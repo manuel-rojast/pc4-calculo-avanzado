@@ -130,6 +130,23 @@
             </p>
           </div>
 
+          <div class="theory-block" style="border-left-color: #38bdf8; background: rgba(56, 189, 248, 0.08);">
+            <h4 style="color:#38bdf8;">💡 Explicación Sencilla y Detallada (Intuición Geométrica):</h4>
+            <p>
+              <strong>¿Qué hace una función multivariable?</strong> Imagina que tienes una lámina de goma elástica en el plano $\mathbb{R}^2$. Una función $f(x,y)$ toma esa lámina y la estira, la gira o la deforma. La <strong>matriz jacobiana</strong> $Df(x_0)$ representa la «lupa matemática»: si te acercas muchísimo a un punto $x_0$, la deformación curva se ve prácticamente plana (lineal).
+            </p>
+            <p>
+              <strong>¿Por qué el determinante jacobiano es la clave?</strong> En una dimensión, $f'(x_0) \neq 0$ significa que la curva no es plana (no tiene tangente horizontal), por lo que sube o baja y podemos invertirla. En varias dimensiones, $\det Df(x_0)$ mide cómo cambia el <em>área</em> (en 2D) o el <em>volumen</em> (en 3D) de un cuadradito diminuto tras la transformación:
+            </p>
+            <ul style="margin-left: 1.5rem; color: #cbd5e1; margin-bottom: 0.75rem;">
+              <li>Si $\det Df(x_0) \neq 0$, el cuadradito se deforma en un paralelogramo con área no nula: <strong>no se aplasta a una línea ni colapsa a un punto</strong>. Al no perderse dimensión, toda la información local se preserva y podemos «deshacer» el movimiento de regreso de forma única y suave.</li>
+              <li>Si $\det Df(x_0) = 0$, la transformación aplasta el área a cero (singularidad). Es imposible recuperar el punto original porque varios puntos se han comprimido en el mismo sitio.</li>
+            </ul>
+            <p>
+              <strong>La trampa entre Local y Global:</strong> El teorema es estrictamente <em>local</em> (en una vecindad pequeña). Piensa en enrollar un papel en forma de tubo: cualquier trocito pequeño de papel sigue siendo plano y bidimensional sin cruzarse (invertible localmente), pero a gran escala el papel se solapa consigo mismo (no es inyectivo globalmente).
+            </p>
+          </div>
+
           <p>
             <strong>Aplicación cinemática (Robótica):</strong> Cuando un mecanismo tiene jacobiano $\det J = 0$, entra en una <em>configuración singular</em> perdiendo grados de libertad instantáneos y volviéndose incontrolable localmente.
           </p>
@@ -214,6 +231,23 @@
               <li><strong>Sistemas $2 \times 4$ ($F: \mathbb{R}^4 \to \mathbb{R}^2$):</strong> Requiere invertir la matriz $2 \times 2$ de derivadas dependientes.</li>
             </ul>
           </div>
+
+          <div class="theory-block" style="border-left-color: #a855f7; background: rgba(168, 85, 247, 0.08);">
+            <h4 style="color:#c084fc;">💡 Explicación Sencilla y Detallada (El Despeje Invisible):</h4>
+            <p>
+              <strong>El problema de las ecuaciones difíciles:</strong> En álgebra básica estamos acostumbrados a funciones explícitas como $y = x^2 + 1$. Sin embargo, en matemáticas superiores y física las leyes suelen presentarse con todas las variables entrelazadas: $x^3 + y^3 - 3xy = 0$ o $x\cos y + e^{x-u} + u^2 v = 1$. Despejar $y$ o $u$ de forma analítica exacta con una fórmula cerrada suele ser humanamente imposible.
+            </p>
+            <p>
+              <strong>La revelación del Teorema de la Función Implícita:</strong> El teorema nos dice: <em>«No necesitas despejar la fórmula de $y(x)$ con lápiz y papel para saber que existe y calcular con total precisión sus derivadas y pendientes»</em>.
+            </p>
+            <ul style="margin-left: 1.5rem; color: #cbd5e1; margin-bottom: 0.75rem;">
+              <li><strong>Geometría en una curva $F(x,y)=0$:</strong> Para que $y$ sea función de $x$ (es decir, $y = \varphi(x)$), la curva no puede tener una recta tangente vertical en ese punto (porque una línea vertical corta a la gráfica en más de un punto o tiene pendiente infinita). Como la recta tangente tiene pendiente $-F_x / F_y$, la condición de que la tangente no sea vertical es exactamente que $F_y \neq 0$.</li>
+              <li><strong>En sistemas multidimensionales:</strong> Si tienes $m$ ecuaciones y quieres despejar $m$ incógnitas $y = (y_1, \dots, y_m)$ en función de $n$ parámetros $x = (x_1, \dots, x_n)$, la submatriz jacobiana $D_y F$ debe ser invertible ($\det D_y F \neq 0$). Esto asegura que las $m$ ecuaciones aportan información independiente y no son contradictorias ni redundantes localmente.</li>
+            </ul>
+            <p>
+              <strong>El signo negativo matricial:</strong> La fórmula $D\varphi = -[D_y F]^{-1} D_x F$ surge de derivar la identidad $F(x, \varphi(x)) = 0$ por regla de la cadena: $D_x F + D_y F \cdot D\varphi = 0$. Al pasar al otro lado de la igualdad, aparece naturalmente el signo menos.
+            </p>
+          </div>
         </article>
 
         <!-- Visor 3D Interactivo: Superficie Implícita -->
@@ -297,6 +331,23 @@
               <em>Propiedad fundamental de orden:</em> Para cualesquiera dos particiones $P_1, P_2$:
               $$L(f, P_1) \le L(f, P_1 \cup P_2) \le S(f, P_1 \cup P_2, \xi) \le U(f, P_1 \cup P_2) \le U(f, P_2).$$
             </p>
+          </div>
+
+          <div class="theory-block" style="border-left-color: #38bdf8; background: rgba(56, 189, 248, 0.08);">
+            <h4 style="color:#38bdf8;">💡 Explicación Sencilla y Detallada (Construyendo con Columnas de Lego):</h4>
+            <p>
+              <strong>El reto del volumen curvo:</strong> Queremos calcular el volumen exacto atrapado bajo una superficie curva $z = f(x,y)$ sobre un piso rectangular $R = [a,b] \times [c,d]$. Como el techo es irregular y ondulado, no podemos usar una simple fórmula geométrica escolar.
+            </p>
+            <p>
+              <strong>La estrategia de Darboux y Riemann:</strong> Cortamos el piso rectangular en una cuadrícula de pequeñas baldosas de área $\Delta A = \Delta x \cdot \Delta y$. Sobre cada baldosa levantamos una columna o prisma recto de techo plano:
+            </p>
+            <ul style="margin-left: 1.5rem; color: #cbd5e1; margin-bottom: 0.75rem;">
+              <li><strong>Suma Inferior $L(f,P)$ (Cota pesimista):</strong> En cada baldosa, construimos una columna cuya altura sea el punto <em>más bajo</em> del terreno ($m_{ij} = \inf f$). Todas las columnas quedan completamente metidas por debajo de la superficie, por lo que el volumen total de estas columnas siempre es menor o igual al volumen real.</li>
+              <li><strong>Suma Superior $U(f,P)$ (Cota optimista):</strong> En cada baldosa, construimos una columna con la altura del punto <em>más alto</em> ($M_{ij} = \sup f$). Estas columnas sobresalen por encima de la superficie, por lo que siempre sobrestiman el volumen real.</li>
+              <li><strong>El principio del emparedado (Sándwich):</strong> El volumen real siempre está atrapado entre la suma inferior y la superior:
+                $$L(f,P) \le \text{Volumen Real} \le U(f,P).$$
+                Cuando refinamos la cuadrícula haciendo las baldosas microscópicas ($\Delta x \to 0, \Delta y \to 0$), la altura máxima y mínima en cada baldosa se van acercando. Si el sándwich se cierra por completo ($\lim (U - L) = 0$), ese valor único atrapado es por definición la integral doble.</li>
+            </ul>
           </div>
         </article>
 
@@ -394,6 +445,24 @@
               <li>La función de Dirichlet en 2D ($\chi_{\mathbb{Q}^2}$) <em>NO es integrable Riemann</em> porque es discontinua en todo punto ($D_f = R$).</li>
             </ul>
           </div>
+
+          <div class="theory-block" style="border-left-color: #10b981; background: rgba(16, 185, 129, 0.08);">
+            <h4 style="color:#34d399;">💡 Explicación Sencilla y Detallada (¿Cuándo una Función es Amigable?):</h4>
+            <p>
+              <strong>¿Por qué no toda función se puede integrar?</strong> Para que una función sea integrable, no puede tener un comportamiento caótico ni oscilar salvajemente en regiones grandes del dominio.
+            </p>
+            <p>
+              <strong>El papel de la Continuidad Uniforme:</strong> En una función continua sobre un rectángulo compacto, los valores no dan saltos repentinos. La continuidad uniforme (Heine-Cantor) nos garantiza que podemos elegir baldosas tan finas que la diferencia entre el punto más alto y el más bajo dentro de <em>todas y cada una</em> de las baldosas sea menor que un $\varepsilon$ arbitrario. Eso asegura que $U - L < \varepsilon$, demostrando que <strong>toda función continua es integrable</strong>.
+            </p>
+            <p>
+              <strong>¿Y si la función tiene saltos o roturas?</strong> Aquí entra el gran resultado de <strong>Lebesgue-Vitali</strong>:
+            </p>
+            <ul style="margin-left: 1.5rem; color: #cbd5e1; margin-bottom: 0.75rem;">
+              <li>Una función acotada <strong>sí puede ser integrable aunque tenga discontinuidades</strong>, siempre y cuando esas fallas ocurran sobre un conjunto que no tenga «grosor» bidimensional (área nula o medida cero de Lebesgue), como por ejemplo a lo largo de rectas, circunferencias o curvas suaves.</li>
+              <li><em>Ejemplo intuitivo:</em> Una plancha metálica soldada a lo largo de una línea tiene discontinuidad en la soldadura, pero la soldadura no tiene área bidimensional: la masa total se puede calcular perfectamente integrando.</li>
+              <li><em>El caso patológico:</em> La función de Dirichlet ($\chi_{\mathbb{Q}^2}$) vale 1 en racionales y 0 en irracionales. Como en cualquier baldosa por diminuta que sea hay tanto racionales como irracionales, en cada baldosa la altura máxima es 1 y la mínima es 0. El sándwich nunca se puede cerrar ($U - L = 1$ siempre), por lo que es imposible medir su volumen con Riemann.</li>
+            </ul>
+          </div>
         </article>
 
       </div>
@@ -445,6 +514,23 @@
               Si $R \subset \mathbb{R}^2$ es compacto y conexo (por ejemplo, cualquier rectángulo cerrado) y $f: R \to \mathbb{R}$ es continua, entonces existe al menos un punto $(x_0, y_0) \in R$ tal que:
               $$\iint_R f(x,y) \, dA = f(x_0, y_0) \cdot \text{Área}(R).$$
               <em>Demostración rigurosa:</em> Por el Teorema de Weierstrass, $f(R) = [m, M]$. La acotación de la integral asegura que $m \le \frac{1}{\text{Área}(R)}\iint_R f dA \le M$. Por el Teorema del Valor Intermedio (conexidad), dicho valor promedio es alcanzado en algún punto del dominio.
+            </p>
+          </div>
+
+          <div class="theory-block" style="border-left-color: #f59e0b; background: rgba(245, 158, 11, 0.08);">
+            <h4 style="color:#fbbf24;">💡 Explicación Sencilla y Detallada (El Pan de Molde y el Lago Nivelado):</h4>
+            <p>
+              <strong>Intuición de Fubini (Rebanadas de Pan):</strong> Imagina que tienes un pan de molde artesanal con una corteza superior curva y accidentada. ¿Cómo mides su volumen total?
+            </p>
+            <ul style="margin-left: 1.5rem; color: #cbd5e1; margin-bottom: 0.75rem;">
+              <li>Tomas un cuchillo y cortas una rebanada perpendicular al eje $x$ en una posición $x$ fija. Esa rebanada plana tiene un área transversal bidimensional $A(x) = \int_c^d f(x,y) dy$.</li>
+              <li>Luego sumas (integras) todas las rebanadas desde el extremo inicial $x=a$ hasta el final $x=b$:
+                $$\text{Volumen} = \int_a^b A(x) \, dx = \int_a^b \left( \int_c^d f(x,y) \, dy \right) dx.$$
+              </li>
+              <li>El milagro del Teorema de Fubini es que <strong>el orden del corte no altera el pan</strong>: rebanar a lo largo del eje $x$ o rebanar a lo ancho a lo largo del eje $y$ da exactamente el mismo volumen final.</li>
+            </ul>
+            <p>
+              <strong>Intuición del Teorema del Valor Medio (El Lago Nivelado):</strong> Imagina una piscina rectangular con olas congeladas de agua $z = f(x,y)$. Si descongelas las olas, el agua se asienta y queda completamente lisa y horizontal. El volumen total de agua es exactamente el mismo que antes. La altura final de ese nivel de agua plano es el <em>valor medio</em> $f(x_0, y_0)$. El teorema asegura que como el agua era continua, en algún punto de las olas originales la altura era exactamente igual a la altura final de reposo.
             </p>
           </div>
         </article>
@@ -516,6 +602,26 @@
                 $$D = \{(x,y) \in \mathbb{R}^2 : c \le y \le d, \ h_1(y) \le x \le h_2(y)\} \implies \iint_D f \, dA = \int_c^d \left( \int_{h_1(y)}^{h_2(y)} f(x,y) \, dx \right) dy.$$
               </li>
             </ul>
+          </div>
+
+          <div class="theory-block" style="border-left-color: #a855f7; background: rgba(168, 85, 247, 0.08);">
+            <h4 style="color:#c084fc;">💡 Explicación Sencilla y Detallada (El Escáner de Rayos y el Cambio de Orden):</h4>
+            <p>
+              <strong>¿Por qué salir de los rectángulos?</strong> En el mundo real y en la geometría (círculos, elipses, triángulos), los dominios casi nunca tienen lados rectos paralelos a los ejes. Para integrar sobre una región curva $D$, la matemática utiliza un truco elegante: encierra a $D$ dentro de una caja rectangular grande $R$ y multiplica la función por una "valla eléctrica" llamada función característica $\chi_D(x,y)$ (vale 1 si estás dentro de $D$ y 0 si estás fuera). Como la frontera de $D$ son curvas continuas (medida de Jordan cero), la función sigue siendo integrable.
+            </p>
+            <p>
+              <strong>Cómo determinar los límites sin equivocarse jamás (El método del rayo):</strong>
+            </p>
+            <ul style="margin-left: 1.5rem; color: #cbd5e1; margin-bottom: 0.75rem;">
+              <li><strong>Región Tipo 1 (Lanzas una flecha vertical hacia arriba):</strong> Te paras en un valor fijo $x$ entre su sombra mínima $x=a$ y máxima $x=b$. Disparas una flecha vertical hacia arriba: la flecha <em>entra</em> a la región atravesando la curva piso $y = g_1(x)$ y <em>sale</em> atravesando la curva techo $y = g_2(x)$. Por eso la integral interna va de $g_1(x)$ a $g_2(x)$, y la externa de constantes $a$ a $b$.</li>
+              <li><strong>Región Tipo 2 (Lanzas una flecha horizontal hacia la derecha):</strong> Te paras en una altura fija $y$ entre su nivel mínimo $y=c$ y máximo $y=d$. Disparas una flecha hacia la derecha: la flecha <em>entra</em> por la curva izquierda $x = h_1(y)$ y <em>sale</em> por la curva derecha $x = h_2(y)$. La integral interna va de $h_1(y)$ a $h_2(y)$, y la externa de $c$ a $d$.</li>
+            </ul>
+            <p>
+              <strong>La técnica salvavidas en exámenes: Inversión del orden de integración.</strong><br>
+              En muchas evaluaciones de la UNI aparece una integral aparentemente imposible de resolver, como $\int_0^1 \int_y^1 e^{x^2} dx dy$, porque $e^{x^2}$ no tiene antiderivada elemental respecto a $x$. La clave no es intentar métodos exóticos, sino <strong>dibujar la región</strong>: actualmente está descrita como Tipo 2 ($y \le x \le 1$, $0 \le y \le 1$). Al reescribirla como Tipo 1, los límites cambian a $0 \le y \le x$ con $0 \le x \le 1$. La integral se transforma en:
+              $$\int_0^1 \left( \int_0^x e^{x^2} dy \right) dx = \int_0^1 x e^{x^2} dx = \left[ \frac{1}{2} e^{x^2} \right]_0^1 = \frac{e - 1}{2}.$$
+              ¡El cambio de orden generó mágicamente el factor multiplicador $x$ necesario para integrar directamente por sustitución!
+            </p>
           </div>
         </article>
 

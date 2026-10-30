@@ -75,6 +75,18 @@
     left=3mm, right=3mm, top=2mm, bottom=2mm
 }
 
+\newtcolorbox{intuitionbox}[1]{
+    enhanced,
+    colback=cyan!4!white,
+    colframe=cyan!60!blue,
+    coltitle=white,
+    fonttitle=\bfseries\sffamily,
+    title={Explicación Sencilla y Detallada $\bullet$ #1},
+    arc=2mm,
+    boxrule=0.8pt,
+    left=3.5mm, right=3.5mm, top=2.5mm, bottom=2.5mm
+}
+
 \begin{document}
 
 % ==============================================================================
@@ -150,6 +162,18 @@ Que una función cumpla $\det Df(x) \neq 0$ en \textbf{todos} los puntos de su d
 \end{itemize}
 \end{cautionbox}
 
+\begin{intuitionbox}{Intuición Geométrica de la Deformación y el Jacobiano}
+\textbf{¿Qué hace una función multivariable?} Imagina que tienes una lámina de goma elástica en el plano $\mathbb{R}^2$ (o un bloque elástico en $\mathbb{R}^n$). Una función $f(x,y)$ toma esa lámina y la estira, la gira o la deforma espacialmente. La \textbf{matriz jacobiana} $Df(x_0)$ representa la «lupa matemática»: si te acercas muchísimo a un punto $x_0$, la deformación no lineal curva se ve indistinguible de una transformación lineal plana (la mejor aproximación afín local).
+
+\textbf{¿Por qué el determinante jacobiano es la clave?} En una dimensión, $f'(x_0) \neq 0$ significa que la curva no tiene tangente horizontal (no se estaciona), por lo que crece o decrece estrictamente y podemos invertirla localmente. En varias dimensiones, $\det Df(x_0)$ mide cómo cambia el \textit{área orientada} (en 2D) o el \textit{volumen} (en 3D) de un elemento infinitesimal tras la transformación:
+\begin{itemize}[noitemsep]
+    \item Si $\det Df(x_0) \neq 0$, un rectángulo diminuto se transforma en un paralelogramo con área no nula: \textbf{no se aplasta a una línea recta ni colapsa a un punto}. Al preservarse la dimensión, no hay pérdida de información geométrica y podemos «deshacer» el movimiento de retorno de manera única, suave y diferenciable.
+    \item Si $\det Df(x_0) = 0$, la transformación aplasta el volumen a cero (configuración singular). Es imposible recuperar el punto original porque infinitos puntos se han comprimido en el mismo sitio.
+\end{itemize}
+
+\textbf{La trampa entre Local y Global:} El teorema garantiza la existencia de la inversa únicamente en una bola abierta pequeña alrededor de $x_0$. Piensa en enrollar un pliego de papel en forma de cilindro: cualquier trozo pequeño del pliego sigue siendo plano y no se interseca consigo mismo (es un difeomorfismo local en todo punto), pero a escala global el papel se solapa una y otra vez perdiendo la inyectividad global.
+\end{intuitionbox}
+
 \section{Subtema 2: Teorema de la Función Implícita (Sesión 21)}
 
 El Teorema de la Función Implícita (TFI) resuelve el problema de parametrizar localmente conjuntos de nivel $F(x,y) = 0$ como la gráfica de una función $y = \varphi(x)$.
@@ -171,6 +195,21 @@ D\varphi(x) = - \left[ D_y F(x, \varphi(x)) \right]^{-1} \cdot D_x F(x, \varphi(
 \]
 \end{theorempage}
 
+\begin{intuitionbox}{Intuición de Conjuntos de Nivel y la Prueba de la Línea Vertical}
+\textbf{El dilema del despeje algebraico:} En matemáticas aplicadas y física, las leyes fundamentales suelen venir dadas como ecuaciones de equilibrio $F(x,y) = 0$ (por ejemplo, superficies equipotenciales o restricciones energéticas no lineales). Despejar algebraicamente la variable dependiente $y = \varphi(x)$ con papel y lápiz suele ser imposible. El Teorema de la Función Implícita resuelve este problema demostrando que \textbf{no hace falta despejar $y$} para saber que existe como función suave ni para calcular todas sus derivadas.
+
+\textbf{¿Por qué la condición clave es $\det D_y F(x_0, y_0) \neq 0$?} Geométricamente en el plano, la ecuación $F(x,y) = 0$ describe una curva de nivel cuyo vector gradiente $\nabla F = (\frac{\partial F}{\partial x}, \frac{\partial F}{\partial y})$ es ortogonal a la curva:
+\begin{itemize}[noitemsep]
+    \item Si $\frac{\partial F}{\partial y}(x_0, y_0) \neq 0$, el vector tangente a la curva en ese punto \textbf{no es vertical}. Al no tener pendiente infinita, la curva no se dobla hacia atrás sobre sí misma en ese instante: pasa con éxito la \textit{prueba de la línea vertical} del cálculo elemental, garantizando que localmente existe una única curva función $y = \varphi(x)$.
+    \item Si $\frac{\partial F}{\partial y}(x_0, y_0) = 0$, la tangente es exactamente vertical (como en los extremos $(\pm 1, 0)$ de la circunferencia unitaria $x^2 + y^2 - 1 = 0$). En esos puntos, la curva se repliega sobre sí misma y es imposible definir $y$ unívocamente como función de $x$.
+\end{itemize}
+
+\textbf{La regla de la cadena implícita:} Al diferenciar la identidad $F(x, \varphi(x)) \equiv 0$ respecto a $x$, obtenemos $D_x F + D_y F \cdot D\varphi = 0$. Al ser $D_y F$ una matriz cuadrada invertible ($\det D_y F \neq 0$), multiplicamos por su inversa a la izquierda y deducimos directamente la fórmula matricial:
+\[
+D\varphi(x) = - \left[ D_y F(x, \varphi(x)) \right]^{-1} \cdot D_x F(x, \varphi(x)).
+\]
+\end{intuitionbox}
+
 \section{Subtema 3: Particiones y Sumas de Darboux y Riemann (Sesión 22)}
 
 La formulación analítica de la integral en $\mathbb{R}^2$ parte de un rectángulo cerrado $R = [a,b] \times [c,d]$.
@@ -188,6 +227,17 @@ L(f, P_1) \le U(f, P_2) \implies \sup_P L(f, P) \le \inf_P U(f, P).
 \]
 \end{theorempage}
 
+\begin{intuitionbox}{Intuición de Topografía y Columnas Lego (Darboux y Riemann)}
+\textbf{Construyendo el volumen bajo una superficie:} Imagina un terreno montañoso cuya elevación sobre el suelo rectangular $R = [a,b] \times [c,d]$ viene dada por $z = f(x,y) \ge 0$. ¿Cómo calculamos el volumen exacto de tierra bajo la montaña?
+\begin{itemize}[noitemsep]
+    \item \textbf{La cuadrícula (Partición $P$):} Trazamos una retícula de líneas paralelas a los ejes, dividiendo el suelo en pequeñas baldosas rectangulares $R_{ij}$.
+    \item \textbf{Suma Inferior $L(f, P)$ (Columnas por defecto):} Sobre cada baldosa $R_{ij}$, construimos una columna prismática cuya altura es la elevación más baja del terreno en esa baldosa: $m_{ij} = \inf_{R_{ij}} f$. El conjunto de todas estas columnas queda totalmente \textbf{por debajo} del terreno montañoso real.
+    \item \textbf{Suma Superior $U(f, P)$ (Columnas por exceso):} Sobre la misma baldosa, levantamos una columna cuya altura es la cumbre más alta del terreno en esa baldosa: $M_{ij} = \sup_{R_{ij}} f$. Estas columnas cubren totalmente la montaña por arriba.
+    \item \textbf{El principio de refinamiento:} Si subdividimos la cuadrícula en baldosas más pequeñas ($P'$ más fina que $P$), las columnas inferiores ganan espacio libre y se elevan ($L(f, P) \le L(f, P')$), mientras que las columnas superiores se ajustan mejor al perfil y bajan ($U(f, P') \le U(f, P)$). Ambas sumas atrapan al volumen real en una prensa hidráulica geométrica.
+    \item \textbf{Suma de Riemann $S(f, P)$:} Si en vez de tomar el ínfimo o el supremo tomamos una muestra cualquiera en cada baldosa $(x_{ij}^*, y_{ij}^*)$, la altura de la columna es $f(x_{ij}^*, y_{ij}^*)$. Como $m_{ij} \le f(x_{ij}^*, y_{ij}^*) \le M_{ij}$, la suma de Riemann siempre queda atrapada entre Darboux inferior y superior: $L(f, P) \le S(f, P) \le U(f, P)$.
+\end{itemize}
+\end{intuitionbox}
+
 \section{Subtema 4: Criterios y Propiedades de Integrabilidad (Sesión 23)}
 
 \begin{theorempage}{Criterio de Riemann y Continuidad Uniforme}
@@ -197,6 +247,22 @@ $f$ es integrable Riemann sobre $R$ si y sólo si:
 \]
 \textbf{Teorema:} Toda función $f: R \to \mathbb{R}$ continua sobre un rectángulo compacto es integrable Riemann.
 \end{theorempage}
+
+\begin{intuitionbox}{El Criterio del Sándwich de Darboux y el Teorema de Lebesgue-Vitali}
+\textbf{¿Cuándo decimos que una función es integrable?} Decimos que una función acotada $f$ es integrable Riemann cuando la «brecha de incertidumbre» entre las columnas por exceso y las columnas por defecto puede hacerse arbitrariamente pequeña:
+\[
+U(f, P) - L(f, P) = \sum_{i,j} (M_{ij} - m_{ij}) \text{Área}(R_{ij}) < \varepsilon.
+\]
+La diferencia $M_{ij} - m_{ij} = \omega(f, R_{ij})$ mide la \textit{oscilación} de la función en cada subrectángulo.
+
+\textbf{¿Por qué toda función continua sobre un rectángulo compacto es integrable?}
+En un conjunto cerrado y acotado (compacto) de $\mathbb{R}^2$, el \textbf{Teorema de Heine-Cantor} asegura que toda función continua es \textit{uniformemente continua}. Esto significa que no existen oscilaciones infinitamente empinadas ni cambios bruscos imprevistos: fijado $\varepsilon > 0$, basta con tomar baldosas con diagonal menor a un $\delta > 0$ para garantizar que en cada subrectángulo la oscilación sea $M_{ij} - m_{ij} < \frac{\varepsilon}{\text{Área}(R)}$. Al sumar todas las baldosas:
+\[
+U(f, P) - L(f, P) < \frac{\varepsilon}{\text{Área}(R)} \sum_{i,j} \text{Área}(R_{ij}) = \varepsilon.
+\]
+\textbf{¿Cuándo falla la integrabilidad? (Criterio de Lebesgue-Vitali UNI):}
+Una función acotada no necesita ser continua en todas partes para ser integrable: puede tener líneas de discontinuidad o saltos escalonados, siempre que el conjunto de sus discontinuidades tenga \textit{medida cero} (como curvas diferenciables o puntos aislados). En cambio, si las discontinuidades están densamente distribuidas por todo el rectángulo (como la función indicatriz de racionales en 2D), la oscilación es $M_{ij} - m_{ij} = 1$ en absolutamente cualquier subrectángulo por fino que sea, haciendo que $U(f, P) - L(f, P) = \text{Área}(R)$ nunca tienda a cero.
+\end{intuitionbox}
 
 \section{Subtema 5: Teorema de Fubini y Teorema del Valor Medio (Sesión 24)}
 
@@ -214,10 +280,59 @@ Si $R \subset \mathbb{R}^2$ es compacto y conexo y $f: R \to \mathbb{R}$ es cont
 \]
 \end{theorempage}
 
+\begin{intuitionbox}{El Pan de Molde de Fubini y el Lago Nivelado del Valor Medio}
+\textbf{Intuición de Fubini (Rebanadas de pan de molde):} Imagina un pan de molde artesanal cuya superficie superior tiene una forma ondulada $z = f(x,y)$. ¿Cómo medimos su volumen total?
+\begin{itemize}[noitemsep]
+    \item Fijamos una posición $x$ en el eje longitudinal y pasamos un cuchillo transversal perpendicular a dicho eje. El corte genera una rebanada plana cuya área transversal bidimensional es $A(x) = \int_c^d f(x,y) \, dy$.
+    \item Luego sumamos (integramos) todas las rebanadas desde el extremo inicial $x=a$ hasta el extremo final $x=b$:
+    \[
+    \text{Volumen} = \int_a^b A(x) \, dx = \int_a^b \left( \int_c^d f(x,y) \, dy \right) dx.
+    \]
+    \item El poder del Teorema de Fubini radica en que \textbf{la orientación del corte no altera el pan}: cortar longitudinalmente en $x$ o transversalmente en $y$ conduce exactamente al mismo volumen numérico.
+\end{itemize}
+
+\textbf{Intuición del Teorema del Valor Medio (El lago nivelado):} Imagina una piscina rectangular con olas congeladas de agua descritas por $z = f(x,y)$. Si descongelamos las olas, el agua se redistribuye por gravedad hasta formar una superficie perfectamente plana y horizontal a una altura de reposo $h = f(x_0, y_0)$. Como el volumen total no ha cambiado, se cumple:
+\[
+\text{Volumen} = \iint_R f(x,y) \, dA = f(x_0, y_0) \cdot \text{Área}(R).
+\]
+Al ser la función continua y el dominio conexo, el Teorema del Valor Intermedio garantiza que en algún punto $(x_0, y_0)$ de las olas originales la altura real era exactamente igual a la altura final de reposo.
+\end{intuitionbox}
+
+\section{Subtema 6 (Bonus): Integración en Regiones Planas de Tipo 1 y 2 (Sesión 25)}
+
+Ampliación del concepto de integral sobre dominios acotados no rectangulares $D \subset \mathbb{R}^2$ mediante la función característica $\chi_D$: $\iint_D f \, dA = \iint_R f \chi_D \, dA$, donde $R$ es un rectángulo envolvente que contiene a $D$.
+
+\begin{theorempage}{Clasificación de Regiones en $\mathbb{R}^2$}
+\begin{itemize}[noitemsep]
+    \item \textbf{Región de Tipo 1 (Verticalmente Simple):} Acotada por constantes en $x$ y funciones continuas en $y$:
+    \[
+    D = \left\{ (x,y) \in \mathbb{R}^2 : a \le x \le b, \ g_1(x) \le y \le g_2(x) \right\} \implies \iint_D f \, dA = \int_a^b \left( \int_{g_1(x)}^{g_2(x)} f(x,y) \, dy \right) dx.
+    \]
+    \item \textbf{Región de Tipo 2 (Horizontalmente Simple):} Acotada por constantes en $y$ y funciones continuas en $x$:
+    \[
+    D = \left\{ (x,y) \in \mathbb{R}^2 : c \le y \le d, \ h_1(y) \le x \le h_2(y) \right\} \implies \iint_D f \, dA = \int_c^d \left( \int_{h_1(y)}^{h_2(y)} f(x,y) \, dx \right) dy.
+    \]
+\end{itemize}
+\end{theorempage}
+
+\begin{intuitionbox}{El Escáner de Rayos y el Cambio de Orden de Integración}
+\textbf{¿Por qué salir de los rectángulos?} En geometría, física e ingeniería, los recintos reales (círculos, sectores parabólicos, triángulos) casi nunca tienen bordes paralelos a los ejes cartesianos. Para integrar sobre $D$, se coloca una «valla eléctrica» matemática $\chi_D(x,y)$ (vale 1 si $(x,y) \in D$ y 0 fuera). Como la frontera de $D$ está formada por curvas continuas (medida de Jordan cero), la función $f \cdot \chi_D$ sigue siendo integrable.
+
+\textbf{Cómo determinar los límites de integración sin fallar (El método del rayo):}
+\begin{itemize}[noitemsep]
+    \item \textbf{Tipo 1 (Disparo vertical):} Fijamos un $x \in [a,b]$ y lanzamos una flecha vertical hacia arriba. La flecha \textit{entra} a la región por el piso $y = g_1(x)$ y \textit{sale} por el techo $y = g_2(x)$. La integral interna va de $g_1(x)$ a $g_2(x)$, y la externa de constantes $a$ a $b$.
+    \item \textbf{Tipo 2 (Disparo horizontal):} Fijamos una altura $y \in [c,d]$ y lanzamos una flecha horizontal hacia la derecha. La flecha \textit{entra} por la pared izquierda $x = h_1(y)$ y \textit{sale} por la pared derecha $x = h_2(y)$. La integral interna va de $h_1(y)$ a $h_2(y)$, y la externa de constantes $c$ a $d$.
+\end{itemize}
+
+\textbf{Técnica clave en exámenes UNI: Inversión del orden de integración.}
+Muchas integrales dobles no pueden resolverse elementalmente en el orden en que son planteadas (por ejemplo $\int_0^1 \int_y^1 e^{x^2} dx dy$, dado que $e^{x^2}$ carece de primitiva elemental respecto a $x$). Al trazar la región y cambiar a Tipo 1 ($0 \le y \le x$ con $0 \le x \le 1$), la integral pasa a ser:
+\[
+\int_0^1 \left( \int_0^x e^{x^2} dy \right) dx = \int_0^1 x e^{x^2} dx = \left[ \frac{1}{2} e^{x^2} \right]_0^1 = \frac{e - 1}{2}.
+\]
+¡El cambio de orden genera automáticamente el factor $x$ necesario para integrar por sustitución directa!
+\end{intuitionbox}
+
 \newpage
-% ==============================================================================
-% PARTE II: BANCO DE PROBLEMAS RESUELTOS
-% ==============================================================================
 \part{Compendio de 80 Problemas Resueltos por Niveles}
 
 \section{Teorema de la Función Inversa}

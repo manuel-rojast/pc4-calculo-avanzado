@@ -8,12 +8,12 @@ document.addEventListener('DOMContentLoaded', () => {
   const state = {
     currentTopic: 't1',
     currentLevels: {
-      't1': '1',
-      't2': '1',
-      't3': '1',
-      't4': '1',
-      't5': '1',
-      'tb': 'all'
+      't1': '0',
+      't2': '0',
+      't3': '0',
+      't4': '0',
+      't5': '0',
+      'tb': '0'
     },
     initializedVisualizers: new Set()
   };

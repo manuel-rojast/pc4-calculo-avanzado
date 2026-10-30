@@ -333,9 +333,123 @@ Muchas integrales dobles no pueden resolverse elementalmente en el orden en que 
 \end{intuitionbox}
 
 \newpage
-\part{Compendio de 80 Problemas Resueltos por Niveles}
+\part{Compendio de 98 Problemas Resueltos por Niveles (Nivel 0 al 5)}
 
 \section{Teorema de la Función Inversa}
+
+\subsection*{Problema 1.0A: Derivada de la inversa en una dimensión (Conexión 1D) \hfill \color{teal}\small[Nivel 0]}
+\addcontentsline{toc}{subsection}{Problema 1.0A: Derivada de la inversa en una dimensión (Conexión 1D) (Nivel 0)}
+
+\begin{tcolorbox}[colback=white,colframe=gray!40,arc=1mm,boxrule=0.5pt,left=3mm,right=3mm,top=2mm,bottom=2mm]
+\textbf{Enunciado:} Considere la función real $f: \mathbb{R} \to \mathbb{R}$ dada por $f(x) = x^3 + 2x$.
+\begin{enumerate}[label=\textbf{\alph*)}]
+\item Demuestre que $f'(x) > 0$ para todo $x \in \mathbb{R}$ y concluya que $f$ admite inversa diferenciable global $f^{-1}: \mathbb{R} \to \mathbb{R}$.
+\item Sabiendo que $f(1) = 3$, calcule la derivada de la inversa $(f^{-1})'(3)$ sin necesidad de despejar la fórmula explícita de $f^{-1}(y)$.
+\end{enumerate}
+\end{tcolorbox}
+
+\begin{tcolorbox}[colback=yellow!4,colframe=accentamber!70,arc=1mm,boxrule=0.5pt,left=3mm,right=3mm,top=1.5mm,bottom=1.5mm]
+\textbf{Pista Conceptual:} En una dimensión, el Teorema de la Función Inversa establece que $(f^{-1})'(y_0) = \frac{1}{f'(x_0)}$, donde $y_0 = f(x_0)$.
+\end{tcolorbox}
+
+\paragraph{Solución Paso a Paso:}\par
+\begin{enumerate}[label=\textbf{\arabic*.}]
+\item \textbf{Cálculo de la derivada directa:}
+\[ f'(x) = 3x^2 + 2. \]
+Como $x^2 \ge 0$ para todo $x \in \mathbb{R}$, se cumple $3x^2 + 2 \ge 2 > 0$ en toda la recta real. Al ser $f'(x) > 0$, la función es estrictamente creciente en todo su dominio, lo que garantiza que es inyectiva globalmente.
+\item \textbf{Evaluación de la derivada en el punto base:}
+Para $x_0 = 1$, tenemos $y_0 = f(1) = 1^3 + 2(1) = 3$. La derivada en dicho punto es:
+\[ f'(1) = 3(1)^2 + 2 = 5. \]
+\item \textbf{Cálculo de la derivada de la inversa:}
+Por el Teorema de la Función Inversa (caso 1D):
+\[ (f^{-1})'(3) = \frac{1}{f'(1)} = \frac{1}{5}. \]
+¡Observe que obtuvimos el valor exacto de la derivada de la función inversa sin haber tenido que resolver la compleja ecuación cúbica $y = x^3 + 2x$!
+\end{enumerate}
+
+\begin{trapbox}
+Intentar despejar algebraicamente $x$ en función de $y$, o evaluar $f'(3)$ en lugar de $f'(1)$ en el denominador. Recuerde: el punto donde se evalúa $f'$ es la preimagen $x_0 = 1$, no la imagen $y_0 = 3$.
+\end{trapbox}
+
+\vspace{0.5cm}
+\hrule
+\vspace{0.5cm}
+\subsection*{Problema 1.0B: Matriz jacobiana e inversión en un sistema desacoplado en R$^2$ \hfill \color{teal}\small[Nivel 0]}
+\addcontentsline{toc}{subsection}{Problema 1.0B: Matriz jacobiana e inversión en un sistema desacoplado en R$^2$ (Nivel 0)}
+
+\begin{tcolorbox}[colback=white,colframe=gray!40,arc=1mm,boxrule=0.5pt,left=3mm,right=3mm,top=2mm,bottom=2mm]
+\textbf{Enunciado:} Sea $f: \mathbb{R}^2 \to \mathbb{R}^2$ la transformación definida por $f(x,y) = (3x - 1, \, 2y + 5)$.
+\begin{enumerate}[label=\textbf{\alph*)}]
+\item Halle la matriz jacobiana $Df(x,y)$ y calcule su determinante.
+\item Verifique que $\det Df(x,y) \neq 0$ en todo $\mathbb{R}^2$ y determine la matriz jacobiana de la inversa $D(f^{-1})(u,v)$.
+\item Despeje directamente la inversa explícita $f^{-1}(u,v)$ y corrobore su derivada.
+\end{enumerate}
+\end{tcolorbox}
+
+\begin{tcolorbox}[colback=yellow!4,colframe=accentamber!70,arc=1mm,boxrule=0.5pt,left=3mm,right=3mm,top=1.5mm,bottom=1.5mm]
+\textbf{Pista Conceptual:} En un sistema lineal o desacoplado, las derivadas parciales cruzadas son cero, facilitando el cálculo directo de la matriz jacobiana diagonal.
+\end{tcolorbox}
+
+\paragraph{Solución Paso a Paso:}\par
+\begin{enumerate}[label=\textbf{\arabic*.}]
+\item \textbf{Matriz jacobiana:}
+Las funciones componentes son $f_1(x,y) = 3x - 1$ y $f_2(x,y) = 2y + 5$.
+\[ Df(x,y) = \begin{pmatrix} \frac{\partial f_1}{\partial x} & \frac{\partial f_1}{\partial y} \\[4pt] \frac{\partial f_2}{\partial x} & \frac{\partial f_2}{\partial y} \end{pmatrix} = \begin{pmatrix} 3 & 0 \\[4pt] 0 & 2 \end{pmatrix}. \]
+\item \textbf{Determinante jacobiano:}
+\[ \det Df(x,y) = (3)(2) - (0)(0) = 6 \neq 0. \]
+Como el determinante es una constante no nula ($6 > 0$) en todo el plano, $f$ es invertible localmente en cualquier punto.
+\item \textbf{Jacobiano de la inversa mediante el teorema:}
+\[ D(f^{-1}) = [Df]^{-1} = \begin{pmatrix} 3 & 0 \\[4pt] 0 & 2 \end{pmatrix}^{-1} = \begin{pmatrix} 1/3 & 0 \\[4pt] 0 & 1/2 \end{pmatrix}. \]
+\item \textbf{Verificación por despeje directo:}
+Igualando $(u,v) = (3x - 1, 2y + 5)$:
+\[ u = 3x - 1 \implies x = \frac{u+1}{3}, \qquad v = 2y + 5 \implies y = \frac{v-5}{2}. \]
+Por tanto, $f^{-1}(u,v) = \left( \frac{u+1}{3}, \frac{v-5}{2} \right)$. Derivando directamente:
+\[ D(f^{-1})(u,v) = \begin{pmatrix} 1/3 & 0 \\[4pt] 0 & 1/2 \end{pmatrix}, \]
+coincidiendo perfectamente con la fórmula matricial del Teorema de la Función Inversa.
+\end{enumerate}
+
+\begin{trapbox}
+Confundir la matriz jacobiana con el gradiente de una sola función escalar, o invertir los elementos de la matriz en lugar de invertir la matriz como operador lineal.
+\end{trapbox}
+
+\vspace{0.5cm}
+\hrule
+\vspace{0.5cm}
+\subsection*{Problema 1.0C: Punto singular y pérdida de invertibilidad local \hfill \color{teal}\small[Nivel 0]}
+\addcontentsline{toc}{subsection}{Problema 1.0C: Punto singular y pérdida de invertibilidad local (Nivel 0)}
+
+\begin{tcolorbox}[colback=white,colframe=gray!40,arc=1mm,boxrule=0.5pt,left=3mm,right=3mm,top=2mm,bottom=2mm]
+\textbf{Enunciado:} Considere la función cuadrática $f: \mathbb{R}^2 \to \mathbb{R}^2$ dada por $f(x,y) = (x^2, \, y)$.
+\begin{enumerate}[label=\textbf{\alph*)}]
+\item Calcule la matriz jacobiana $Df(x,y)$ y determine todos los puntos donde el determinante jacobiano se anula.
+\item En el punto $p_0 = (0,1)$, verifique que $\det Df(0,1) = 0$. Explique geométricamente por qué $f$ no puede tener función inversa en ninguna vecindad alrededor de $(0,1)$.
+\end{enumerate}
+\end{tcolorbox}
+
+\begin{tcolorbox}[colback=yellow!4,colframe=accentamber!70,arc=1mm,boxrule=0.5pt,left=3mm,right=3mm,top=1.5mm,bottom=1.5mm]
+\textbf{Pista Conceptual:} Analice qué ocurre con los puntos $(+\varepsilon, 1)$ y $(-\varepsilon, 1)$ bajo la acción de $f$ para valores pequeños de $\varepsilon > 0$.
+\end{tcolorbox}
+
+\paragraph{Solución Paso a Paso:}\par
+\begin{enumerate}[label=\textbf{\arabic*.}]
+\item \textbf{Cálculo del jacobiano y determinante:}
+\[ Df(x,y) = \begin{pmatrix} 2x & 0 \\[4pt] 0 & 1 \end{pmatrix} \implies \det Df(x,y) = 2x(1) - 0 = 2x. \]
+El determinante se anula exactamente cuando $2x = 0$, es decir, sobre todo el eje $y$ ($x = 0$).
+\item \textbf{Evaluación en $p_0 = (0,1)$:}
+\[ Df(0,1) = \begin{pmatrix} 0 & 0 \\[4pt] 0 & 1 \end{pmatrix} \implies \det Df(0,1) = 0. \]
+\item \textbf{Falla de la inyectividad local:}
+Cualquier bola abierta centrada en $(0,1)$ de radio $r > 0$ contiene pares de puntos de la forma $p_1 = (\varepsilon, 1)$ y $p_2 = (-\varepsilon, 1)$ con $0 < \varepsilon < r$. Evaluando $f$ en ambos puntos:
+\[ f(\varepsilon, 1) = (\varepsilon^2, 1) = f(-\varepsilon, 1). \]
+Como $p_1 \neq p_2$ pero tienen exactamente la misma imagen, $f$ \textbf{no es inyectiva} en ninguna vecindad de $(0,1)$, por pequeña que sea. Al no ser inyectiva, es imposible definir una función inversa local $f^{-1}$, demostrando por qué la condición $\det Df \neq 0$ es indispensable.
+\end{enumerate}
+
+\begin{trapbox}
+Asumir que si una sola variable tiene derivada no nula (como $\frac{\partial f_2}{\partial y} = 1$), la función completa es invertible. La invertibilidad requiere que todo el determinante sea no nulo.
+\end{trapbox}
+
+\vspace{0.5cm}
+\hrule
+\vspace{0.5cm}
+
 
 \subsection*{Problema 1.1: Inversión local elemental en R$^2$ \hfill \color{primaryblue}\small[Nivel 1]}
 \addcontentsline{toc}{subsection}{Problema 1.1: \texorpdfstring{Inversión local elemental en R$^2$}{Inversión local elemental en R^2} (Nivel 1)}
@@ -1142,6 +1256,120 @@ Derivar cada elemento escalarmente sin mantener el orden del producto no conmuta
 \vspace{0.5cm}
 
 \section{Teorema de la Función Implícita}
+
+\subsection*{Problema 2.0A: Derivación implícita de la circunferencia en un punto regular \hfill \color{teal}\small[Nivel 0]}
+\addcontentsline{toc}{subsection}{Problema 2.0A: Derivación implícita de la circunferencia en un punto regular (Nivel 0)}
+
+\begin{tcolorbox}[colback=white,colframe=gray!40,arc=1mm,boxrule=0.5pt,left=3mm,right=3mm,top=2mm,bottom=2mm]
+\textbf{Enunciado:} Sea la curva descrita implícitamente por $F(x,y) = x^2 + y^2 - 25 = 0$ y sea el punto $P_0 = (3,4)$.
+\begin{enumerate}[label=\textbf{\alph*)}]
+\item Verifique que $P_0$ pertenece a la curva.
+\item Calcule $\frac{\partial F}{\partial x}(3,4)$ y $\frac{\partial F}{\partial y}(3,4)$.
+\item Verifique que $\frac{\partial F}{\partial y}(3,4) \neq 0$, aplique la fórmula del TFI para hallar $\frac{dy}{dx}(3)$ y compruebe el resultado despejando $y = \sqrt{25 - x^2}$.
+\end{enumerate}
+\end{tcolorbox}
+
+\begin{tcolorbox}[colback=yellow!4,colframe=accentamber!70,arc=1mm,boxrule=0.5pt,left=3mm,right=3mm,top=1.5mm,bottom=1.5mm]
+\textbf{Pista Conceptual:} La fórmula del Teorema de la Función Implícita en el plano es $\frac{dy}{dx} = -\frac{\partial F / \partial x}{\partial F / \partial y}$.
+\end{tcolorbox}
+
+\paragraph{Solución Paso a Paso:}\par
+\begin{enumerate}[label=\textbf{\arabic*.}]
+\item \textbf{Pertenencia a la curva:}
+\[ F(3,4) = 3^2 + 4^2 - 25 = 9 + 16 - 25 = 0. \]
+El punto satisface la ecuación.
+\item \textbf{Derivadas parciales:}
+\[ \frac{\partial F}{\partial x} = 2x \implies \frac{\partial F}{\partial x}(3,4) = 2(3) = 6. \]
+\[ \frac{\partial F}{\partial y} = 2y \implies \frac{\partial F}{\partial y}(3,4) = 2(4) = 8. \]
+\item \textbf{Cálculo con la fórmula del TFI:}
+Como $\frac{\partial F}{\partial y}(3,4) = 8 \neq 0$, por el TFI existe una función $y = \varphi(x)$ en una vecindad de $x=3$ tal que $\varphi(3) = 4$, y su derivada es:
+\[ \frac{dy}{dx}(3) = - \frac{\frac{\partial F}{\partial x}(3,4)}{\frac{\partial F}{\partial y}(3,4)} = -\frac{6}{8} = -\frac{3}{4}. \]
+\item \textbf{Comprobación por despeje:}
+Cerca de $(3,4)$, $y > 0$, de modo que $y = \sqrt{25 - x^2} = (25 - x^2)^{1/2}$. Derivando:
+\[ \frac{dy}{dx} = \frac{1}{2}(25 - x^2)^{-1/2}(-2x) = -\frac{x}{\sqrt{25 - x^2}} \implies \frac{dy}{dx}(3) = -\frac{3}{\sqrt{25-9}} = -\frac{3}{4}. \]
+¡El resultado coincide con exactitud total!
+\end{enumerate}
+
+\begin{trapbox}
+Olvidar el signo menos en la fórmula del TFI: $\frac{dy}{dx} = -\frac{F_x}{F_y}$. Recuerde que al diferenciar $F(x,y)=0$ se tiene $F_x dx + F_y dy = 0 \implies dy = -\frac{F_x}{F_y} dx$.
+\end{trapbox}
+
+\vspace{0.5cm}
+\hrule
+\vspace{0.5cm}
+\subsection*{Problema 2.0B: Falla de despeje para y(x) pero éxito para x(y) (Punto con tangente vertical) \hfill \color{teal}\small[Nivel 0]}
+\addcontentsline{toc}{subsection}{Problema 2.0B: Falla de despeje para y(x) pero éxito para x(y) (Punto con tangente vertical) (Nivel 0)}
+
+\begin{tcolorbox}[colback=white,colframe=gray!40,arc=1mm,boxrule=0.5pt,left=3mm,right=3mm,top=2mm,bottom=2mm]
+\textbf{Enunciado:} Considere la misma circunferencia $F(x,y) = x^2 + y^2 - 25 = 0$ en el punto extremo $P_1 = (5,0)$.
+\begin{enumerate}[label=\textbf{\alph*)}]
+\item Calcule $\frac{\partial F}{\partial y}(5,0)$ y explique por qué el TFI no garantiza que $y$ sea función diferenciable de $x$ alrededor de este punto.
+\item Demuestre que, en cambio, la variable $x$ sí puede despejarse como función suave de $y$, es decir $x = \psi(y)$, calculando $\frac{dx}{dy}(0)$.
+\end{enumerate}
+\end{tcolorbox}
+
+\begin{tcolorbox}[colback=yellow!4,colframe=accentamber!70,arc=1mm,boxrule=0.5pt,left=3mm,right=3mm,top=1.5mm,bottom=1.5mm]
+\textbf{Pista Conceptual:} En $(5,0)$, la recta tangente a la circunferencia es la recta vertical $x = 5$. Una curva con recta tangente vertical no puede ser función de $x$.
+\end{tcolorbox}
+
+\paragraph{Solución Paso a Paso:}\par
+\begin{enumerate}[label=\textbf{\arabic*.}]
+\item \textbf{Evaluación de derivadas parciales en $(5,0)$:}
+\[ \frac{\partial F}{\partial y}(5,0) = 2(0) = 0, \qquad \frac{\partial F}{\partial x}(5,0) = 2(5) = 10 \neq 0. \]
+\item \textbf{Por qué falla $y = \varphi(x)$:}
+Como $\frac{\partial F}{\partial y}(5,0) = 0$, la hipótesis del TFI para despejar $y(x)$ no se cumple. Geométricamente, en $(5,0)$ la recta tangente a la circunferencia es vertical ($x=5$). Para cualquier $x < 5$ cercano, existen dos valores correspondientes de $y$: $+\sqrt{25-x^2}$ y $-\sqrt{25-x^2}$, mientras que para $x > 5$ no existe ningún valor real. Por tanto, ninguna vecindad de $(5,0)$ permite definir $y$ como función unívoca de $x$.
+\item \textbf{Éxito para $x = \psi(y)$:}
+Como $\frac{\partial F}{\partial x}(5,0) = 10 \neq 0$, intercambiamos los roles de las variables en el TFI:
+\[ \frac{dx}{dy}(0) = - \frac{\frac{\partial F}{\partial y}(5,0)}{\frac{\partial F}{\partial x}(5,0)} = -\frac{0}{10} = 0. \]
+Efectivamente, localmente la curva se puede despejar como $x = \psi(y) = \sqrt{25 - y^2}$, la cual es suave para $y$ cercano a 0 y tiene tangente horizontal $\psi'(0) = 0$ respecto a $y$.
+\end{enumerate}
+
+\begin{trapbox}
+Pensar que cuando $\frac{\partial F}{\partial y} = 0$ la curva no tiene sentido analítico. Solo significa que la recta tangente es vertical y que la variable que debe despejarse es $x$, no $y$.
+\end{trapbox}
+
+\vspace{0.5cm}
+\hrule
+\vspace{0.5cm}
+\subsection*{Problema 2.0C: Función implícita en tres variables $z = \varphi(x,y)$ (Plano afín) \hfill \color{teal}\small[Nivel 0]}
+\addcontentsline{toc}{subsection}{Problema 2.0C: Función implícita en tres variables $z = \varphi(x,y)$ (Plano afín) (Nivel 0)}
+
+\begin{tcolorbox}[colback=white,colframe=gray!40,arc=1mm,boxrule=0.5pt,left=3mm,right=3mm,top=2mm,bottom=2mm]
+\textbf{Enunciado:} Sea la ecuación implícita en $\mathbb{R}^3$ dada por $F(x,y,z) = 2x - 3y + 4z - 12 = 0$.
+\begin{enumerate}[label=\textbf{\alph*)}]
+\item Verifique que $\frac{\partial F}{\partial z} \neq 0$ en todo punto.
+\item Aplique las fórmulas del TFI para calcular las derivadas parciales $\frac{\partial z}{\partial x}$ y $\frac{\partial z}{\partial y}$.
+\item Despeje $z$ directamente y verifique las derivadas.
+\end{enumerate}
+\end{tcolorbox}
+
+\begin{tcolorbox}[colback=yellow!4,colframe=accentamber!70,arc=1mm,boxrule=0.5pt,left=3mm,right=3mm,top=1.5mm,bottom=1.5mm]
+\textbf{Pista Conceptual:} Para una superficie $F(x,y,z)=0$, las derivadas de $z(x,y)$ son $\frac{\partial z}{\partial x} = -\frac{F_x}{F_z}$ y $\frac{\partial z}{\partial y} = -\frac{F_y}{F_z}$.
+\end{tcolorbox}
+
+\paragraph{Solución Paso a Paso:}\par
+\begin{enumerate}[label=\textbf{\arabic*.}]
+\item \textbf{Cálculo de derivadas parciales de $F$:}
+\[ \frac{\partial F}{\partial x} = 2, \qquad \frac{\partial F}{\partial y} = -3, \qquad \frac{\partial F}{\partial z} = 4. \]
+Como $\frac{\partial F}{\partial z} = 4 \neq 0$, la variable dependiente $z$ puede expresarse como función suave $z = \varphi(x,y)$ en todo $\mathbb{R}^2$.
+\item \textbf{Derivadas parciales con el TFI:}
+\[ \frac{\partial z}{\partial x} = -\frac{\frac{\partial F}{\partial x}}{\frac{\partial F}{\partial z}} = -\frac{2}{4} = -\frac{1}{2}. \]
+\[ \frac{\partial z}{\partial y} = -\frac{\frac{\partial F}{\partial y}}{\frac{\partial F}{\partial z}} = -\frac{-3}{4} = \frac{3}{4}. \]
+\item \textbf{Verificación por despeje directo:}
+\[ 2x - 3y + 4z - 12 = 0 \implies 4z = 12 - 2x + 3y \implies z = 3 - \frac{1}{2}x + \frac{3}{4}y. \]
+Derivando directamente respecto a $x$ e $y$:
+\[ \frac{\partial z}{\partial x} = -\frac{1}{2}, \qquad \frac{\partial z}{\partial y} = \frac{3}{4}, \]
+coincidiendo plenamente con las fórmulas del teorema.
+\end{enumerate}
+
+\begin{trapbox}
+Confundir el signo al dividir por un término negativo, como en $\frac{\partial z}{\partial y} = -\frac{-3}{4} = +\frac{3}{4}$.
+\end{trapbox}
+
+\vspace{0.5cm}
+\hrule
+\vspace{0.5cm}
+
 
 \subsection*{Problema 2.1: Función implícita en curva plana (Folium de Descartes) \hfill \color{primaryblue}\small[Nivel 1]}
 \addcontentsline{toc}{subsection}{Problema 2.1: \texorpdfstring{Función implícita en curva plana (Folium de Descartes)}{Función implícita en curva plana (Folium de Descartes)} (Nivel 1)}
@@ -3053,6 +3281,116 @@ Incluir en la suma inferior cubos que cortan la frontera oblicua del tetraedro.
 
 \section{Criterios y Propiedades de Integrabilidad}
 
+\subsection*{Problema 4.0A: Criterio de Riemann para una función constante \hfill \color{teal}\small[Nivel 0]}
+\addcontentsline{toc}{subsection}{Problema 4.0A: Criterio de Riemann para una función constante (Nivel 0)}
+
+\begin{tcolorbox}[colback=white,colframe=gray!40,arc=1mm,boxrule=0.5pt,left=3mm,right=3mm,top=2mm,bottom=2mm]
+\textbf{Enunciado:} Sea $f(x,y) = c$ una función constante sobre un rectángulo $R = [a,b] \times [c,d]$, con $c \in \mathbb{R}$.
+\begin{enumerate}[label=\textbf{\alph*)}]
+\item Demuestre que para cualquier partición $P$ de $R$, la suma inferior $L(f,P)$ y la suma superior $U(f,P)$ son exactamente iguales a $c \cdot \text{Área}(R)$.
+\item Concluya mediante el Criterio de Riemann que $f$ es integrable y calcule el valor de $\iint_R c \, dA$.
+\end{enumerate}
+\end{tcolorbox}
+
+\begin{tcolorbox}[colback=yellow!4,colframe=accentamber!70,arc=1mm,boxrule=0.5pt,left=3mm,right=3mm,top=1.5mm,bottom=1.5mm]
+\textbf{Pista Conceptual:} En cualquier subconjunto no vacío, el ínfimo y el supremo de una constante son la propia constante: $\inf c = \sup c = c$.
+\end{tcolorbox}
+
+\paragraph{Solución Paso a Paso:}\par
+\begin{enumerate}[label=\textbf{\arabic*.}]
+\item \textbf{Extremos en cada subrectángulo:}
+Para cualquier partición $P$ y para todo subrectángulo $R_{ij}$:
+\[ m_{ij} = \inf_{R_{ij}} c = c, \qquad M_{ij} = \sup_{R_{ij}} c = c. \]
+\item \textbf{Cálculo de sumas de Darboux:}
+\[ L(f,P) = \sum_{i,j} c \cdot \text{Área}(R_{ij}) = c \sum_{i,j} \text{Área}(R_{ij}) = c \cdot \text{Área}(R). \]
+\[ U(f,P) = \sum_{i,j} c \cdot \text{Área}(R_{ij}) = c \sum_{i,j} \text{Área}(R_{ij}) = c \cdot \text{Área}(R). \]
+\item \textbf{Aplicación del Criterio de Riemann:}
+Para cualquier $\varepsilon > 0$, tomamos cualquier partición $P$ y se tiene:
+\[ U(f,P) - L(f,P) = c \cdot \text{Área}(R) - c \cdot \text{Área}(R) = 0 < \varepsilon. \]
+Como la diferencia es 0 (menor que todo $\varepsilon > 0$), $f$ es integrable Riemann y:
+\[ \iint_R c \, dA = L(f,P) = U(f,P) = c \cdot \text{Área}(R). \]
+\end{enumerate}
+
+\begin{trapbox}
+Pensar que se necesita una partición muy fina con $\Delta x \to 0$ para una función constante. Para una constante, cualquier partición satisface $U-L=0$.
+\end{trapbox}
+
+\vspace{0.5cm}
+\hrule
+\vspace{0.5cm}
+\subsection*{Problema 4.0B: Linealidad y monotonía de la integral doble \hfill \color{teal}\small[Nivel 0]}
+\addcontentsline{toc}{subsection}{Problema 4.0B: Linealidad y monotonía de la integral doble (Nivel 0)}
+
+\begin{tcolorbox}[colback=white,colframe=gray!40,arc=1mm,boxrule=0.5pt,left=3mm,right=3mm,top=2mm,bottom=2mm]
+\textbf{Enunciado:} Sean $f(x,y) = x$ y $g(x,y) = x + y^2$ dos funciones continuas sobre el cuadrado unitario $R = [0,1] \times [0,1]$. Se sabe que $\iint_R x \, dA = \frac{1}{2}$ y $\iint_R y^2 \, dA = \frac{1}{3}$.
+\begin{enumerate}[label=\textbf{\alph*)}]
+\item Utilice la propiedad de linealidad para calcular $\iint_R (x + y^2) \, dA$.
+\item Demuestre que $f(x,y) \le g(x,y)$ en todo $(x,y) \in R$ y verifique que $\iint_R f \, dA \le \iint_R g \, dA$.
+\end{enumerate}
+\end{tcolorbox}
+
+\begin{tcolorbox}[colback=yellow!4,colframe=accentamber!70,arc=1mm,boxrule=0.5pt,left=3mm,right=3mm,top=1.5mm,bottom=1.5mm]
+\textbf{Pista Conceptual:} La linealidad establece que $\iint (\alpha f + \beta g) dA = \alpha \iint f dA + \beta \iint g dA$. La monotonía garantiza que si $f \le g$, entonces sus integrales conservan el orden.
+\end{tcolorbox}
+
+\paragraph{Solución Paso a Paso:}\par
+\begin{enumerate}[label=\textbf{\arabic*.}]
+\item \textbf{Cálculo por linealidad:}
+\[ \iint_R (x + y^2) \, dA = \iint_R x \, dA + \iint_R y^2 \, dA = \frac{1}{2} + \frac{1}{3} = \frac{5}{6}. \]
+\item \textbf{Comprobación de la monotonía puntual:}
+Para todo $(x,y) \in [0,1] \times [0,1]$, se tiene $y^2 \ge 0$. Por lo tanto:
+\[ g(x,y) - f(x,y) = (x + y^2) - x = y^2 \ge 0 \implies f(x,y) \le g(x,y). \]
+\item \textbf{Monotonía de las integrales:}
+\[ \iint_R f \, dA = \frac{1}{2} = \frac{3}{6} \le \frac{5}{6} = \iint_R g \, dA. \]
+Se confirma experimentalmente la propiedad de monotonía.
+\end{enumerate}
+
+\begin{trapbox}
+Separar productos de funciones dentro de la integral creyendo erróneamente que $\iint (f \cdot g) dA = (\iint f dA)(\iint g dA)$. La linealidad solo aplica a sumas y productos por escalares.
+\end{trapbox}
+
+\vspace{0.5cm}
+\hrule
+\vspace{0.5cm}
+\subsection*{Problema 4.0C: Integrabilidad con una discontinuidad aislada en el origen \hfill \color{teal}\small[Nivel 0]}
+\addcontentsline{toc}{subsection}{Problema 4.0C: Integrabilidad con una discontinuidad aislada en el origen (Nivel 0)}
+
+\begin{tcolorbox}[colback=white,colframe=gray!40,arc=1mm,boxrule=0.5pt,left=3mm,right=3mm,top=2mm,bottom=2mm]
+\textbf{Enunciado:} Considere la función $f: [0,1] \times [0,1] \to \mathbb{R}$ definida por $f(0,0) = 5$ y $f(x,y) = 0$ para todo $(x,y) \neq (0,0)$.
+\begin{enumerate}[label=\textbf{\alph*)}]
+\item Para $\delta \in (0,1)$, construya una partición que aísle al origen en un subcuadrado $[0,\delta] \times [0,\delta]$.
+\item Calcule $L(f,P)$ y $U(f,P)$, y demuestre que $U(f,P) - L(f,P) = 5\delta^2$.
+\item Concluya que $f$ es integrable Riemann y que su integral es 0.
+\end{enumerate}
+\end{tcolorbox}
+
+\begin{tcolorbox}[colback=yellow!4,colframe=accentamber!70,arc=1mm,boxrule=0.5pt,left=3mm,right=3mm,top=1.5mm,bottom=1.5mm]
+\textbf{Pista Conceptual:} En el subcuadrado que contiene al origen, el supremo es 5 y el ínfimo es 0. En todos los demás subrectángulos la función es constantemente 0.
+\end{tcolorbox}
+
+\paragraph{Solución Paso a Paso:}\par
+\begin{enumerate}[label=\textbf{\arabic*.}]
+\item \textbf{Construcción de la partición:}
+Tomamos $P_1 = \{0, \delta, 1\}$ y $P_2 = \{0, \delta, 1\}$. Esto divide al cuadrado en 4 subrectángulos: $R_{11} = [0, \delta] \times [0, \delta]$ de área $\delta^2$, y tres subrectángulos que no contienen al origen.
+\item \textbf{Cálculo de extremos:}
+En $R_{11}$, $f(0,0) = 5$ y $f(x,y) = 0$ en el resto: $m_{11} = 0$, $M_{11} = 5$. En los demás subrectángulos: $m_{ij} = M_{ij} = 0$.
+\item \textbf{Sumas de Darboux:}
+\[ L(f,P) = 0 \cdot \delta^2 + 0 = 0, \qquad U(f,P) = 5 \cdot \delta^2 + 0 = 5\delta^2. \]
+\item \textbf{Criterio de Riemann:}
+Dado cualquier $\varepsilon > 0$, basta elegir $\delta < \sqrt{\frac{\varepsilon}{5}}$. Entonces:
+\[ U(f,P) - L(f,P) = 5\delta^2 < 5\left(\frac{\varepsilon}{5}\right) = \varepsilon. \]
+Como $U(f,P) - L(f,P) < \varepsilon$, $f$ es integrable Riemann, y al ser $L(f,P)=0$, $\iint_R f \, dA = 0$.
+\end{enumerate}
+
+\begin{trapbox}
+Creer que la presencia de una discontinuidad anula automáticamente la integrabilidad. Un punto aislado tiene área cero (medida nula de Jordan) y no altera el valor de la integral.
+\end{trapbox}
+
+\vspace{0.5cm}
+\hrule
+\vspace{0.5cm}
+
+
 \subsection*{Problema 4.1: Propiedad de acotación básica en rectángulos \hfill \color{primaryblue}\small[Nivel 1]}
 \addcontentsline{toc}{subsection}{Problema 4.1: \texorpdfstring{Propiedad de acotación básica en rectángulos}{Propiedad de acotación básica en rectángulos} (Nivel 1)}
 
@@ -3970,6 +4308,112 @@ Omitir el caso en que $\iint g^2 dA = 0$ al dividir entre el coeficiente princip
 \vspace{0.5cm}
 
 \section{Teorema de Fubini y Teorema del Valor Medio}
+
+\subsection*{Problema 5.0A: Integración iterada básica en dos órdenes distintos \hfill \color{teal}\small[Nivel 0]}
+\addcontentsline{toc}{subsection}{Problema 5.0A: Integración iterada básica en dos órdenes distintos (Nivel 0)}
+
+\begin{tcolorbox}[colback=white,colframe=gray!40,arc=1mm,boxrule=0.5pt,left=3mm,right=3mm,top=2mm,bottom=2mm]
+\textbf{Enunciado:} Sea $f(x,y) = x \cdot y$ sobre el rectángulo $R = [0,2] \times [0,3]$.
+\begin{enumerate}[label=\textbf{\alph*)}]
+\item Calcule la integral doble integrando primero respecto a $y$ y luego respecto a $x$: $I_1 = \int_0^2 \left( \int_0^3 x y \, dy \right) dx$.
+\item Calcule la misma integral invirtiendo el orden: $I_2 = \int_0^3 \left( \int_0^2 x y \, dx \right) dy$.
+\item Verifique que $I_1 = I_2$.
+\end{enumerate}
+\end{tcolorbox}
+
+\begin{tcolorbox}[colback=yellow!4,colframe=accentamber!70,arc=1mm,boxrule=0.5pt,left=3mm,right=3mm,top=1.5mm,bottom=1.5mm]
+\textbf{Pista Conceptual:} Al integrar respecto a $y$, la variable $x$ se comporta como una constante que puede salir fuera de la integral interna.
+\end{tcolorbox}
+
+\paragraph{Solución Paso a Paso:}\par
+\begin{enumerate}[label=\textbf{\arabic*.}]
+\item \textbf{Primer orden (respecto a $y$ primero):}
+\[ \int_0^3 x y \, dy = x \left[ \frac{y^2}{2} \right]_0^3 = \frac{9}{2}x. \]
+Integrando respecto a $x$ de 0 a 2:
+\[ I_1 = \int_0^2 \frac{9}{2}x \, dx = \frac{9}{2} \left[ \frac{x^2}{2} \right]_0^2 = \frac{9}{2}(2) = 9. \]
+\item \textbf{Segundo orden (respecto a $x$ primero):}
+\[ \int_0^2 x y \, dx = y \left[ \frac{x^2}{2} \right]_0^2 = 2y. \]
+Integrando respecto a $y$ de 0 a 3:
+\[ I_2 = \int_0^3 2y \, dy = \left[ y^2 \right]_0^3 = 9. \]
+\item \textbf{Conclusión:}
+\[ I_1 = 9 = I_2. \]
+Ambos órdenes coinciden plenamente, ilustrando el Teorema de Fubini.
+\end{enumerate}
+
+\begin{trapbox}
+Tratar a $x$ como variable al integrar respecto a $y$, o confundir los límites de integración de cada variable ($x$ va de 0 a 2; $y$ va de 0 a 3).
+\end{trapbox}
+
+\vspace{0.5cm}
+\hrule
+\vspace{0.5cm}
+\subsection*{Problema 5.0B: Factorización de integrales con variables desacopladas \hfill \color{teal}\small[Nivel 0]}
+\addcontentsline{toc}{subsection}{Problema 5.0B: Factorización de integrales con variables desacopladas (Nivel 0)}
+
+\begin{tcolorbox}[colback=white,colframe=gray!40,arc=1mm,boxrule=0.5pt,left=3mm,right=3mm,top=2mm,bottom=2mm]
+\textbf{Enunciado:} Demuestre que si $f(x,y) = g(x) \cdot h(y)$ sobre un rectángulo $R = [a,b] \times [c,d]$, entonces:
+\[ \iint_R g(x)h(y) \, dA = \left( \int_a^b g(x) \, dx \right) \cdot \left( \int_c^d h(y) \, dy \right). \]
+Utilice este resultado para calcular $\iint_R \sin(x) e^y \, dA$ sobre $R = [0, \pi] \times [0, 1]$.
+\end{tcolorbox}
+
+\begin{tcolorbox}[colback=yellow!4,colframe=accentamber!70,arc=1mm,boxrule=0.5pt,left=3mm,right=3mm,top=1.5mm,bottom=1.5mm]
+\textbf{Pista Conceptual:} Extraiga $g(x)$ fuera de la integral de $y$, y luego observe que la integral de $h(y)$ es un número constante que puede salir fuera de la integral de $x$.
+\end{tcolorbox}
+
+\paragraph{Solución Paso a Paso:}\par
+\begin{enumerate}[label=\textbf{\arabic*.}]
+\item \textbf{Demostración de la propiedad de factorización:}
+Por el Teorema de Fubini:
+\[ \iint_R g(x)h(y) \, dA = \int_a^b \left( \int_c^d g(x)h(y) \, dy \right) dx = \int_a^b g(x) \left( \int_c^d h(y) \, dy \right) dx. \]
+La integral interior $K = \int_c^d h(y) dy$ es constante respecto a $x$, por lo que sale de la integral exterior:
+\[ = \left( \int_c^d h(y) \, dy \right) \cdot \int_a^b g(x) \, dx = \left( \int_a^b g(x) \, dx \right) \left( \int_c^d h(y) \, dy \right). \]
+\item \textbf{Aplicación al ejemplo:}
+\[ \iint_R \sin(x) e^y \, dA = \left( \int_0^\pi \sin x \, dx \right) \cdot \left( \int_0^1 e^y \, dy \right) = [-\cos x]_0^\pi \cdot [e^y]_0^1 = 2(e - 1) = 2e - 2. \]
+\end{enumerate}
+
+\begin{trapbox}
+Intentar aplicar esta fórmula de factorización cuando el dominio no es un rectángulo (por ejemplo si los límites de $y$ dependen de $x$), o cuando la función no es un producto factorizable (como $\sin(x+y)$).
+\end{trapbox}
+
+\vspace{0.5cm}
+\hrule
+\vspace{0.5cm}
+\subsection*{Problema 5.0C: Verificación explícita del Teorema del Valor Medio \hfill \color{teal}\small[Nivel 0]}
+\addcontentsline{toc}{subsection}{Problema 5.0C: Verificación explícita del Teorema del Valor Medio (Nivel 0)}
+
+\begin{tcolorbox}[colback=white,colframe=gray!40,arc=1mm,boxrule=0.5pt,left=3mm,right=3mm,top=2mm,bottom=2mm]
+\textbf{Enunciado:} Sea $f(x,y) = x$ sobre el rectángulo $R = [0,2] \times [0,4]$.
+\begin{enumerate}[label=\textbf{\alph*)}]
+\item Calcule el área de $R$ y la integral $\iint_R x \, dA$.
+\item Calcule el valor promedio $\bar{f} = \frac{1}{\text{Área}(R)} \iint_R f(x,y) \, dA$.
+\item Halle explícitamente al menos un punto $(x_0, y_0) \in R$ tal que $f(x_0, y_0) = \bar{f}$.
+\end{enumerate}
+\end{tcolorbox}
+
+\begin{tcolorbox}[colback=yellow!4,colframe=accentamber!70,arc=1mm,boxrule=0.5pt,left=3mm,right=3mm,top=1.5mm,bottom=1.5mm]
+\textbf{Pista Conceptual:} El Teorema del Valor Medio garantiza que si $f$ es continua y $R$ es conexo, el valor promedio se alcanza en algún punto interior o de borde del dominio.
+\end{tcolorbox}
+
+\paragraph{Solución Paso a Paso:}\par
+\begin{enumerate}[label=\textbf{\arabic*.}]
+\item \textbf{Cálculo del área:}
+\[ \text{Área}(R) = (2 - 0)(4 - 0) = 8. \]
+\item \textbf{Cálculo de la integral doble:}
+\[ \iint_R x \, dA = \int_0^4 \left( \int_0^2 x \, dx \right) dy = \int_0^4 2 \, dy = 8. \]
+\item \textbf{Valor promedio:}
+\[ \bar{f} = \frac{1}{\text{Área}(R)} \iint_R x \, dA = \frac{1}{8}(8) = 1. \]
+\item \textbf{Búsqueda del punto $(x_0, y_0) \in R$:}
+Queremos $f(x_0, y_0) = 1$. Como $f(x,y) = x$, basta tomar $x_0 = 1$ con cualquier $y_0 \in [0,4]$. Por ejemplo, $(x_0, y_0) = (1, 2) \in R \implies f(1,2) = 1 = \bar{f}$, comprobando el Teorema del Valor Medio.
+\end{enumerate}
+
+\begin{trapbox}
+Olvidar dividir entre el área del dominio al calcular el valor promedio $\bar{f}$, o buscar un punto fuera del rectángulo $R$.
+\end{trapbox}
+
+\vspace{0.5cm}
+\hrule
+\vspace{0.5cm}
+
 
 \subsection*{Problema 5.1: Inversión del orden de integración con Fubini (Examen UNI 2026-I) \hfill \color{primaryblue}\small[Nivel 1]}
 \addcontentsline{toc}{subsection}{Problema 5.1: \texorpdfstring{Inversión del orden de integración con Fubini (Examen UNI 2026-I)}{Inversión del orden de integración con Fubini (Examen UNI 2026-I)} (Nivel 1)}

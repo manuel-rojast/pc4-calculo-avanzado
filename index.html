@@ -1,0 +1,554 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
+  <meta name="description" content="Guía Teórica y Compendio de 80 Ejercicios Resueltos para la Práctica Calificada 4 de Cálculo Diferencial e Integral Avanzado (CM2A1 - UNI). Incluye gráficos 3D interactivos con Three.js y versión PDF imprimible.">
+  <title>Cálculo Avanzado CM2A1 - Plataforma Interactiva PC4 | UNI</title>
+
+  <!-- KaTeX CSS & JS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.css">
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/contrib/auto-render.min.js"></script>
+
+  <!-- Three.js & OrbitControls -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/controls/OrbitControls.js"></script>
+
+  <!-- Google Fonts: Inter & Fira Code -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;600&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Estilos propios -->
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav class="navbar">
+    <div class="nav-brand">
+      <span class="brand-badge">UNI FC</span>
+      <span class="brand-title">Cálculo Avanzado CM2A1 • PC4</span>
+    </div>
+    <ul class="nav-links">
+      <li><a href="#hero">Inicio</a></li>
+      <li><a href="#temario">Temario</a></li>
+      <li><a href="#ejercicios">Ejercicios</a></li>
+      <li><a href="pdf/PC4_Calculo_Avanzado_UNI.pdf" target="_blank" class="btn-pdf-download">📄 Versión PDF Imprimible</a></li>
+    </ul>
+  </nav>
+
+  <main class="main-container">
+
+    <!-- Hero Header -->
+    <header class="hero-header" id="hero">
+      <span class="hero-tag">Ciclo 2026-2 • Facultad de Ciencias • UNI</span>
+      <h1 class="hero-title">Guía Maestra y Banco Interactivo: PC4</h1>
+      <p class="hero-desc">
+        Compendio integral de teoría rigurosa, modelos 3D interactivos con Three.js y <strong>80 problemas resueltos paso a paso</strong> calibrados con los exámenes pasados oficiales de la Universidad Nacional de Ingeniería (2024-II, 2025-II y 2026-I).
+      </p>
+
+      <div class="hero-stats">
+        <div class="stat-item">
+          <div class="stat-number">5</div>
+          <div class="stat-label">Sesiones (20 a 24)</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-number">80</div>
+          <div class="stat-label">Problemas Resueltos</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-number">5</div>
+          <div class="stat-label">Niveles de Rigor</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-number">4</div>
+          <div class="stat-label">Modelos 3D Táctiles</div>
+        </div>
+      </div>
+    </header>
+
+    <!-- Pestañas de Navegación de Temas -->
+    <nav class="topic-tabs-nav" id="temario">
+      <button class="topic-tab-btn active" data-topic="t1">
+        <span>🔄</span> Subtema 1: Función Inversa
+      </button>
+      <button class="topic-tab-btn" data-topic="t2">
+        <span>📐</span> Subtema 2: Función Implícita
+      </button>
+      <button class="topic-tab-btn" data-topic="t3">
+        <span>📊</span> Subtema 3: Sumas de Riemann / Darboux
+      </button>
+      <button class="topic-tab-btn" data-topic="t4">
+        <span>📏</span> Subtema 4: Criterios de Integrabilidad
+      </button>
+      <button class="topic-tab-btn" data-topic="t5">
+        <span>📦</span> Subtema 5: Teorema de Fubini y TVM
+      </button>
+      <button class="topic-tab-btn" data-topic="tb">
+        <span>✨</span> Bonus: Regiones Tipo 1 y 2
+      </button>
+    </nav>
+
+    <!-- ========================================================================
+         SECCIÓN 1: TEOREMA DE LA FUNCIÓN INVERSA (SESIÓN 20)
+         ======================================================================== -->
+    <section class="topic-section active" id="section-t1">
+      <div class="topic-grid">
+        
+        <!-- Tarjeta de Teoría -->
+        <article class="theory-card">
+          <h2><span>🔄</span> Teorema de la Función Inversa y Difeomorfismos</h2>
+          <p>
+            El <strong>Teorema de la Función Inversa (TFI)</strong> es el pilar analítico que vincula la aproximación lineal infinitesimal proporcionada por la matriz jacobiana $Df(x_0)$ con la invertibilidad geométrica local de la función no lineal $f$.
+          </p>
+
+          <div class="theory-block theorem">
+            <h4>Teorema de la Función Inversa en $\mathbb{R}^n$</h4>
+            <p>
+              Sea $U \subseteq \mathbb{R}^n$ abierto y $f: U \to \mathbb{R}^n$ una aplicación de clase $C^k$ ($k \ge 1$). Sea $x_0 \in U$ tal que la diferencial $Df(x_0)$ es un operador lineal invertible, es decir:
+              $$\det Df(x_0) \neq 0.$$
+              Entonces existen un entorno abierto $V \subseteq U$ de $x_0$ y un entorno abierto $W \subseteq \mathbb{R}^n$ de $y_0 = f(x_0)$ tales que:
+            </p>
+            <ol style="margin-left: 1.5rem; color: #cbd5e1;">
+              <li>$f|_V: V \to W$ es una biyección (inversión local).</li>
+              <li>La función inversa $g = (f|_V)^{-1}: W \to V$ es también de clase $C^k$.</li>
+              <li>Para todo $y \in W$, siendo $y = f(x)$, la matriz jacobiana de la inversa viene dada por:
+                $$Dg(y) = [Df(x)]^{-1}.$$
+              </li>
+            </ol>
+          </div>
+
+          <div class="theory-block caution">
+            <h4>Difeomorfismo Local vs Difeomorfismo Global (Trampa Clásica UNI)</h4>
+            <p>
+              Tener $\det Df(x) \neq 0$ para <em>todo</em> $x \in \mathbb{R}^n$ <strong>NO</strong> garantiza que $f$ sea globalmente inyectiva o invertible.
+            </p>
+            <p>
+              <em>Contraejemplo estándar:</em> La función exponencial compleja $F(x,y) = (e^x\cos y, \, e^x\sin y)$ tiene determinante $\det DF(x,y) = e^{2x} > 0$ en todo $\mathbb{R}^2$. Es un difeomorfismo local en todo punto, pero no es inyectiva globalmente debido a su periodicidad $F(x, y + 2\pi) = F(x,y)$.
+            </p>
+          </div>
+
+          <p>
+            <strong>Aplicación cinemática (Robótica):</strong> Cuando un mecanismo tiene jacobiano $\det J = 0$, entra en una <em>configuración singular</em> perdiendo grados de libertad instantáneos y volviéndose incontrolable localmente.
+          </p>
+        </article>
+
+        <!-- Visor 3D Interactivo: Deformación Jacobiana -->
+        <aside class="visualizer-card">
+          <div class="visualizer-header">
+            <h3 class="visualizer-title">Deformación de Malla y Factor $\det J$</h3>
+            <span class="touch-hint-badge">👆 Toca y gira en 3D</span>
+          </div>
+
+          <div class="three-canvas-wrapper" id="jacobian-canvas-container"></div>
+
+          <div class="visualizer-controls">
+            <div class="control-group">
+              <label class="control-label" for="jacobian-slider">No-Linealidad ($t$):</label>
+              <input type="range" class="control-slider" id="jacobian-slider" min="0" max="1" step="0.05" value="0">
+            </div>
+            <div class="visualizer-readout">
+              <span>Factor de Escala Local $\det J$:</span>
+              <span class="readout-value" id="jacobian-det-val">1.000</span>
+            </div>
+          </div>
+          <p style="font-size:0.8rem; color:#94a3b8; margin-top:0.75rem;">
+            El parche naranja representa el elemento diferencial de área transformado. El determinante jacobiano cuantifica exactamente el estiramiento o compresión del área infinitesimal.
+          </p>
+        </aside>
+
+      </div>
+
+      <!-- Barra de Filtros de Nivel de Ejercicios -->
+      <div class="exercises-header" id="ejercicios">
+        <div>
+          <h2>Banco de Ejercicios: Función Inversa</h2>
+          <p style="color:#94a3b8; font-size:0.9rem;">15 ejercicios rigurosos organizados progresivamente del Nivel 1 al 5.</p>
+        </div>
+        <div class="level-tabs" data-topic="t1">
+          <button class="level-tab-btn active" data-level="1">Nivel 1 (Básico)</button>
+          <button class="level-tab-btn" data-level="2">Nivel 2 (Intermedio)</button>
+          <button class="level-tab-btn" data-level="3">Nivel 3 (Examen UNI)</button>
+          <button class="level-tab-btn" data-level="4">Nivel 4 (Avanzado)</button>
+          <button class="level-tab-btn" data-level="5">Nivel 5 (Rigor Máximo)</button>
+          <button class="level-tab-btn" data-level="all">Ver Todos</button>
+        </div>
+      </div>
+
+      <!-- Contenedor dinámico de ejercicios -->
+      <div class="exercises-list" id="exercises-container-t1"></div>
+    </section>
+
+    <!-- ========================================================================
+         SECCIÓN 2: TEOREMA DE LA FUNCIÓN IMPLÍCITA (SESIÓN 21)
+         ======================================================================== -->
+    <section class="topic-section" id="section-t2">
+      <div class="topic-grid">
+        
+        <!-- Tarjeta de Teoría -->
+        <article class="theory-card">
+          <h2><span>📐</span> Teorema de la Función Implícita en Sistemas</h2>
+          <p>
+            Permite determinar cuándo un sistema no lineal acoplado $F(x, y) = 0$ define de forma unívoca a ciertas variables dependientes $y \in \mathbb{R}^m$ como funciones diferenciables de las variables independientes $x \in \mathbb{R}^n$, sin necesidad de despejarlas algebraicamente.
+          </p>
+
+          <div class="theory-block theorem">
+            <h4>Formulación Matricial General ($F: \mathbb{R}^{n+m} \to \mathbb{R}^m$)</h4>
+            <p>
+              Sea $U \subseteq \mathbb{R}^n \times \mathbb{R}^m$ un abierto y $F: U \to \mathbb{R}^m$ de clase $C^k$ ($k \ge 1$). Sea $(x_0, y_0) \in U$ tal que:
+              $$F(x_0, y_0) = 0 \quad \text{y} \quad \det D_y F(x_0, y_0) \neq 0.$$
+              Entonces existen vecindades abiertas $V \subset \mathbb{R}^n$ de $x_0$ y $W \subset \mathbb{R}^m$ de $y_0$, y una única función $\varphi: V \to W$ de clase $C^k$ tal que:
+              $$\varphi(x_0) = y_0 \quad \text{y} \quad F(x, \varphi(x)) = 0, \quad \forall x \in V.$$
+              Además, la matriz jacobiana de $\varphi$ se calcula resolviendo el sistema lineal matricial:
+              $$D\varphi(x) = - \left[ D_y F(x, \varphi(x)) \right]^{-1} \cdot D_x F(x, \varphi(x)).$$
+            </p>
+          </div>
+
+          <div class="theory-block">
+            <h4>Casos Notables en Evaluaciones de la UNI</h4>
+            <ul style="margin-left: 1.5rem; color: #cbd5e1;">
+              <li><strong>Curva en el plano ($F: \mathbb{R}^2 \to \mathbb{R}$):</strong> $\varphi'(x) = -\frac{F_x(x,y)}{F_y(x,y)}$ siempre que $F_y \neq 0$.</li>
+              <li><strong>Superficie en el espacio ($F: \mathbb{R}^3 \to \mathbb{R}$):</strong> $\nabla \varphi(x,y) = \left(-\frac{F_x}{F_z}, -\frac{F_y}{F_z}\right)$ si $F_z \neq 0$.</li>
+              <li><strong>Sistemas $2 \times 4$ ($F: \mathbb{R}^4 \to \mathbb{R}^2$):</strong> Requiere invertir la matriz $2 \times 2$ de derivadas dependientes.</li>
+            </ul>
+          </div>
+        </article>
+
+        <!-- Visor 3D Interactivo: Superficie Implícita -->
+        <aside class="visualizer-card">
+          <div class="visualizer-header">
+            <h3 class="visualizer-title">Superficie Implícita $F(x,y,z)=0$</h3>
+            <span class="touch-hint-badge">👆 Toca y gira en 3D</span>
+          </div>
+
+          <div class="three-canvas-wrapper" id="implicit-canvas-container"></div>
+
+          <div class="visualizer-controls">
+            <p style="font-size:0.85rem; color:#cbd5e1; margin-bottom:0.5rem;">
+              <strong>Punto Regular $P_0$ (Esfera roja):</strong> Cumple $\nabla F(P_0) \neq 0$.
+            </p>
+            <div class="visualizer-readout">
+              <span>Plano Tangente (Verde):</span>
+              <span class="readout-value">$\nabla F(P_0) \cdot (X - P_0) = 0$</span>
+            </div>
+            <div class="visualizer-readout" style="margin-top:0.4rem;">
+              <span>Curva Local (Amarilla):</span>
+              <span class="readout-value">$z = \varphi(x, y_0)$</span>
+            </div>
+          </div>
+        </aside>
+
+      </div>
+
+      <!-- Barra de Filtros de Nivel de Ejercicios -->
+      <div class="exercises-header">
+        <div>
+          <h2>Banco de Ejercicios: Función Implícita</h2>
+          <p style="color:#94a3b8; font-size:0.9rem;">15 ejercicios de sistemas lineales y no lineales del Nivel 1 al 5.</p>
+        </div>
+        <div class="level-tabs" data-topic="t2">
+          <button class="level-tab-btn active" data-level="1">Nivel 1 (Básico)</button>
+          <button class="level-tab-btn" data-level="2">Nivel 2 (Intermedio)</button>
+          <button class="level-tab-btn" data-level="3">Nivel 3 (Examen UNI)</button>
+          <button class="level-tab-btn" data-level="4">Nivel 4 (Avanzado)</button>
+          <button class="level-tab-btn" data-level="5">Nivel 5 (Rigor Máximo)</button>
+          <button class="level-tab-btn" data-level="all">Ver Todos</button>
+        </div>
+      </div>
+
+      <div class="exercises-list" id="exercises-container-t2"></div>
+    </section>
+
+    <!-- ========================================================================
+         SECCIÓN 3: PARTICIONES Y SUMAS DE DARBOUX / RIEMANN (SESIÓN 22)
+         ======================================================================== -->
+    <section class="topic-section" id="section-t3">
+      <div class="topic-grid">
+        
+        <!-- Tarjeta de Teoría -->
+        <article class="theory-card">
+          <h2><span>📊</span> Bloques, Particiones y Sumas de Darboux</h2>
+          <p>
+            La construcción rigurosa de la integral múltiple comienza en bloques cartesianos compactos $R = [a_1, b_1] \times \dots \times [a_n, b_n] \subset \mathbb{R}^n$.
+          </p>
+
+          <div class="theory-block theorem">
+            <h4>Partición y Refinamiento de un Bloque</h4>
+            <p>
+              Una <strong>partición</strong> de $R = [a,b] \times [c,d]$ es el producto cartesiano $P = P_1 \times P_2$, donde $P_1 = \{x_0, x_1, \dots, x_m\}$ particiona $[a,b]$ y $P_2 = \{y_0, y_1, \dots, y_n\}$ particiona $[c,d]$. Los subrectángulos resultantes son:
+              $$R_{ij} = [x_{i-1}, x_i] \times [y_{j-1}, y_j], \quad \text{Área}(R_{ij}) = \Delta x_i \Delta y_j.$$
+              Se dice que $P'$ <strong>refina</strong> a $P$ ($P \subseteq P'$) si todos los puntos de división de $P$ pertenecen a $P'$.
+            </p>
+          </div>
+
+          <div class="theory-block">
+            <h4>Sumas Inferiores, Superiores y de Riemann</h4>
+            <p>
+              Sea $f: R \to \mathbb{R}$ acotada. En cada subrectángulo $R_{ij}$ definimos $m_{ij} = \inf_{R_{ij}} f$ y $M_{ij} = \sup_{R_{ij}} f$:
+            </p>
+            <ul style="margin-left: 1.5rem; color: #cbd5e1;">
+              <li><strong>Suma Inferior de Darboux:</strong> $L(f, P) = \sum_{i,j} m_{ij} \text{Área}(R_{ij})$.</li>
+              <li><strong>Suma Superior de Darboux:</strong> $U(f, P) = \sum_{i,j} M_{ij} \text{Área}(R_{ij})$.</li>
+              <li><strong>Suma de Riemann:</strong> $S(f, P, \xi) = \sum_{i,j} f(\xi_{ij}) \text{Área}(R_{ij})$, con $\xi_{ij} \in R_{ij}$.</li>
+            </ul>
+            <p style="margin-top:0.5rem;">
+              <em>Propiedad fundamental de orden:</em> Para cualesquiera dos particiones $P_1, P_2$:
+              $$L(f, P_1) \le L(f, P_1 \cup P_2) \le S(f, P_1 \cup P_2, \xi) \le U(f, P_1 \cup P_2) \le U(f, P_2).$$
+            </p>
+          </div>
+        </article>
+
+        <!-- Visor 3D Interactivo: Sumas de Riemann -->
+        <aside class="visualizer-card">
+          <div class="visualizer-header">
+            <h3 class="visualizer-title">Prismas de Riemann y Darboux 3D</h3>
+            <span class="touch-hint-badge">👆 Toca y gira en 3D</span>
+          </div>
+
+          <div class="three-canvas-wrapper" id="riemann-canvas-container"></div>
+
+          <div class="visualizer-controls">
+            <div class="control-group">
+              <label class="control-label" for="riemann-m-slider">Subdivisiones en $x$ ($m$):</label>
+              <input type="range" class="control-slider" id="riemann-m-slider" min="2" max="16" step="1" value="4">
+            </div>
+            <div class="control-group">
+              <label class="control-label" for="riemann-n-slider">Subdivisiones en $y$ ($n$):</label>
+              <input type="range" class="control-slider" id="riemann-n-slider" min="2" max="16" step="1" value="4">
+            </div>
+            <div class="control-group">
+              <span class="control-label">Modo de aproximación:</span>
+              <div class="control-btn-group">
+                <button class="btn-ctrl riemann-mode-btn" data-mode="lower">Inferior (L)</button>
+                <button class="btn-ctrl riemann-mode-btn active" data-mode="upper">Superior (U)</button>
+                <button class="btn-ctrl riemann-mode-btn" data-mode="mid">Punto Medio</button>
+              </div>
+            </div>
+            <div class="visualizer-readout">
+              <span id="riemann-boxes-count">16 prismas (4x4)</span>
+              <span>Volumen aproximado: <strong class="readout-value" id="riemann-val-display">5.1200</strong></span>
+            </div>
+          </div>
+        </aside>
+
+      </div>
+
+      <!-- Barra de Filtros de Nivel de Ejercicios -->
+      <div class="exercises-header">
+        <div>
+          <h2>Banco de Ejercicios: Sumas de Darboux y Riemann</h2>
+          <p style="color:#94a3b8; font-size:0.9rem;">15 ejercicios de cálculo de límites formales y propiedades del Nivel 1 al 5.</p>
+        </div>
+        <div class="level-tabs" data-topic="t3">
+          <button class="level-tab-btn active" data-level="1">Nivel 1 (Básico)</button>
+          <button class="level-tab-btn" data-level="2">Nivel 2 (Intermedio)</button>
+          <button class="level-tab-btn" data-level="3">Nivel 3 (Examen UNI)</button>
+          <button class="level-tab-btn" data-level="4">Nivel 4 (Avanzado)</button>
+          <button class="level-tab-btn" data-level="5">Nivel 5 (Rigor Máximo)</button>
+          <button class="level-tab-btn" data-level="all">Ver Todos</button>
+        </div>
+      </div>
+
+      <div class="exercises-list" id="exercises-container-t3"></div>
+    </section>
+
+    <!-- ========================================================================
+         SECCIÓN 4: CRITERIOS Y PROPIEDADES DE INTEGRABILIDAD (SESIÓN 23)
+         ======================================================================== -->
+    <section class="topic-section" id="section-t4">
+      <div class="topic-grid" style="grid-template-columns: 1fr;">
+        
+        <!-- Tarjeta de Teoría Completa -->
+        <article class="theory-card">
+          <h2><span>📏</span> Integrabilidad sobre Bloques y Propiedades Analíticas</h2>
+          <p>
+            Una función acotada $f: R \to \mathbb{R}$ es <strong>integrable según Riemann (o Darboux)</strong> en $R$ si sus integrales superior e inferior coinciden:
+            $$\underline{\iint_R} f \, dA = \sup_P L(f, P) = \inf_P U(f, P) = \overline{\iint_R} f \, dA = \iint_R f(x,y) \, dA.$$
+          </p>
+
+          <div class="theory-block theorem">
+            <h4>Criterio de Riemann ($\varepsilon$-Partición)</h4>
+            <p>
+              $f$ es integrable en $R$ si y sólo si para todo $\varepsilon > 0$, existe una partición $P$ de $R$ tal que:
+              $$U(f, P) - L(f, P) = \sum_{j} \omega(f, R_j) \text{Área}(R_j) < \varepsilon.$$
+            </p>
+          </div>
+
+          <div class="theory-block">
+            <h4>Teorema Fundamental de Integrabilidad de Funciones Continuas</h4>
+            <p>
+              Toda función $f: R \to \mathbb{R}$ continua sobre un rectángulo compacto $R$ es <strong>integrable Riemann</strong>. La demostración se basa en el Teorema de Heine-Cantor (toda función continua sobre un compacto es <em>uniformemente continua</em>), lo que permite acotar simultáneamente la oscilación $\omega(f, R_j) < \varepsilon / \text{Área}(R)$ en todos los subrectángulos.
+            </p>
+          </div>
+
+          <div class="theory-block caution">
+            <h4>Teorema de Lebesgue-Vitali y Discontinuidades</h4>
+            <p>
+              Una función acotada es integrable Riemann si y sólo si su conjunto de discontinuidades $D_f$ tiene <strong>medida cero de Lebesgue</strong>. Por tanto:
+            </p>
+            <ul style="margin-left: 1.5rem; color: #cbd5e1;">
+              <li>Funciones discontinuas a trozos a lo largo de curvas suaves son <em>integrables</em>.</li>
+              <li>Integrabilidad <strong>NO</strong> implica continuidad (pregunta clásica de verdadero/falso en la UNI).</li>
+              <li>La función de Dirichlet en 2D ($\chi_{\mathbb{Q}^2}$) <em>NO es integrable Riemann</em> porque es discontinua en todo punto ($D_f = R$).</li>
+            </ul>
+          </div>
+        </article>
+
+      </div>
+
+      <!-- Barra de Filtros de Nivel de Ejercicios -->
+      <div class="exercises-header">
+        <div>
+          <h2>Banco de Ejercicios: Criterios y Propiedades de Integrabilidad</h2>
+          <p style="color:#94a3b8; font-size:0.9rem;">15 ejercicios de demostración analítica y desigualdades del Nivel 1 al 5.</p>
+        </div>
+        <div class="level-tabs" data-topic="t4">
+          <button class="level-tab-btn active" data-level="1">Nivel 1 (Básico)</button>
+          <button class="level-tab-btn" data-level="2">Nivel 2 (Intermedio)</button>
+          <button class="level-tab-btn" data-level="3">Nivel 3 (Examen UNI)</button>
+          <button class="level-tab-btn" data-level="4">Nivel 4 (Avanzado)</button>
+          <button class="level-tab-btn" data-level="5">Nivel 5 (Rigor Máximo)</button>
+          <button class="level-tab-btn" data-level="all">Ver Todos</button>
+        </div>
+      </div>
+
+      <div class="exercises-list" id="exercises-container-t4"></div>
+    </section>
+
+    <!-- ========================================================================
+         SECCIÓN 5: TEOREMA DE FUBINI Y TEOREMA DEL VALOR MEDIO (SESIÓN 24)
+         ======================================================================== -->
+    <section class="topic-section" id="section-t5">
+      <div class="topic-grid">
+        
+        <!-- Tarjeta de Teoría -->
+        <article class="theory-card">
+          <h2><span>📦</span> Teorema de Fubini en Bloques y Teorema del Valor Medio</h2>
+          <p>
+            El <strong>Teorema de Fubini</strong> reduce el cálculo de integrales múltiples multidimensionales al cálculo sucesivo de integrales simples en una variable (integrales iteradas).
+          </p>
+
+          <div class="theory-block theorem">
+            <h4>Teorema de Fubini para Funciones Continuas</h4>
+            <p>
+              Sea $R = [a,b] \times [c,d]$ y $f: R \to \mathbb{R}$ continua. Entonces:
+              $$\iint_R f(x,y) \, dA = \int_a^b \left( \int_c^d f(x,y) \, dy \right) dx = \int_c^d \left( \int_a^b f(x,y) \, dx \right) dy.$$
+              Geométricamente, $\int_c^d f(x,y) dy = A(x)$ representa el área de la sección transversal perpendicular al eje $x$ en la posición $x$. El volumen total se obtiene integrando estas rebanadas de $a$ a $b$.
+            </p>
+          </div>
+
+          <div class="theory-block theorem">
+            <h4>Teorema del Valor Medio para Integrales Dobles</h4>
+            <p>
+              Si $R \subset \mathbb{R}^2$ es compacto y conexo (por ejemplo, cualquier rectángulo cerrado) y $f: R \to \mathbb{R}$ es continua, entonces existe al menos un punto $(x_0, y_0) \in R$ tal que:
+              $$\iint_R f(x,y) \, dA = f(x_0, y_0) \cdot \text{Área}(R).$$
+              <em>Demostración rigurosa:</em> Por el Teorema de Weierstrass, $f(R) = [m, M]$. La acotación de la integral asegura que $m \le \frac{1}{\text{Área}(R)}\iint_R f dA \le M$. Por el Teorema del Valor Intermedio (conexidad), dicho valor promedio es alcanzado en algún punto del dominio.
+            </p>
+          </div>
+        </article>
+
+        <!-- Visor 3D Interactivo: Rebanadas de Fubini -->
+        <aside class="visualizer-card">
+          <div class="visualizer-header">
+            <h3 class="visualizer-title">Rebanadas de Fubini $A(x) = \int f dy$</h3>
+            <span class="touch-hint-badge">👆 Toca y gira en 3D</span>
+          </div>
+
+          <div class="three-canvas-wrapper" id="fubini-canvas-container"></div>
+
+          <div class="visualizer-controls">
+            <div class="control-group">
+              <label class="control-label" for="fubini-x-slider">Plano de corte $x = x_0$:</label>
+              <input type="range" class="control-slider" id="fubini-x-slider" min="0" max="2" step="0.05" value="1">
+            </div>
+            <div class="visualizer-readout">
+              <span>Área de la rebanada $A(x_0)$ (Perfil rojo):</span>
+              <span class="readout-value" id="fubini-slice-area">2.150</span>
+            </div>
+          </div>
+          <p style="font-size:0.8rem; color:#94a3b8; margin-top:0.75rem;">
+            Deslice el plano transversal $x = x_0$ para observar cómo la sección se acumula para generar el volumen del sólido.
+          </p>
+        </aside>
+
+      </div>
+
+      <!-- Barra de Filtros de Nivel de Ejercicios -->
+      <div class="exercises-header">
+        <div>
+          <h2>Banco de Ejercicios: Fubini y Teorema del Valor Medio</h2>
+          <p style="color:#94a3b8; font-size:0.9rem;">15 ejercicios con integrales iteradas, valores absolutos y pruebas del Nivel 1 al 5.</p>
+        </div>
+        <div class="level-tabs" data-topic="t5">
+          <button class="level-tab-btn active" data-level="1">Nivel 1 (Básico)</button>
+          <button class="level-tab-btn" data-level="2">Nivel 2 (Intermedio)</button>
+          <button class="level-tab-btn" data-level="3">Nivel 3 (Examen UNI)</button>
+          <button class="level-tab-btn" data-level="4">Nivel 4 (Avanzado)</button>
+          <button class="level-tab-btn" data-level="5">Nivel 5 (Rigor Máximo)</button>
+          <button class="level-tab-btn" data-level="all">Ver Todos</button>
+        </div>
+      </div>
+
+      <div class="exercises-list" id="exercises-container-t5"></div>
+    </section>
+
+    <!-- ========================================================================
+         SECCIÓN 6: BONUS - REGIONES GENERALES DE TIPO 1 Y 2 (SESIÓN 25)
+         ======================================================================== -->
+    <section class="topic-section" id="section-tb">
+      <div class="topic-grid" style="grid-template-columns: 1fr;">
+        
+        <article class="theory-card">
+          <h2><span>✨</span> Bonus: Integración en Regiones Planas de Tipo 1 y 2</h2>
+          <p>
+            Ampliación del concepto de integral sobre dominios no rectangulares acotados mediante la función característica $\chi_D$: $\iint_D f dA = \iint_R f \chi_D dA$.
+          </p>
+
+          <div class="theory-block theorem">
+            <h4>Clasificación de Regiones en $\mathbb{R}^2$</h4>
+            <ul style="margin-left: 1.5rem; color: #cbd5e1;">
+              <li><strong>Región Tipo 1 (Verticalmente Simple):</strong> Acotada por constantes en $x$ y funciones continuas en $y$:
+                $$D = \{(x,y) \in \mathbb{R}^2 : a \le x \le b, \ g_1(x) \le y \le g_2(x)\} \implies \iint_D f \, dA = \int_a^b \left( \int_{g_1(x)}^{g_2(x)} f(x,y) \, dy \right) dx.$$
+              </li>
+              <li><strong>Región Tipo 2 (Horizontalmente Simple):</strong> Acotada por constantes en $y$ y funciones continuas en $x$:
+                $$D = \{(x,y) \in \mathbb{R}^2 : c \le y \le d, \ h_1(y) \le x \le h_2(y)\} \implies \iint_D f \, dA = \int_c^d \left( \int_{h_1(y)}^{h_2(y)} f(x,y) \, dx \right) dy.$$
+              </li>
+            </ul>
+          </div>
+        </article>
+
+      </div>
+
+      <div class="exercises-header">
+        <div>
+          <h2>Ejercicios Selectos: Regiones Tipo 1 y 2</h2>
+          <p style="color:#94a3b8; font-size:0.9rem;">Cálculo de áreas, inversión de límites y volúmenes de sólidos.</p>
+        </div>
+        <div class="level-tabs" data-topic="tb">
+          <button class="level-tab-btn active" data-level="all">Ver Todos los Ejercicios</button>
+        </div>
+      </div>
+
+      <div class="exercises-list" id="exercises-container-tb"></div>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-content">
+      <p><strong>Cálculo Diferencial e Integral Avanzado (CM2A1)</strong> • Escuela Profesional de Matemática</p>
+      <p>Facultad de Ciencias • Universidad Nacional de Ingeniería (UNI) • Lima, Perú</p>
+      <p style="margin-top:0.5rem; font-size:0.8rem; color:#6b7280;">Diseñado para visualización óptima en celulares Android, tablets y pantallas de escritorio.</p>
+    </div>
+  </footer>
+
+  <!-- Scripts de la Aplicación -->
+  <script src="js/data-exercises.js"></script>
+  <script src="js/visualizers.js"></script>
+  <script src="js/app.js"></script>
+
+</body>
+</html>

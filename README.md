@@ -20,7 +20,7 @@ Compendio interactivo web y versión académica en PDF diseñada específicament
      - Enunciados completos, pistas didácticas, soluciones paso a paso sin omitir pasos intermedios y cuadros de advertencia sobre trampas conceptuales y errores frecuentes en los exámenes de la UNI.
      - Problemas directamente extraídos y adaptados de las evaluaciones oficiales 2024-II, 2025-II y 2026-I.
 
-2. **Compendio en PDF Imprimible (`pdf/PC4_Calculo_Avanzado_UNI.pdf`):**
+2. **Compendio en PDF Imprimible (`pdf/PC4_Calculo_Avanzado_UNI_v2.pdf` / `pdf/PC4_Calculo_Avanzado_UNI.pdf`):**
    - Documento de 96 páginas con maquetación académica en LaTeX (compilado con MiKTeX).
    - Formato A4 listo para imprimir a doble cara o lectura digital, con índice hipervinculado, tipografía `lmodern` y `amsmath`.
 

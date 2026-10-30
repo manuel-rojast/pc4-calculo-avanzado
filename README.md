@@ -14,13 +14,14 @@ Compendio interactivo web y versión académica en PDF diseñada específicament
      - *Sumas de Riemann 3D:* Prismas tridimensionales bajo $z=f(x,y)$ con deslizadores de subdivisiones $m \times n$, alternando entre suma inferior, superior y de punto medio.
      - *Rebanadas de Fubini:* Plano de corte transversal deslizante $x = x_0$ mostrando la función de área $A(x) = \int f(x,y) dy$.
    - **Soporte Táctil Completo para Celulares Android:** Controles de rotación con un dedo, zoom con pellizco de dos dedos y diseño 100% responsivo.
-   - **Banco de 80 Ejercicios Clasificados por Niveles (Nivel 1 al 5):**
+   - **Banco de 98 Ejercicios Clasificados por Niveles (Nivel 0 al 5):**
+     - 18 ejercicios de Nivel 0 (Principiante) con conexiones intuitivas 1D y comprobaciones paso a paso.
      - 15 ejercicios por cada subtema oficial (3 ejercicios variados por cada nivel del 1 al 5) + 5 ejercicios del tema bonus.
      - Enunciados completos, pistas didácticas, soluciones paso a paso sin omitir pasos intermedios y cuadros de advertencia sobre trampas conceptuales y errores frecuentes en los exámenes de la UNI.
      - Problemas directamente extraídos y adaptados de las evaluaciones oficiales 2024-II, 2025-II y 2026-I.
 
 2. **Compendio en PDF Imprimible (`pdf/PC4_Calculo_Avanzado_UNI.pdf`):**
-   - Documento de 82 páginas con maquetación académica en LaTeX (compilado con MiKTeX).
+   - Documento de 96 páginas con maquetación académica en LaTeX (compilado con MiKTeX).
    - Formato A4 listo para imprimir a doble cara o lectura digital, con índice hipervinculado, tipografía `lmodern` y `amsmath`.
 
 ---

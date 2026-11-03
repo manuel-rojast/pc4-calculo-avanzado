@@ -1,6 +1,6 @@
 /**
  * APLICACIÓN PRINCIPAL - CÁLCULO AVANZADO PC4 (CM2A1 - UNI)
- * Control de navegación, renderizado dinámico de ejercicios y KaTeX
+ * Control de navegación, gestión de memoria WebGL, renderizado dinámico y KaTeX por sección
  */
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -15,7 +15,8 @@ document.addEventListener('DOMContentLoaded', () => {
       't5': '0',
       'tb': '0'
     },
-    initializedVisualizers: new Set()
+    initializedVisualizers: new Set(),
+    renderedMathSections: new Set()
   };
 
   // Inicializar pestañas de temas principales
@@ -35,22 +36,32 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     // Mostrar sección correspondiente
+    let activeSectionEl = null;
     topicSections.forEach(sec => {
       if (sec.id === `section-${topicId}`) {
         sec.classList.add('active');
+        activeSectionEl = sec;
       } else {
         sec.classList.remove('active');
       }
     });
 
-    // Inicializar visualizador 3D si no ha sido creado aún
+    // Liberar contextos WebGL de pestañas inactivas y gestionar el visor del tema actual
+    if (window.VisualizerManager) {
+      window.VisualizerManager.onTopicSwitch(topicId);
+    }
+
+    // Inicializar visualizador 3D si no ha sido registrado aún
     initVisualizerForTopic(topicId);
 
     // Renderizar ejercicios del tema
     renderExercises(topicId);
 
-    // Re-renderizar KaTeX
-    renderMath();
+    // Renderizar KaTeX únicamente en la sección activa si aún no fue procesada
+    if (activeSectionEl && !state.renderedMathSections.has(topicId)) {
+      renderMath(activeSectionEl);
+      state.renderedMathSections.add(topicId);
+    }
   }
 
   topicTabButtons.forEach(btn => {
@@ -84,7 +95,7 @@ document.addEventListener('DOMContentLoaded', () => {
       } catch (e) {
         console.warn(`Error inicializando visor 3D para ${topicId}:`, e);
       }
-    }, 150);
+    }, 80);
   }
 
   // Renderizado dinámico de tarjetas de ejercicios
@@ -187,7 +198,7 @@ document.addEventListener('DOMContentLoaded', () => {
       .replace(/\n/g, '<br>');
   }
 
-  // Renderizar fórmulas KaTeX de forma segura
+  // Renderizar fórmulas KaTeX de forma segura y acotada al contenedor
   function renderMath(targetElement) {
     const el = targetElement || document.body;
     if (window.renderMathInElement) {
@@ -203,7 +214,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   }
 
-  // Configurar selectores de nivel (Pestañas de Nivel 1 a 5)
+  // Configurar selectores de nivel (Pestañas de Nivel 0 a 5)
   document.querySelectorAll('.level-tabs').forEach(tabGroup => {
     const topicId = tabGroup.dataset.topic;
     tabGroup.querySelectorAll('.level-tab-btn').forEach(btn => {
@@ -216,7 +227,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-  // Inicializar primer tema y módulo de retos 2026-2
+  // Inicializar módulo de retos 2026-2 y primer tema
   if (window.initRetos2026Module) {
     window.initRetos2026Module();
   }

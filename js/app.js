@@ -77,6 +77,9 @@ document.addEventListener('DOMContentLoaded', () => {
         } else if (topicId === 't5' && window.initFubiniVisualizer) {
           window.initFubiniVisualizer();
           state.initializedVisualizers.add('t5');
+        } else if (topicId === 'tr' && window.initRetos2026Module) {
+          window.initRetos2026Module();
+          state.initializedVisualizers.add('tr');
         }
       } catch (e) {
         console.warn(`Error inicializando visor 3D para ${topicId}:`, e);
@@ -213,6 +216,18 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-  // Inicializar primer tema
+  // Inicializar primer tema y módulo de retos 2026-2
+  if (window.initRetos2026Module) {
+    window.initRetos2026Module();
+  }
+  const navRetosLink = document.getElementById('nav-link-retos');
+  if (navRetosLink) {
+    navRetosLink.addEventListener('click', (e) => {
+      e.preventDefault();
+      switchTopic('tr');
+      const temarioEl = document.getElementById('temario');
+      if (temarioEl) temarioEl.scrollIntoView({ behavior: 'smooth' });
+    });
+  }
   switchTopic('t1');
 });

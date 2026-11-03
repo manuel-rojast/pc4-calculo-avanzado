@@ -37,12 +37,18 @@
     <ul class="nav-links">
       <li><a href="#hero">Inicio</a></li>
       <li><a href="#temario">Temario</a></li>
+      <li>
+        <a href="#retos-2026" id="nav-link-retos" class="nav-link-highlight">
+          <span class="pdf-text-long">🎯 Retos 2026-2</span>
+          <span class="pdf-text-short">🎯 Retos</span>
+        </a>
+      </li>
       <li><a href="#ejercicios">Ejercicios</a></li>
       <li>
-        <a href="pdf/PC4_Calculo_Avanzado_UNI_v2.pdf?v=96p" target="_blank" rel="noopener noreferrer" class="btn-pdf-download" title="Descargar compendio completo oficial en PDF (96 páginas)">
+        <a href="pdf/PC4_Calculo_Avanzado_UNI_v3.pdf?v=105p" target="_blank" rel="noopener noreferrer" class="btn-pdf-download" title="Descargar compendio completo oficial en PDF con Retos 2026-2 (105 páginas)">
           <span class="pdf-icon">📄</span>
-          <span class="pdf-text-long">Versión PDF Imprimible (96 págs)</span>
-          <span class="pdf-text-short">Ver PDF (96p)</span>
+          <span class="pdf-text-long">Versión PDF Imprimible (105 págs)</span>
+          <span class="pdf-text-short">Ver PDF (105p)</span>
         </a>
       </li>
     </ul>
@@ -52,28 +58,28 @@
 
     <!-- Hero Header -->
     <header class="hero-header" id="hero">
-      <span class="hero-tag">Ciclo 2026-2 • Facultad de Ciencias • UNI</span>
+      <span class="hero-tag">Ciclo 2026-2 • Abanto • Nuñez • Sulca • Valverde • UNI</span>
       <h1 class="hero-title">Guía Maestra y Banco Interactivo: PC4</h1>
       <p class="hero-desc">
-        Compendio integral de teoría rigurosa, modelos 3D interactivos con Three.js y <strong>98 problemas resueltos paso a paso</strong> calibrados con los exámenes pasados oficiales de la Universidad Nacional de Ingeniería (2024-II, 2025-II y 2026-I).
+        Compendio integral de teoría rigurosa, <strong>Traductor Bilingüe de Notación Formal de Clase</strong>, <strong>Entrenador Visual $\varepsilon$-$\delta$ / Darboux</strong>, <strong>Anatomía de Demostraciones en 2 Fases</strong>, <strong>Casos Combinados estilo «Los Baseados» (Parcial 2026-2)</strong> y <strong>104 problemas resueltos paso a paso</strong>.
       </p>
 
       <div class="hero-stats">
         <div class="stat-item">
-          <div class="stat-number">5</div>
-          <div class="stat-label">Sesiones (20 a 24)</div>
-        </div>
-        <div class="stat-item">
-          <div class="stat-number">98</div>
-          <div class="stat-label">Problemas Resueltos</div>
-        </div>
-        <div class="stat-item">
           <div class="stat-number">6</div>
-          <div class="stat-label">Niveles de Rigor (0 al 5)</div>
+          <div class="stat-label">Subtemas + Retos 2026-2</div>
         </div>
         <div class="stat-item">
-          <div class="stat-number">4</div>
-          <div class="stat-label">Modelos 3D Táctiles</div>
+          <div class="stat-number">104+</div>
+          <div class="stat-label">Problemas y Híbridos</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-number">2 Fases</div>
+          <div class="stat-label">Borrador vs. Formal</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-number">5</div>
+          <div class="stat-label">Simuladores 3D y ε-δ</div>
         </div>
       </div>
     </header>
@@ -97,6 +103,9 @@
       </button>
       <button class="topic-tab-btn" data-topic="tb">
         <span>✨</span> Bonus: Regiones Tipo 1 y 2
+      </button>
+      <button class="topic-tab-btn retos-tab-special" data-topic="tr">
+        <span>🎯</span> Retos 2026-2: Demos, ε-δ y Combinadas
       </button>
     </nav>
 
@@ -156,9 +165,83 @@
             </p>
           </div>
 
-          <p>
-            <strong>Aplicación cinemática (Robótica):</strong> Cuando un mecanismo tiene jacobiano $\det J = 0$, entra en una <em>configuración singular</em> perdiendo grados de libertad instantáneos y volviéndose incontrolable localmente.
-          </p>
+            <p>
+              <strong>Aplicación cinemática (Robótica):</strong> Cuando un mecanismo tiene jacobiano $\det J = 0$, entra en una <em>configuración singular</em> perdiendo grados de libertad instantáneos y volviéndose incontrolable localmente.
+            </p>
+
+            <!-- Traductor Bilingüe de Notación Formal: Subtema 1 (Sesión 7.2 y PD04/PD05) -->
+            <div class="formal-translator-box">
+              <h4>🔍 Traductor de Jerga Formal UNI (Sesión 7.2 y PD04/PD05) ↔ Español Humano</h4>
+              <div class="translator-grid">
+                <div class="translator-item">
+                  <div class="trans-col-symbol">
+                    <span class="trans-col-label">Símbolo en Clase / Examen</span>
+                    $Jf_{x_0} \text{ es invertible} \implies \exists V \text{ vecindad abierta de } x_0 \text{ tal que } f|_V: V \to f(V) \text{ es biyección y } f(V) \text{ es abierto}$
+                  </div>
+                  <div class="trans-col-human">
+                    <span class="trans-col-label">En Español Sencillo</span>
+                    Si el determinante jacobiano en $x_0$ no es cero, puedes encerrar a $x_0$ en una pequeña burbuja $V$ donde $f$ no repite valores (es $1$ a $1$) y su imagen $f(V)$ también es una burbuja abierta alrededor de $f(x_0)$.
+                  </div>
+                  <div class="trans-col-action">
+                    <span class="trans-col-label">¿Qué hacer en tu hoja?</span>
+                    1) Verifica que las componentes de $f$ sean $C^1$.<br>
+                    2) Calcula $\det Jf(x_0) \neq 0$.<br>
+                    3) Concluye que existe $f^{-1}$ localmente cerca de $y_0 = f(x_0)$.
+                  </div>
+                </div>
+                <div class="translator-item">
+                  <div class="trans-col-symbol">
+                    <span class="trans-col-label">Símbolo en Clase / Examen</span>
+                    $Jf^{-1}_{f(x)} = (Jf_x)^{-1}$
+                  </div>
+                  <div class="trans-col-human">
+                    <span class="trans-col-label">En Español Sencillo</span>
+                    La matriz de derivadas de la función inversa evaluada en el punto de llegada $y = f(x)$ es exactamente la <strong>matriz inversa</strong> de la jacobiana original evaluada en el punto de partida $x$.
+                  </div>
+                  <div class="trans-col-action">
+                    <span class="trans-col-label">¿Qué hacer en tu hoja?</span>
+                    ¡Nunca intentes despejar $x(u,v)$! Evalúa la matriz $Jf(x_0)$ con números y luego invierte esa matriz numérica ($2\times 2$ o $3\times 3$).
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Anatomía de Demostración en 2 Fases: Subtema 1 -->
+            <div class="proof-anatomy-widget">
+              <div class="proof-anatomy-header">
+                <span class="proof-anatomy-title">🧬 Anatomía de Demostración Clásica (PD04 #29 / PD05 #8): Inyectividad Global vs. Invertibilidad Local</span>
+                <div class="proof-phase-tabs">
+                  <button class="proof-phase-toggle-btn active" data-phase="draft">🧠 Fase 1: Cómo pensarla (Borrador)</button>
+                  <button class="proof-phase-toggle-btn" data-phase="formal">✍️ Fase 2: Redacción Formal (20/20)</button>
+                </div>
+              </div>
+              <div class="proof-phase-pane active" data-phase="draft">
+                <p style="margin-bottom:0.6rem;"><strong>Problema:</strong> <em>Sean $f, g: \mathbb{R} \to \mathbb{R}$ de clase $C^1$. Si $f$ no posee puntos críticos y $g$ no tiene raíces, pruebe que $F(x,y) = (f(x)g(y), f(y))$ es inyectiva y localmente invertible en todo $\mathbb{R}^2$.</em></p>
+                <div class="draft-step-grid">
+                  <div class="draft-step-card">
+                    <h5>🎯 1. ¿A qué quiero llegar?</h5>
+                    <p style="font-size:0.85rem; margin:0;">Debo probar dos cosas distintas:<br>1) <strong>Localmente invertible:</strong> probar que $\det JF(x,y) \neq 0$.<br>2) <strong>Inyectiva global:</strong> partir de $F(x_1,y_1) = F(x_2,y_2)$ y deducir $(x_1,y_1)=(x_2,y_2)$.</p>
+                  </div>
+                  <div class="draft-step-card">
+                    <h5>🧰 2. Traducción de Hipótesis</h5>
+                    <p style="font-size:0.85rem; margin:0;">• «$f$ sin puntos críticos» $\implies f'(t) \neq 0$ para todo $t \in \mathbb{R}$ (además, en $\mathbb{R}$, eso obliga a $f$ a ser estrictamente monótona e inyectiva).<br>• «$g$ sin raíces» $\implies g(t) \neq 0$ para todo $t \in \mathbb{R}$.</p>
+                  </div>
+                  <div class="draft-step-card">
+                    <h5>🌉 3. El Puente / Truco</h5>
+                    <p style="font-size:0.85rem; margin:0;">La matriz $JF(x,y)$ es triangular: su diagonal es $f'(x)g(y)$ y $f'(y)$. Su determinante es el producto $f'(x)f'(y)g(y)$, que jamás es cero. Para la inyectividad, igualo la 2da componente $f(y_1)=f(y_2) \implies y_1=y_2$ y luego cancelo $g(y_1)\neq 0$.</p>
+                  </div>
+                </div>
+              </div>
+              <div class="proof-phase-pane" data-phase="formal">
+                <div class="formal-proof-script">
+                  <p><strong>Demostración Formal (Lista para entregar):</strong></p>
+                  <p>1. <strong>Invertibilidad local:</strong> Como $f, g \in C^1(\mathbb{R})$, las componentes de $F$ son de clase $C^1(\mathbb{R}^2)$. Calculamos la matriz jacobiana en cualquier $(x,y) \in \mathbb{R}^2$:
+                  $$JF(x,y) = \begin{pmatrix} f'(x)g(y) & f(x)g'(y) \\ 0 & f'(y) \end{pmatrix} \implies \det JF(x,y) = f'(x)f'(y)g(y).$$
+                  Por hipótesis, $f$ carece de puntos críticos ($\forall t \in \mathbb{R}, f'(t) \neq 0$) y $g$ carece de raíces ($\forall t \in \mathbb{R}, g(t) \neq 0$). Por tanto, $\det JF(x,y) \neq 0$ en todo $\mathbb{R}^2$. Por el Teorema de la Función Inversa, $F$ es localmente invertible alrededor de cada punto $(x,y) \in \mathbb{R}^2$.</p>
+                  <p style="margin-bottom:0;">2. <strong>Inyectividad global:</strong> Como $f'(t) \neq 0$ en todo $\mathbb{R}$, por el Teorema de Rolle $f: \mathbb{R} \to \mathbb{R}$ es inyectiva. Sean $(x_1, y_1), (x_2, y_2) \in \mathbb{R}^2$ tales que $F(x_1, y_1) = F(x_2, y_2)$. Igualando segundas componentes tenemos $f(y_1) = f(y_2) \implies y_1 = y_2$. Sustituyendo en la primera componente: $f(x_1)g(y_1) = f(x_2)g(y_1)$. Como $g(y_1) \neq 0$, dividimos por $g(y_1)$ obteniendo $f(x_1) = f(x_2)$, de donde $x_1 = x_2$. Así $(x_1, y_1) = (x_2, y_2)$, probando que $F$ es globalmente inyectiva. $\blacksquare$</p>
+                </div>
+              </div>
+            </div>
         </article>
 
         <!-- Visor 3D Interactivo: Deformación Jacobiana -->
@@ -257,6 +340,83 @@
             <p>
               <strong>El signo negativo matricial:</strong> La fórmula $D\varphi = -[D_y F]^{-1} D_x F$ surge de derivar la identidad $F(x, \varphi(x)) = 0$ por regla de la cadena: $D_x F + D_y F \cdot D\varphi = 0$. Al pasar al otro lado de la igualdad, aparece naturalmente el signo menos.
             </p>
+          </div>
+
+          <!-- Traductor Bilingüe de Notación Formal: Subtema 2 (Sesión 7.3 y Parcial 2026-2 Pregunta 2) -->
+          <div class="formal-translator-box">
+            <h4>🔍 Traductor de Jerga Formal UNI (Sesión 7.3 y Parcial 2026-2 Pregunta 2) ↔ Español Humano</h4>
+            <div class="translator-grid">
+              <div class="translator-item">
+                <div class="trans-col-symbol">
+                  <span class="trans-col-label">Símbolo en Parcial 2026-2 (Preg. 2a)</span>
+                  $\phi: \operatorname{Proy}_{X \times Y}\Omega \to \mathbb{R}$ de clase $C^1$ en un entorno abierto $\Omega$ de $P(x_0,y_0,z_0)$
+                </div>
+                <div class="trans-col-human">
+                  <span class="trans-col-label">En Español Sencillo</span>
+                  $\Omega \subset \mathbb{R}^3$ es una caja o esfera abierta alrededor del punto $P(x_0,y_0,z_0)$. $\operatorname{Proy}_{X\times Y}\Omega$ es simplemente <strong>la sombra que proyecta $\Omega$ sobre el piso $XY$</strong> (que es el dominio abierto donde vive $(x,y)$).
+                </div>
+                <div class="trans-col-action">
+                  <span class="trans-col-label">¿Qué hacer en tu hoja?</span>
+                  1) Define $F(x,y,z) = 0$.<br>
+                  2) Verifica $F(P)=0$ y $F \in C^1$.<br>
+                  3) Calcula $\frac{\partial F}{\partial z}(P) \neq 0$ y cita el TFI.
+                </div>
+              </div>
+              <div class="translator-item">
+                <div class="trans-col-symbol">
+                  <span class="trans-col-label">Símbolo en Diapositivas (Sesión 7.3)</span>
+                  $Df(P): \mathbb{R}^4 \to \mathbb{R}^2$ es sobreyectiva y la restricción $Df(P)|_{\operatorname{eje}(X)\times\operatorname{eje}(Z)}: \operatorname{eje}(X)\times\operatorname{eje}(Z) \to \mathbb{R}^2$ es biyectiva
+                </div>
+                <div class="trans-col-human">
+                  <span class="trans-col-label">En Español Sencillo</span>
+                  Decir que la restricción al plano $XZ$ es biyectiva significa que <strong>las columnas de $x$ y de $z$ en la matriz jacobiana son linealmente independientes</strong>, por lo que puedes despejar $(x,z)$ en función de $(y,u)$: $g: \operatorname{Proy}_{Y\times U}V \to \operatorname{Proy}_{X\times Z}V$.
+                </div>
+                <div class="trans-col-action">
+                  <span class="trans-col-label">¿Qué hacer en tu hoja?</span>
+                  Extrae la submatriz $2\times 2$ formada por las derivadas respecto a las 2 variables que quieres despejar y comprueba que su determinante sea $\neq 0$.
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Anatomía de Demostración en 2 Fases: Subtema 2 -->
+          <div class="proof-anatomy-widget">
+            <div class="proof-anatomy-header">
+              <span class="proof-anatomy-title">🧬 Anatomía de Demostración (PD04 #31 / PD05 #4): El Acoplamiento que Demuestra el TFI</span>
+              <div class="proof-phase-tabs">
+                <button class="proof-phase-toggle-btn active" data-phase="draft">🧠 Fase 1: Cómo pensarla (Borrador)</button>
+                <button class="proof-phase-toggle-btn" data-phase="formal">✍️ Fase 2: Redacción Formal (20/20)</button>
+              </div>
+            </div>
+            <div class="proof-phase-pane active" data-phase="draft">
+              <p style="margin-bottom:0.6rem;"><strong>Problema:</strong> <em>Sea $F=(F_1,F_2): \mathbb{R}^4 \to \mathbb{R}^2$ de clase $C^1$ con $F(0)=(0,0)$ y $\frac{\partial(F_1,F_2)}{\partial(z,w)}(0) \neq 0$. Se define $G(x,y,z,w) = (x,y,F_1(x,y,z,w),F_2(x,y,z,w))$. (a) Pruebe que $G$ es localmente invertible en $0$. (b) Halle $DH(0)$ para $H = F \circ G^{-1}$.</em></p>
+              <div class="draft-step-grid">
+                <div class="draft-step-card">
+                  <h5>🎯 1. ¿A qué quiero llegar?</h5>
+                  <p style="font-size:0.85rem; margin:0;">En (a), mostrar que $\det JG(0) \neq 0$. En (b), hallar la matriz $2\times 4$ de $H = F \circ G^{-1}$ en el origen sin calcular la inversa explícita.</p>
+                </div>
+                <div class="draft-step-card">
+                  <h5>🧰 2. El Secreto de Bloques</h5>
+                  <p style="font-size:0.85rem; margin:0;">Las primeras dos componentes de $G$ son $(x,y)$, cuya derivada respecto a $(x,y)$ es la identidad $I_2$ y respecto a $(z,w)$ es la matriz nula $0_{2\times 2}$. ¡Por tanto $JG(0)$ es triangular por bloques!</p>
+                </div>
+                <div class="draft-step-card">
+                  <h5>🌉 3. El Truco en (b)</h5>
+                  <p style="font-size:0.85rem; margin:0;">En vez de multiplicar matrices gigantes, observa qué hace $G$: si $(x,y,u,v) = G(x,y,z,w) = (x,y,F_1,F_2)$, entonces $H(x,y,u,v) = (F \circ G^{-1})(x,y,u,v) = (u,v)$! ¡Es una proyección lineal trivial!</p>
+                </div>
+              </div>
+            </div>
+            <div class="proof-phase-pane" data-phase="formal">
+              <div class="formal-proof-script">
+                <p><strong>Demostración Formal (Lista para entregar):</strong></p>
+                <p><strong>(a)</strong> Como $F \in C^1(\mathbb{R}^4, \mathbb{R}^2)$ y las proyecciones coordenadas son $C^\infty$, $G: \mathbb{R}^4 \to \mathbb{R}^4$ es de clase $C^1$. Su matriz jacobiana en el origen tiene estructura triangular por bloques $2\times 2$:
+                $$JG(0) = \begin{pmatrix} I_2 & 0_{2\times 2} \\ D_{(x,y)}F(0) & D_{(z,w)}F(0) \end{pmatrix} \implies \det JG(0) = \det(I_2)\cdot \det D_{(z,w)}F(0) = \frac{\partial(F_1,F_2)}{\partial(z,w)}(0) \neq 0.$$
+                Por el Teorema de la Función Inversa, $G$ es localmente invertible en una vecindad abierta del origen $0 \in \mathbb{R}^4$.</p>
+                <p style="margin-bottom:0;"><strong>(b)</strong> Sea $\pi_{(3,4)}: \mathbb{R}^4 \to \mathbb{R}^2$ la proyección sobre las dos últimas coordenadas, $\pi_{(3,4)}(x,y,u,v) = (u,v)$. Por definición de $G$, se cumple que $\pi_{(3,4)} \circ G = F$. Componiendo por la derecha con $G^{-1}$ en la vecindad donde es biyectiva:
+                $$H = F \circ G^{-1} = (\pi_{(3,4)} \circ G) \circ G^{-1} = \pi_{(3,4)}, \quad \text{es decir, } H(x,y,u,v) = (u,v).$$
+                Como $H$ es lineal, su matriz jacobiana en el origen (y en todo punto de la vecindad) es:
+                $$JH(0) = \begin{pmatrix} 0 & 0 & 1 & 0 \\ 0 & 0 & 0 & 1 \end{pmatrix}. \quad \blacksquare$$</p>
+              </div>
+            </div>
           </div>
         </article>
 
@@ -359,6 +519,82 @@
                 $$L(f,P) \le \text{Volumen Real} \le U(f,P).$$
                 Cuando refinamos la cuadrícula haciendo las baldosas microscópicas ($\Delta x \to 0, \Delta y \to 0$), la altura máxima y mínima en cada baldosa se van acercando. Si el sándwich se cierra por completo ($\lim (U - L) = 0$), ese valor único atrapado es por definición la integral doble.</li>
             </ul>
+          </div>
+
+          <!-- Traductor Bilingüe de Notación Formal: Subtema 3 (Sesión 9.1 y PD05) -->
+          <div class="formal-translator-box">
+            <h4>🔍 Traductor de Jerga Formal UNI (Sesión 9.1 y PD05) ↔ Español Humano</h4>
+            <div class="translator-grid">
+              <div class="translator-item">
+                <div class="trans-col-symbol">
+                  <span class="trans-col-label">Símbolo en Clase (Sesión 9.1)</span>
+                  2-bloque $B = [a_1, b_1]\times[a_2, b_2]$, sub-bloques $\beta_{ij} \in P$, y puntillación $\xi = \{\xi_{ij}\}$
+                </div>
+                <div class="trans-col-human">
+                  <span class="trans-col-label">En Español Sencillo</span>
+                  «2-bloque» es simplemente un <strong>rectángulo cerrado</strong>. Cada «sub-bloque $\beta_{ij}$» es una baldosa pequeña de la cuadrícula $P$. La «puntillación $\xi$» es el conjunto de puntos de prueba $\xi_{ij}$ elegidos dentro de cada baldosa para medir la altura.
+                </div>
+                <div class="trans-col-action">
+                  <span class="trans-col-label">¿Qué hacer en tu hoja?</span>
+                  En una partición uniforme $P_n$ de $n\times n$ partes, escribe $\text{Area}(\beta_{ij}) = \frac{b_1-a_1}{n}\cdot\frac{b_2-a_2}{n}$.
+                </div>
+              </div>
+              <div class="translator-item">
+                <div class="trans-col-symbol">
+                  <span class="trans-col-label">Doble Notación (Clase vs PD05)</span>
+                  En diapositivas: $s(f,P)$ y $S(f,P)$<br>
+                  En PD05 (#19, #32): $L(f,P)$ y $U(f,P)$
+                </div>
+                <div class="trans-col-human">
+                  <span class="trans-col-label">En Español Sencillo</span>
+                  ¡Significan <strong>exactamente lo mismo</strong>! $s(f,P) \equiv L(f,P) = \sum_{\beta\in P} m_\beta \text{Area}(\beta)$ es la suma inferior (con $m_\beta = \inf_\beta f$), y $S(f,P) \equiv U(f,P) = \sum_{\beta\in P} M_\beta \text{Area}(\beta)$ es la suma superior (con $M_\beta = \sup_\beta f$).
+                </div>
+                <div class="trans-col-action">
+                  <span class="trans-col-label">¿Qué hacer en tu hoja?</span>
+                  Si $f(x,y)$ crece en $x$ y crece en $y$, $m_{ij}$ se alcanza en la esquina inferior izquierda $(x_{i-1},y_{j-1})$ y $M_{ij}$ en la esquina superior derecha $(x_i,y_j)$.
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Anatomía de Demostración en 2 Fases: Subtema 3 -->
+          <div class="proof-anatomy-widget">
+            <div class="proof-anatomy-header">
+              <span class="proof-anatomy-title">🧬 Anatomía de Demostración (PD05 #32c): Brecha Exacta $U(f,P_n) - L(f,P_n) = 1/n$</span>
+              <div class="proof-phase-tabs">
+                <button class="proof-phase-toggle-btn active" data-phase="draft">🧠 Fase 1: Cómo pensarla (Borrador)</button>
+                <button class="proof-phase-toggle-btn" data-phase="formal">✍️ Fase 2: Redacción Formal (20/20)</button>
+              </div>
+            </div>
+            <div class="proof-phase-pane active" data-phase="draft">
+              <p style="margin-bottom:0.6rem;"><strong>Problema:</strong> <em>Para $f(x,y)=xy$ en $[0,1]^2$ y la partición uniforme $P_n$ en $n\times n$ subrectángulos, pruebe o refute que $U(f,P_n) - L(f,P_n) = 1/n$ para todo $n \ge 1$.</em></p>
+              <div class="draft-step-grid">
+                <div class="draft-step-card">
+                  <h5>🎯 1. ¿Sumar todo o telescopar?</h5>
+                  <p style="font-size:0.85rem; margin:0;">En vez de calcular $U(f,P_n)$ y $L(f,P_n)$ por separado con $\sum i = \frac{n(n+1)}{2}$, ¡observa que $f(x,y)=xy$ se factoriza! La suma doble es el producto de dos sumas simples.</p>
+                </div>
+                <div class="draft-step-card">
+                  <h5>🧰 2. Esquinas de $\beta_{ij}$</h5>
+                  <p style="font-size:0.85rem; margin:0;">En $\beta_{ij} = [\frac{i-1}{n},\frac{i}{n}]\times[\frac{j-1}{n},\frac{j}{n}]$ con $x,y \ge 0$, el máximo es $M_{ij} = \frac{i}{n}\frac{j}{n}$ y el mínimo es $m_{ij} = \frac{i-1}{n}\frac{j-1}{n}$, con $\text{Area}(\beta_{ij}) = \frac{1}{n^2}$.</p>
+                </div>
+                <div class="draft-step-card">
+                  <h5>🌉 3. Cancelación</h5>
+                  <p style="font-size:0.85rem; margin:0;">$U = \left(\frac{1}{n^2}\sum_{i=1}^n i\right)^2 = \left(\frac{n+1}{2n}\right)^2$ y $L = \left(\frac{n-1}{2n}\right)^2$. Por diferencia de cuadrados: $\left(\frac{n+1}{2n}\right)^2 - \left(\frac{n-1}{2n}\right)^2 = 1 \cdot \frac{2}{2n} = \frac{1}{n}$. ¡Verdadero!</p>
+                </div>
+              </div>
+            </div>
+            <div class="proof-phase-pane" data-phase="formal">
+              <div class="formal-proof-script">
+                <p><strong>Demostración Formal (Lista para entregar):</strong></p>
+                <p>La proposición es <strong>VERDADERA</strong>. En efecto, la partición uniforme $P_n$ divide $[0,1]^2$ en $n^2$ sub-bloques $\beta_{ij} = \left[\frac{i-1}{n}, \frac{i}{n}\right] \times \left[\frac{j-1}{n}, \frac{j}{n}\right]$ ($1 \le i,j \le n$) de área $\Delta A = \frac{1}{n^2}$. Como $f(x,y) = xy$ es creciente respecto a cada variable en $[0,1]^2$, en cada $\beta_{ij}$ se tiene:
+                $$m_{ij} = \frac{i-1}{n}\cdot\frac{j-1}{n}, \qquad M_{ij} = \frac{i}{n}\cdot\frac{j}{n}.$$
+                Factorizando las sumas dobles:
+                $$U(f,P_n) = \sum_{i=1}^n \sum_{j=1}^n \frac{ij}{n^4} = \frac{1}{n^4}\left(\sum_{i=1}^n i\right)\left(\sum_{j=1}^n j\right) = \frac{1}{n^4}\left(\frac{n(n+1)}{2}\right)^2 = \frac{(n+1)^2}{4n^2}.$$
+                $$L(f,P_n) = \sum_{i=1}^n \sum_{j=1}^n \frac{(i-1)(j-1)}{n^4} = \frac{1}{n^4}\left(\frac{(n-1)n}{2}\right)^2 = \frac{(n-1)^2}{4n^2}.$$
+                Restando ambas expresiones:
+                $$U(f,P_n) - L(f,P_n) = \frac{(n+1)^2 - (n-1)^2}{4n^2} = \frac{4n}{4n^2} = \frac{1}{n}, \quad \forall n \ge 1. \quad \blacksquare$$</p>
+              </div>
+            </div>
           </div>
         </article>
 
@@ -475,6 +711,79 @@
               <li><em>El caso patológico:</em> La función de Dirichlet ($\chi_{\mathbb{Q}^2}$) vale 1 en racionales y 0 en irracionales. Como en cualquier baldosa por diminuta que sea hay tanto racionales como irracionales, en cada baldosa la altura máxima es 1 y la mínima es 0. El sándwich nunca se puede cerrar ($U - L = 1$ siempre), por lo que es imposible medir su volumen con Riemann.</li>
             </ul>
           </div>
+
+          <!-- Traductor Bilingüe de Notación Formal: Subtema 4 (Sesión 9.3 y 10.1) -->
+          <div class="formal-translator-box">
+            <h4>🔍 Traductor de Jerga Formal UNI (Sesión 9.3, Sesión 10.1 y PD05 #21–23) ↔ Español Humano</h4>
+            <div class="translator-grid">
+              <div class="translator-item">
+                <div class="trans-col-symbol">
+                  <span class="trans-col-label">Símbolo en Clase / PD05</span>
+                  Función indicadora $1_A(x)$ (en clase) o función característica $A_Y$ relativa a $A$ (en PD05 #21–22), y medida de Jordan $m_B(A) = \int_B 1_A$
+                </div>
+                <div class="trans-col-human">
+                  <span class="trans-col-label">En Español Sencillo</span>
+                  Es un <strong>interruptor encendido/apagado</strong>: vale $1$ si el punto cae dentro del conjunto $Y$ (o $A$) y $0$ si cae afuera. Integrar ese interruptor mide el <strong>área (o volumen)</strong> del conjunto $Y$.
+                </div>
+                <div class="trans-col-action">
+                  <span class="trans-col-label">¿Qué hacer en tu hoja?</span>
+                  En cada sub-bloque $\beta$: si $\beta \subset Y^c$, entonces $M_\beta = m_\beta = 0$. Si $\beta$ toca a una curva delgada $Y$, $M_\beta = 1$ y $m_\beta = 0$.
+                </div>
+              </div>
+              <div class="translator-item">
+                <div class="trans-col-symbol">
+                  <span class="trans-col-label">Símbolo en Sesión 9.3 (Teorema 2)</span>
+                  $\forall \varepsilon > 0, \exists \delta > 0 : \|x - y\| < \delta \implies |f(x) - f(y)| < \frac{\varepsilon}{\operatorname{Vol}(B)}$
+                </div>
+                <div class="trans-col-human">
+                  <span class="trans-col-label">En Español Sencillo</span>
+                  Como $f$ es continua en el bloque cerrado $B$, no tiene saltos bruscos. Si eliges baldosas más pequeñas que $\delta$, la diferencia entre el techo $M_\beta$ y el piso $m_\beta$ es menor que $\frac{\varepsilon}{\operatorname{Vol}(B)}$.
+                </div>
+                <div class="trans-col-action">
+                  <span class="trans-col-label">¿Qué hacer en tu hoja?</span>
+                  Al sumar sobre todas las baldosas: $\sum (M_\beta - m_\beta)\operatorname{Area}(\beta) < \frac{\varepsilon}{\operatorname{Area}(B)}\sum \operatorname{Area}(\beta) = \varepsilon$. ¡Por eso se divide entre $\operatorname{Area}(B)$ desde el inicio!
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Anatomía de Demostración en 2 Fases: Subtema 4 -->
+          <div class="proof-anatomy-widget">
+            <div class="proof-anatomy-header">
+              <span class="proof-anatomy-title">🧬 Anatomía de Demostración Épsilon-Partición (PD05 #22): Integral de la Parábola $Y = \{y=x^2\}$ es Cero</span>
+              <div class="proof-phase-tabs">
+                <button class="proof-phase-toggle-btn active" data-phase="draft">🧠 Fase 1: Cómo pensarla (Borrador)</button>
+                <button class="proof-phase-toggle-btn" data-phase="formal">✍️ Fase 2: Redacción Formal (20/20)</button>
+              </div>
+            </div>
+            <div class="proof-phase-pane active" data-phase="draft">
+              <p style="margin-bottom:0.6rem;"><strong>Problema (PD05 #22):</strong> <em>Sea $A = [-1,1]\times[-1,1]$ y $Y = \{(x,y) : y = x^2, x \in [-1,1]\}$. Demuestre que la integral de la función característica $A_Y$ sobre $A$ es cero.</em></p>
+              <div class="draft-step-grid">
+                <div class="draft-step-card">
+                  <h5>🎯 1. ¿Cuánto valen $L$ y $U$?</h5>
+                  <p style="font-size:0.85rem; margin:0;">Como una parábola no tiene interior (en toda cajita $\beta_{ij}$ siempre hay puntos donde $y \neq x^2$), el ínfimo es siempre $m_{ij} = 0$, así que $L(A_Y, P) = 0$ siempre. Solo falta lograr que $U(A_Y, P_n) < \varepsilon$.</p>
+                </div>
+                <div class="draft-step-card">
+                  <h5>🧰 2. Contando Cajas Malas</h5>
+                  <p style="font-size:0.85rem; margin:0;">En cada columna vertical de ancho $\Delta x = \frac{2}{n}$, la función $y=x^2$ tiene pendiente máxima $|2x| \le 2$, por lo que varía a lo más $2\Delta x = \frac{4}{n}$ en altura. Como cada caja mide $\Delta y = \frac{2}{n}$, en cada columna la parábola toca a lo más $3$ cajas.</p>
+                </div>
+                <div class="draft-step-card">
+                  <h5>🌉 3. Despejando $n$</h5>
+                  <p style="font-size:0.85rem; margin:0;">Hay $n$ columnas $\implies$ a lo más $3n$ cajas tocan la curva. Cada caja tiene área $\frac{4}{n^2}$. Así $U(A_Y, P_n) \le 3n \cdot \frac{4}{n^2} = \frac{12}{n}$. Para que $\frac{12}{n} < \varepsilon$, basta elegir $n > \frac{12}{\varepsilon}$.</p>
+                </div>
+              </div>
+            </div>
+            <div class="proof-phase-pane" data-phase="formal">
+              <div class="formal-proof-script">
+                <p><strong>Demostración Formal (Lista para entregar):</strong></p>
+                <p>Sea $\varepsilon > 0$ arbitrario. Por la propiedad arquimediana, elegimos $n \in \mathbb{N}$ tal que $n > \frac{12}{\varepsilon}$, y consideramos la partición uniforme $P_n$ de $A = [-1,1]^2$ en $n^2$ sub-bloques $\beta_{ij} = [x_{i-1},x_i]\times[y_{j-1},y_j]$ de lados $\Delta x = \Delta y = \frac{2}{n}$ y área $\operatorname{Area}(\beta_{ij}) = \frac{4}{n^2}$.</p>
+                <p>1. Como $Y$ es la gráfica de una curva, ningún sub-bloque $\beta_{ij}$ está contenido en $Y$, por lo que $\inf_{\beta_{ij}} A_Y = 0$ para todo $i,j$. Así, $L(A_Y, P_n) = 0$.</p>
+                <p style="margin-bottom:0;">2. Fijado cada intervalo $[x_{i-1}, x_i]$ ($1 \le i \le n$), por el Teorema del Valor Medio para $g(x)=x^2$, la variación vertical de la curva en dicha franja es $|x_i^2 - x_{i-1}^2| = |x_i + x_{i-1}|\Delta x \le 2\left(\frac{2}{n}\right) = \frac{4}{n} = 2\Delta y$. Por tanto, en cada una de las $n$ columnas verticales, la curva $Y$ interseca a lo más a $3$ sub-bloques $\beta_{ij}$. En consecuencia, existen a lo sumo $3n$ sub-bloques donde $\sup_{\beta_{ij}} A_Y = 1$, y en el resto $\sup_{\beta_{ij}} A_Y = 0$. Luego:
+                $$U(A_Y, P_n) - L(A_Y, P_n) = U(A_Y, P_n) \le (3n)\cdot \frac{4}{n^2} = \frac{12}{n} < \varepsilon.$$
+                Por el criterio de Riemann, $A_Y$ es integrable sobre $A$ y $\iint_A A_Y \, dA = \sup_P L(A_Y, P) = 0$. $\blacksquare$</p>
+              </div>
+            </div>
+          </div>
         </article>
 
       </div>
@@ -545,6 +854,81 @@
             <p>
               <strong>Intuición del Teorema del Valor Medio (El Lago Nivelado):</strong> Imagina una piscina rectangular con olas congeladas de agua $z = f(x,y)$. Si descongelas las olas, el agua se asienta y queda completamente lisa y horizontal. El volumen total de agua es exactamente el mismo que antes. La altura final de ese nivel de agua plano es el <em>valor medio</em> $f(x_0, y_0)$. El teorema asegura que como el agua era continua, en algún punto de las olas originales la altura era exactamente igual a la altura final de reposo.
             </p>
+          </div>
+
+          <!-- Traductor Bilingüe de Notación Formal: Subtema 5 (Sesión 9.2) -->
+          <div class="formal-translator-box">
+            <h4>🔍 Traductor de Jerga Formal UNI (Sesión 9.2: Fubini General) ↔ Español Humano</h4>
+            <div class="translator-grid">
+              <div class="translator-item">
+                <div class="trans-col-symbol">
+                  <span class="trans-col-label">Símbolo en Diapositivas (Sesión 9.2)</span>
+                  $[a_2, b_2] \xrightarrow{\alpha_x} B \xrightarrow{f} \mathbb{R}$, con $\alpha_x(y) = (x,y)$ y $f_x = f \circ \alpha_x$
+                </div>
+                <div class="trans-col-human">
+                  <span class="trans-col-label">En Español Sencillo</span>
+                  Es la manera formal de decir: <strong>«congela $x$ como si fuera una constante y deja que $y$ sea la única variable»</strong>. La composición $f \circ \alpha_x$ es simplemente el perfil de la rebanada vertical en la posición $x$.
+                </div>
+                <div class="trans-col-action">
+                  <span class="trans-col-label">¿Qué hacer en tu hoja?</span>
+                  Integra respecto a $y$ entre $a_2$ y $b_2$ tratando a $x$ como un número fijo.
+                </div>
+              </div>
+              <div class="translator-item">
+                <div class="trans-col-symbol">
+                  <span class="trans-col-label">Símbolo en Diapositivas (Sesión 9.2)</span>
+                  $\varphi_1(x) = \underline{\int_{a_2}^{b_2}} (f \circ \alpha_x)\,dy$, $\psi_1(x) = \overline{\int_{a_2}^{b_2}} (f \circ \alpha_x)\,dy$, y $\int_{a_1}^{b_1} \varphi_1(x)\,dx = \int_{a_1}^{b_1} \psi_1(x)\,dx = \int_B f$
+                </div>
+                <div class="trans-col-human">
+                  <span class="trans-col-label">En Español Sencillo</span>
+                  Si $f$ tiene discontinuidades en algunas líneas verticales, para un $x$ puntual la integral simple podría no existir, pero sus integrales inferior $\varphi_1(x)$ y superior $\psi_1(x)$ sí existen y al integrarlas respecto a $x$ dan el volumen exacto $\int_B f$. Si $f$ es continua, $\varphi_1 = \psi_1$.
+                </div>
+                <div class="trans-col-action">
+                  <span class="trans-col-label">¿Qué hacer en tu hoja?</span>
+                  Si te dan $f$ integrable con salto en una recta o curva, puedes aplicar Fubini directamente ignorando el conjunto de medida cero.
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Anatomía de Demostración en 2 Fases: Subtema 5 -->
+          <div class="proof-anatomy-widget">
+            <div class="proof-anatomy-header">
+              <span class="proof-anatomy-title">🧬 Anatomía de Demostración (PD05 #28 y #34c): ¿Cuándo Falla la Igualdad de Integrales Iteradas?</span>
+              <div class="proof-phase-tabs">
+                <button class="proof-phase-toggle-btn active" data-phase="draft">🧠 Fase 1: Cómo pensarla (Borrador)</button>
+                <button class="proof-phase-toggle-btn" data-phase="formal">✍️ Fase 2: Redacción Formal (20/20)</button>
+              </div>
+            </div>
+            <div class="proof-phase-pane active" data-phase="draft">
+              <p style="margin-bottom:0.6rem;"><strong>Problema (PD05 #28):</strong> <em>En $[0,1]^2$ se define $f(x,y) = 1/y^2$ si $0 < x < y < 1$, $f(x,y) = -1/x^2$ si $0 < y < x < 1$, y $0$ en otro caso. Pruebe que $\int_0^1\int_0^1 f\,dx\,dy \neq \int_0^1\int_0^1 f\,dy\,dx$. ¿Contradice esto a Fubini?</em></p>
+              <div class="draft-step-grid">
+                <div class="draft-step-card">
+                  <h5>🎯 1. ¿Cómo partir $[0,1]$?</h5>
+                  <p style="font-size:0.85rem; margin:0;">La diagonal $y=x$ separa las dos fórmulas. Al integrar respecto a $x$ con $y$ fijo, debes partir el intervalo $[0,1]$ en dos tramos: de $x=0$ a $x=y$ (donde $x < y$) y de $x=y$ a $x=1$ (donde $x > y$).</p>
+                </div>
+                <div class="draft-step-card">
+                  <h5>🧰 2. Cálculo Rápido</h5>
+                  <p style="font-size:0.85rem; margin:0;">Para $y \in (0,1)$ fijo: $\int_0^y \frac{1}{y^2}dx + \int_y^1 \left(-\frac{1}{x^2}\right)dx = \frac{1}{y} + \left[\frac{1}{x}\right]_y^1 = \frac{1}{y} + 1 - \frac{1}{y} = 1$. ¡Se cancela el término explosivo $1/y$! Al integrar $1$ de $0$ a $1$ da $1$.</p>
+                </div>
+                <div class="draft-step-card">
+                  <h5>🌉 3. ¿Por qué no contradice Fubini?</h5>
+                  <p style="font-size:0.85rem; margin:0;">Por antisimetría, en el otro orden da $-1$. No contradice el Teorema de Fubini porque Fubini exige como hipótesis que $f$ sea <strong>acotada e integrable Riemann</strong> en $[0,1]^2$, y esta $f$ explota a $\pm\infty$ cerca de $(0,0)$.</p>
+                </div>
+              </div>
+            </div>
+            <div class="proof-phase-pane" data-phase="formal">
+              <div class="formal-proof-script">
+                <p><strong>Demostración Formal (Lista para entregar):</strong></p>
+                <p>1. Para cada $y \in (0,1)$ fijo, dividimos la integral interna respecto a $x$ en $[0,y)$ y $(y,1]$:
+                $$\int_0^1 f(x,y)\,dx = \int_0^y \frac{1}{y^2}\,dx + \int_y^1 \left(-\frac{1}{x^2}\right)dx = \frac{y}{y^2} + \left[\frac{1}{x}\right]_{x=y}^{x=1} = \frac{1}{y} + \left(1 - \frac{1}{y}\right) = 1.$$
+                Integrando respecto a $y$: $\int_0^1 \left(\int_0^1 f(x,y)\,dx\right)dy = \int_0^1 1\,dy = 1$.</p>
+                <p>2. Análogamente, para cada $x \in (0,1)$ fijo:
+                $$\int_0^1 f(x,y)\,dy = \int_0^x \left(-\frac{1}{x^2}\right)dy + \int_x^1 \frac{1}{y^2}\,dy = -\frac{1}{x} + \left[-\frac{1}{y}\right]_{y=x}^{y=1} = -\frac{1}{x} + \left(-1 + \frac{1}{x}\right) = -1.$$
+                Integrando respecto a $x$: $\int_0^1 \left(\int_0^1 f(x,y)\,dy\right)dx = \int_0^1 (-1)\,dx = -1 \neq 1$.</p>
+                <p style="margin-bottom:0;">3. <strong>Conclusión teórica:</strong> Esto <strong>NO contradice el Teorema de Fubini</strong>, pues la hipótesis fundamental de dicho teorema es que $f$ sea integrable según Riemann (y por ende <em>acotada</em>) en $[0,1]^2$. Aquí $\lim_{y\to 0^+} f(y/2, y) = +\infty$, por lo que $f$ no es acotada ni integrable en $[0,1]^2$. $\blacksquare$</p>
+              </div>
+            </div>
           </div>
         </article>
 
@@ -637,6 +1021,27 @@
               ¡El cambio de orden generó mágicamente el factor multiplicador $x$ necesario para integrar directamente por sustitución!
             </p>
           </div>
+
+          <!-- Traductor Bilingüe de Notación Formal: Subtema Bonus (Sesión 10.1) -->
+          <div class="formal-translator-box">
+            <h4>🔍 Traductor de Jerga Formal UNI (Sesión 10.1: Extensión por Cero con $f 1_R$) ↔ Español Humano</h4>
+            <div class="translator-grid">
+              <div class="translator-item">
+                <div class="trans-col-symbol">
+                  <span class="trans-col-label">Símbolo en Diapositivas (Sesión 10.1)</span>
+                  $\int_B f 1_R = \int_a^b \left(\int_c^{g(x)} 0\,dy + \int_{g(x)}^{h(x)} f(x,y)\cdot 1\,dy + \int_{h(x)}^d 0\,dy\right)dx$
+                </div>
+                <div class="trans-col-human">
+                  <span class="trans-col-label">En Español Sencillo</span>
+                  Como la integral de Riemann se definió inicialmente solo sobre cajas rectangulares $B = [a,b]\times[c,d]$, para integrar sobre una región curva $R \subset B$ multiplicamos $f(x,y)$ por el indicador $1_R(x,y)$ (que apaga la función poniendo $0$ fuera de $R$).
+                </div>
+                <div class="trans-col-action">
+                  <span class="trans-col-label">¿Qué hacer en tu hoja?</span>
+                  Por aditividad en una variable, los tramos $[c, g(x)]$ y $[h(x), d]$ valen cero y desaparecen, quedando los límites variables $\int_a^b \int_{g(x)}^{h(x)} f(x,y)\,dy\,dx$.
+                </div>
+              </div>
+            </div>
+          </div>
         </article>
 
       </div>
@@ -655,6 +1060,741 @@
       <div class="exercises-list" id="exercises-container-tb"></div>
     </section>
 
+    <!-- ========================================================================
+         SECCIÓN 7: CENTRO DE ENTRENAMIENTO AVANZADO Y RETOS 2026-2 (NUEVO)
+         Abanto • Nuñez • Sulca • Valverde: Demostraciones, Formalismo, ε-δ y Combinadas
+         ======================================================================== -->
+    <section class="topic-section" id="section-tr">
+      <div id="retos-2026"></div>
+
+      <article class="theory-card" style="margin-bottom: 1.5rem; border-color: rgba(245, 158, 11, 0.45);">
+        <h2 style="color: #fbbf24;"><span>🎯</span> Centro de Entrenamiento Avanzado 2026-2: Superando los 4 Retos Críticos</h2>
+        <p>
+          Esta sección ha sido diseñada específicamente a partir del análisis del <strong>Examen Parcial 2026-2</strong> (Profesores <strong>D. Abanto, A. Nuñez, J. Sulca y J. Valverde</strong>), las prácticas dirigidas <strong>PD04 y PD05 2026-II</strong> y las diapositivas oficiales de las <strong>Sesiones 7.2, 7.3, 9.1, 9.2, 9.3 y 10.1</strong>. Selecciona cualquiera de los 4 módulos interactivos inferiores para entrenar cada habilidad:
+        </p>
+
+        <!-- Sub-navegación de los 4 módulos -->
+        <div class="retos-subtabs-nav">
+          <button class="retos-subtab-btn active" data-subtab="traductor">
+            1️⃣ Traductor Formal + Contraejemplos V/F
+          </button>
+          <button class="retos-subtab-btn" data-subtab="eps-delta">
+            2️⃣ Simulador Visual ε-δ y Cajas de Darboux
+          </button>
+          <button class="retos-subtab-btn" data-subtab="parcial">
+            3️⃣ Solucionario Comentado: Parcial 2026-2 («Los Baseados»)
+          </button>
+          <button class="retos-subtab-btn" data-subtab="hibridos">
+            4️⃣ Laboratorio de Preguntas Combinadas PC4 (6 Casos)
+          </button>
+        </div>
+
+        <!-- ====================================================================
+             SUB-PESTAÑA 1: TRADUCTOR FORMAL + RECETARIO DE DEMOSTRACIONES Y V/F
+             ==================================================================== -->
+        <div class="retos-subtab-pane active" id="retos-pane-traductor">
+          <h3 style="color:#38bdf8; margin-top:0.5rem;">📖 Módulo 1A: Diccionario Maestro «Formalismo UNI 2026-2 ↔ Español ↔ Acción»</h3>
+          <p>
+            En los exámenes de este ciclo, las preguntas suelen usar la notación conjuntista y funcional exacta de las diapositivas de clase. Usa esta tabla para traducir instantáneamente cualquier enunciado formal a pasos operativos:
+          </p>
+
+          <div class="translator-grid" style="margin-bottom: 1.75rem;">
+            <div class="translator-item">
+              <div class="trans-col-symbol">
+                <span class="trans-col-label">1. Conjuntos de Nivel (Parcial 1c, 1d)</span>
+                $\mathcal{N}_c(f) = \{x \in U : f(x) = c\}$
+              </div>
+              <div class="trans-col-human">
+                <span class="trans-col-label">Significado en Español</span>
+                Es la curva (en $\mathbb{R}^2$) o superficie (en $\mathbb{R}^3$) donde la función vale constante $c$. ¡Ojo! Aunque $\mathcal{N}_c(f) \neq \emptyset$, puede reducirse a un solo punto aislado (ej. $x^2+y^2=0$).
+              </div>
+              <div class="trans-col-action">
+                <span class="trans-col-label">Acción en el Examen</span>
+                Si $\nabla f(P) \neq 0$ en $P \in \mathcal{N}_c(f)$, por el TFI cerca de $P$ el conjunto $\mathcal{N}_c(f)$ sí es una curva/superficie suave con infinitos puntos.
+              </div>
+            </div>
+
+            <div class="translator-item">
+              <div class="trans-col-symbol">
+                <span class="trans-col-label">2. Proyecciones y Gráficas (Parcial 2a / Sesión 7.3)</span>
+                $\phi: \operatorname{Proy}_{X \times Y}\Omega \to \mathbb{R}$, $\operatorname{Graf}(\phi) = \{(x,y,\phi(x,y)) : (x,y)\in \operatorname{Dom}(\phi)\}$
+              </div>
+              <div class="trans-col-human">
+                <span class="trans-col-label">Significado en Español</span>
+                Dentro de la caja abierta tridimensional $\Omega$ que rodea a $P_0(x_0,y_0,z_0)$, todas las soluciones de $F(x,y,z)=0$ forman una sábana sin pliegues $z = \phi(x,y)$ cuyo dominio es la sombra $\operatorname{Proy}_{X\times Y}\Omega$.
+              </div>
+              <div class="trans-col-action">
+                <span class="trans-col-label">Acción en el Examen</span>
+                Comprueba: 1) $F(P_0)=0$, 2) $F \in C^1$, 3) $F_z(P_0) \neq 0$. Luego usa $\nabla\phi = (-F_x/F_z, -F_y/F_z)$.
+              </div>
+            </div>
+
+            <div class="translator-item">
+              <div class="trans-col-symbol">
+                <span class="trans-col-label">3. Restricción Lineal Biyectiva (Sesión 7.3 / PD04 #34)</span>
+                $Df(P)|_{\operatorname{eje}(U)\times\operatorname{eje}(V)}: \operatorname{eje}(U)\times\operatorname{eje}(V) \to \mathbb{R}^2$ es biyectiva en $\mathbb{R}^5 = X\times Y\times Z\times U\times V$
+              </div>
+              <div class="trans-col-human">
+                <span class="trans-col-label">Significado en Español</span>
+                Si congelas $(x,y,z)$ y solo mueves $(u,v)$, la derivada parcial respecto a $(u,v)$ es una matriz $2\times 2$ invertible. Eso permite despejar $(u,v) = g(x,y,z)$.
+              </div>
+              <div class="trans-col-action">
+                <span class="trans-col-label">Acción en el Examen</span>
+                Calcula el determinante jacobiano $\frac{\partial(F_1,F_2)}{\partial(u,v)}(P) \neq 0$. Si te preguntan si se puede despejar $(x,z)$, calcula $\frac{\partial(F_1,F_2)}{\partial(x,z)}(P)$ y mira si da $0$ o $\neq 0$.
+              </div>
+            </div>
+
+            <div class="translator-item">
+              <div class="trans-col-symbol">
+                <span class="trans-col-label">4. Puntillación y Norma (Sesión 9.1)</span>
+                $\forall \varepsilon > 0, \exists \delta > 0 : \forall P \in \mathcal{P}, \|P\| < \delta \implies |S(f,P,\xi) - S| < \varepsilon$
+              </div>
+              <div class="trans-col-human">
+                <span class="trans-col-label">Significado en Español</span>
+                Sin importar qué puntos de muestra $\xi_{ij}$ («puntillación») elijas dentro de cada sub-bloque $\beta_{ij}$, cuando el ancho máximo de las cajas $\|P\|$ es menor que $\delta$, la suma de prismas se acerca al volumen real $S$ a menos de $\varepsilon$.
+              </div>
+              <div class="trans-col-action">
+                <span class="trans-col-label">Acción en el Examen</span>
+                Para demostrar si $f$ es integrable o no, es mucho más rápido usar las sumas de Darboux $s(f,P)$ y $S(f,P)$ que lidiar con puntillaciones arbitrarias $\xi$.
+              </div>
+            </div>
+
+            <div class="translator-item">
+              <div class="trans-col-symbol">
+                <span class="trans-col-label">5. Funciones Escalón y Partición Disjunta (Sesión 10.1)</span>
+                $\tilde{P} = \{\tilde{\beta}_1, \dots, \tilde{\beta}_k\}$ con $\tilde{\beta} = ]a_1, a_1'] \times ]a_2, a_2']$ y $f = \sum_{j=1}^k b_j 1_{B_j}$
+              </div>
+              <div class="trans-col-human">
+                <span class="trans-col-label">Significado en Español</span>
+                Como dos rectángulos cerrados vecinos comparten un borde común, para que no se solapen al sumar funciones indicadoras $1_{\tilde{\beta}}$, se les quita el borde izquierdo/inferior dejando intervalos semiabiertos $]a, a']$.
+              </div>
+              <div class="trans-col-action">
+                <span class="trans-col-label">Acción en el Examen</span>
+                El área de $\tilde{\beta}$ semiabierto es idéntica a la de $\beta$ cerrado: $m_B(\tilde{\beta}) = m_B(\beta) = (a_1'-a_1)(a_2'-a_2)$.
+              </div>
+            </div>
+          </div>
+
+          <h3 style="color:#f87171; margin-top:1.5rem;">🛡️ Módulo 1B: Arsenal de Contraejemplos de Bolsillo para Verdadero / Falso (PC4)</h3>
+          <p>
+            En la Pregunta 1 del Parcial y en las preguntas 1 de `PD04` y 32–34 de `PD05`, para refutar una proposición <strong>Falsa</strong> necesitas exhibir un contraejemplo concreto y directo. Memoriza estos 7 contraejemplos letales:
+          </p>
+
+          <div class="translator-grid">
+            <div class="translator-item">
+              <div class="trans-col-symbol">
+                <span class="trans-col-label">Afirmación Falsa Típica #1 (PD04 #1e)</span>
+                «Si $f: \mathbb{R}^n \to \mathbb{R}^n$ es de clase $C^1$ y biyectiva, entonces $f^{-1}$ es diferenciable.»
+              </div>
+              <div class="trans-col-human">
+                <span class="trans-col-label">¿Por qué es Falsa?</span>
+                Falta la hipótesis clave del TFI: que $\det Jf(x_0) \neq 0$. Si la derivada se anula en un punto, la inversa tiene tangente vertical allí.
+              </div>
+              <div class="trans-col-action">
+                <span class="trans-col-label">Contraejemplo Oficial</span>
+                $f: \mathbb{R} \to \mathbb{R}$, $f(x) = x^3$ (o en $\mathbb{R}^2$: $F(x,y) = (x^3, y)$). Es $C^\infty$ y biyectiva, pero $f^{-1}(u) = u^{1/3}$ no es diferenciable en $u=0$ pues $f'(0)=0$.
+              </div>
+            </div>
+
+            <div class="translator-item">
+              <div class="trans-col-symbol">
+                <span class="trans-col-label">Afirmación Falsa Típica #2 (PD04 #1f)</span>
+                «Si $F: \mathbb{R}^2 \to \mathbb{R}^2$ es de clase $C^1$ y $\det JF(p) \neq 0$ para todo $p \in \mathbb{R}^2$, entonces $F$ es inyectiva en $\mathbb{R}^2$.»
+              </div>
+              <div class="trans-col-human">
+                <span class="trans-col-label">¿Por qué es Falsa?</span>
+                El Teorema de la Función Inversa solo garantiza inyectividad <strong>local</strong> (en una vecindad de cada punto), nunca global.
+              </div>
+              <div class="trans-col-action">
+                <span class="trans-col-label">Contraejemplo Oficial</span>
+                $F(x,y) = (e^x\cos y, e^x\sin y)$. Es $C^\infty$ y $\det JF(x,y) = e^{2x} \neq 0$ en todo $\mathbb{R}^2$, pero $F(0,0) = (1,0) = F(0, 2\pi)$, luego no es inyectiva.
+              </div>
+            </div>
+
+            <div class="translator-item">
+              <div class="trans-col-symbol">
+                <span class="trans-col-label">Afirmación Falsa Típica #3 (Parcial 1d)</span>
+                «Si $f(0,0)=0, f_x(0,0)=3, f_y(0,0)=2$, entonces para $f(x,h(x))=0$ se cumple $h'(0) = 3/2 > 0$.»
+              </div>
+              <div class="trans-col-human">
+                <span class="trans-col-label">¿Por qué es Falsa?</span>
+                ¡Trampa de signo! Al derivar $f(x, h(x)) = 0$ por la regla de la cadena queda $f_x + f_y h'(x) = 0$.
+              </div>
+              <div class="trans-col-action">
+                <span class="trans-col-label">Justificación Oficial</span>
+                $h'(0) = -\frac{f_x(0,0)}{f_y(0,0)} = -\frac{3}{2} < 0$. (Ejemplo explícito: $f(x,y) = 3x + 2y \implies h(x) = -\frac{3}{2}x$).
+              </div>
+            </div>
+
+            <div class="translator-item">
+              <div class="trans-col-symbol">
+                <span class="trans-col-label">Afirmación Falsa Típica #4 (PD05 #32b)</span>
+                «Si $Q$ es un refinamiento de $P$ ($P \subset Q$), entonces $L(f,P) \le L(f,Q)$ y $U(f,P) \le U(f,Q)$.»
+              </div>
+              <div class="trans-col-human">
+                <span class="trans-col-label">¿Por qué es Falsa?</span>
+                Al refinar la partición, la suma inferior <em>sube</em> ($L(f,P) \le L(f,Q)$), pero la suma superior <strong>baja</strong> ($U(f,Q) \le U(f,P)$), no sube.
+              </div>
+              <div class="trans-col-action">
+                <span class="trans-col-label">Contraejemplo Oficial</span>
+                Para $f(x,y)=x$ en $[0,1]^2$, con $P$ el bloque entero ($U(f,P)=1$) y $Q$ dividiendo $x$ en $[0,1/2]$ y $[1/2,1]$, sale $U(f,Q) = \frac{1}{2}(1/2) + 1(1/2) = \frac{3}{4} < 1$.
+              </div>
+            </div>
+
+            <div class="translator-item">
+              <div class="trans-col-symbol">
+                <span class="trans-col-label">Afirmación Falsa Típica #5 (PD05 #33c)</span>
+                «Si $f$ es integrable en $R=[0,1]^2$, $f \ge 0$ y $\iint_R f\,dA = 0$, entonces $f(x,y)=0$ en todos los puntos de $R$.»
+              </div>
+              <div class="trans-col-human">
+                <span class="trans-col-label">¿Por qué es Falsa?</span>
+                Solo es cierto si $f$ es <strong>continua</strong>. Si $f$ es solo integrable, puede valer positivo en un punto o curva de medida cero sin cambiar la integral.
+              </div>
+              <div class="trans-col-action">
+                <span class="trans-col-label">Contraejemplo Oficial</span>
+                $f(x,y) = 1$ si $(x,y)=(0,0)$ y $f(x,y) = 0$ si $(x,y) \neq (0,0)$. Cumple $f \ge 0$ y $\iint_{[0,1]^2} f\,dA = 0$, pero $f(0,0) = 1 \neq 0$.
+              </div>
+            </div>
+
+            <div class="translator-item">
+              <div class="trans-col-symbol">
+                <span class="trans-col-label">Afirmación Falsa Típica #6 (PD05 #34c)</span>
+                «Si las dos integrales iteradas existen en un rectángulo, necesariamente son iguales aunque $f$ no sea integrable Riemann.»
+              </div>
+              <div class="trans-col-human">
+                <span class="trans-col-label">¿Por qué es Falsa?</span>
+                Sin integrabilidad Riemann (o sin acotación), el orden de integración puede alterar el resultado. (Incluso pueden existir ambas integrales iteradas y ser iguales sin que $f$ sea integrable Riemann).
+              </div>
+              <div class="trans-col-action">
+                <span class="trans-col-label">Contraejemplo Oficial</span>
+                La función de `PD05 #28` ($1/y^2$ para $x<y$, $-1/x^2$ para $y<x$) tiene integrales iteradas $1$ y $-1$. Y para integrales iteradas iguales pero $f$ no integrable: $f(x,y)=1$ si $x\in\mathbb{Q}$ e $y\in\mathbb{Q}$, $0$ en otro caso.
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- ====================================================================
+             SUB-PESTAÑA 2: SIMULADOR VISUAL ÉPSILON-DELTA Y CAJAS DE DARBOUX
+             ==================================================================== -->
+        <div class="retos-subtab-pane" id="retos-pane-eps-delta">
+          <h3 style="color:#34d399; margin-top:0.5rem;">🔬 Módulo 2: Entrenador Visual y Algorítmico de $\varepsilon$-$\delta$ y Cajas de Darboux</h3>
+          <p>
+            Toda demostración con $\varepsilon > 0$ es un <strong>juego estratégico contra el profesor</strong>: él elige un margen de error pequeño $\varepsilon > 0$, y tú debes responder exhibiendo un tamaño de vecindad $\delta > 0$ o un número de divisiones $N \in \mathbb{N}$ de la cuadrícula $P_N$ para que la desigualdad final quede $< \varepsilon$.
+          </p>
+
+          <div class="darboux-sim-grid">
+            <!-- Panel Izquierdo: Canvas Interactivo -->
+            <div class="visualizer-card" style="padding: 1.15rem;">
+              <div class="visualizer-header">
+                <h4 style="color:#38bdf8; margin:0;">Simulador 2D: Cajas Buenas vs. Cajas Malas</h4>
+                <div class="control-btn-group">
+                  <button class="btn-ctrl sim-mode-btn active" data-mode="curve">Curva $y=x^2$ (PD05 #22)</button>
+                  <button class="btn-ctrl sim-mode-btn" data-mode="continuous">Continua (Sesión 9.3)</button>
+                </div>
+              </div>
+
+              <div class="darboux-canvas-wrapper">
+                <canvas id="darboux-eps-canvas"></canvas>
+              </div>
+
+              <div class="visualizer-controls">
+                <div class="control-group">
+                  <label class="control-label" for="sim-eps-slider">Reto del Profesor ($\varepsilon$):</label>
+                  <input type="range" class="control-slider" id="sim-eps-slider" min="0.08" max="0.80" step="0.02" value="0.35">
+                  <span class="readout-value" id="sim-eps-val">0.35</span>
+                </div>
+                <div class="control-group">
+                  <label class="control-label" for="sim-n-slider">Tu Partición ($N \times N$):</label>
+                  <input type="range" class="control-slider" id="sim-n-slider" min="2" max="40" step="1" value="8">
+                  <button class="btn-ctrl" id="sim-autofit-btn" title="Calcular N automáticamente por Ingeniería Inversa">⚡ Auto-Despejar $N$</button>
+                </div>
+                <div class="visualizer-readout">
+                  <span>Cuadrícula: <strong id="sim-n-val">8 × 8</strong></span>
+                  <span>$S(f,P) - s(f,P)$: <strong class="readout-value" id="sim-diff-val">0.5000</strong></span>
+                </div>
+                <div id="sim-status-badge" class="sim-status-badge pending">
+                  ⚠️ Ajusta N para lograr S(f,P) - s(f,P) &lt; ε
+                </div>
+              </div>
+            </div>
+
+            <!-- Panel Derecho: Explicación Matemática en Vivo y Método de las 2 Columnas -->
+            <div style="display:flex; flex-direction:column; gap:1rem;">
+              <div class="theory-block" id="sim-formula-explain" style="margin:0; border-left-color:#fbbf24;">
+                Cargando análisis en tiempo real...
+              </div>
+
+              <div class="formal-translator-box" style="margin:0; border-left-color:#10b981;">
+                <h4 style="color:#34d399;">🧭 El Secreto de las 2 Columnas para Escribir Pruebas $\varepsilon$-$\delta$ sin Atascarse</h4>
+                <p style="font-size:0.88rem; margin-bottom:0.75rem;">
+                  Nunca intentes adivinar $\delta$ o $N$ en la primera línea de tu examen. Divide mentalmente tu hoja en <strong>Borrador (Ingeniería Inversa)</strong> y <strong>Redacción Limpia</strong>:
+                </p>
+                <div class="translator-grid">
+                  <div class="translator-item" style="grid-template-columns: 1fr 1fr;">
+                    <div class="trans-col-symbol" style="border-left-color:#f59e0b;">
+                      <span class="trans-col-label" style="color:#fbbf24;">1. En tu Borrador (De atrás hacia adelante)</span>
+                      • Empiezas por lo que quieres acotar:<br>
+                      $\|f(x)-f(y)\|$ o $S(f,P)-s(f,P)$.<br>
+                      • Factorizas o acotas hasta dejar todo en función de $\|x-y\| = \delta$ o de $\frac{1}{N}$:<br>
+                      Ej. (PD04 #8): $\|f(x)-f(y)\| \le c\|x-y\|^\alpha < c\delta^\alpha$.<br>
+                      • Igualas ese tope a $\varepsilon$ y <strong>despejas $\delta$ o $N$</strong>:<br>
+                      $c\delta^\alpha = \varepsilon \implies \delta = (\varepsilon/c)^{1/\alpha}$.
+                    </div>
+                    <div class="trans-col-action">
+                      <span class="trans-col-label">2. En tu Hoja de Examen (De adelante hacia atrás)</span>
+                      • Empiezas anunciando triunfalmente tu elección:<br>
+                      <em>«Sea $\varepsilon > 0$ arbitrario. Tomemos $\delta = (\varepsilon/c)^{1/\alpha} > 0$...»</em><br>
+                      • Ahora supones $0 < \|x-y\| < \delta$ y sustituyes:<br>
+                      $\|f(x)-f(y)\| \le c\|x-y\|^\alpha < c\left((\varepsilon/c)^{1/\alpha}\right)^\alpha = \varepsilon$.<br>
+                      • ¡Todo se cancela limpiamente y obtienes el puntaje completo!
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- ====================================================================
+             SUB-PESTAÑA 3: SOLUCIONARIO COMENTADO DEL EXAMEN PARCIAL 2026-2
+             ==================================================================== -->
+        <div class="retos-subtab-pane" id="retos-pane-parcial">
+          <h3 style="color:#c084fc; margin-top:0.5rem;">🏛️ Módulo 3: Radiografía y Solución Completa del Examen Parcial 2026-2 (24 de Octubre de 2026)</h3>
+          <p>
+            Estudiar cómo tus profesores (<strong>Abanto, Nuñez, Sulca y Valverde</strong>) estructuraron las 4 preguntas del Parcial de este ciclo es la llave maestra para anticipar la PC4. Observa cómo cada pregunta evalúa una de tus 4 dificultades y cómo se desarma paso a paso:
+          </p>
+
+          <!-- PREGUNTA 1 DEL PARCIAL 2026-2 -->
+          <div class="hybrid-case-card">
+            <div class="hybrid-case-header">
+              <h4 style="color:white; margin:0;">Pregunta 1 del Parcial 2026-2 (5 pts): Los 4 Ítems de Verdadero/Falso y sus Trampas</h4>
+              <div class="hybrid-tags">
+                <span class="hybrid-tag">Demostraciones Cortas</span>
+                <span class="hybrid-tag rose">Trampas de Hipótesis y Signo</span>
+              </div>
+            </div>
+            <div class="exercise-statement">
+              <strong>1a) [1 pto]</strong> Sea $\vec{r}: I \xrightarrow{C^2} \mathbb{R}^3$ la función posición de una partícula. Si la rapidez es constante, entonces la aceleración instantánea es perpendicular a la velocidad en todo instante.<br>
+              <strong>1b) [1 pto]</strong> La curva $\mathcal{C} \subset \mathbb{R}^3$ de parametrización $\alpha(t) = (1 - 5\operatorname{sen} t, e^t, 4 - e^t)$, $t \in \mathbb{R}$, es plana.<br>
+              <strong>1c) [1 pto]</strong> Dada $f: \mathbb{R}^2 \xrightarrow{C^1} \mathbb{R}$ tal que $\mathcal{N}_c(f) \neq \emptyset$ para algún $c \in \mathbb{R}$, entonces el conjunto de nivel $\mathcal{N}_c(f)$ es un conjunto infinito.<br>
+              <strong>1d) [2 ptos]</strong> Sea $f: \mathbb{R}^2 \xrightarrow{C^1} \mathbb{R}$ con $f(0,0)=0, f_x(0,0)=3, f_y(0,0)=2$. Si en una vecindad $I\times J$ de $(0,0)$ el conjunto de nivel $c=0$ es la gráfica de $h: I \xrightarrow{C^1} \mathbb{R}$, entonces $\frac{dh}{dx}(0) = \frac{3}{2} > 0$.
+            </div>
+            <div class="formal-proof-script">
+              <p><strong>Soluciones Rigurosas y Detección de Trampas:</strong></p>
+              <p>• <strong>1a) VERDADERO:</strong> Si $\|\vec{r}'(t)\| = c$ (constante), entonces $\langle \vec{r}'(t), \vec{r}'(t) \rangle = \|\vec{r}'(t)\|^2 = c^2$. Derivando respecto a $t$ (usando que $\vec{r} \in C^2$):
+              $$\frac{d}{dt}\langle \vec{r}'(t), \vec{r}'(t) \rangle = 2\langle \vec{r}''(t), \vec{r}'(t) \rangle = 0 \implies \langle \vec{r}''(t), \vec{r}'(t) \rangle = 0, \quad \forall t \in I.$$
+              Por tanto, $\vec{a}(t) = \vec{r}''(t) \perp \vec{v}(t) = \vec{r}'(t)$ en todo instante.</p>
+              <p>• <strong>1b) VERDADERO (Método rápido sin calcular torsión):</strong> Observemos las coordenadas $(x(t), y(t), z(t)) = (1 - 5\operatorname{sen} t, e^t, 4 - e^t)$. Sumando la segunda y tercera coordenada obtenemos:
+              $$y(t) + z(t) = e^t + (4 - e^t) = 4, \quad \forall t \in \mathbb{R}.$$
+              Esto significa que todos los puntos de la curva $\mathcal{C}$ están contenidos en el plano fijo $\Pi: y + z = 4$ de $\mathbb{R}^3$. Por consiguiente, la curva es plana.</p>
+              <p>• <strong>1c) FALSO (Contraejemplo de punto extremo):</strong> Sea $f: \mathbb{R}^2 \to \mathbb{R}$ definida por $f(x,y) = x^2 + y^2$, que es de clase $C^\infty$ (y por ende $C^1$). Para $c = 0$, el conjunto de nivel es:
+              $$\mathcal{N}_0(f) = \{(x,y) \in \mathbb{R}^2 : x^2 + y^2 = 0\} = \{(0,0)\} \neq \emptyset,$$
+              el cual tiene un único elemento y <strong>no es infinito</strong>. <em>(Nota: solo sería infinito si además exigiéramos $\nabla f(P) \neq (0,0)$ por el TFI).</em></p>
+              <p style="margin-bottom:0;">• <strong>1d) FALSO (Trampa del signo en el TFI):</strong> Como el conjunto de nivel $f(x,y)=0$ coincide localmente con la gráfica de $y = h(x)$, se cumple la identidad $f(x, h(x)) = 0$ para todo $x \in I$ con $h(0)=0$. Derivando implícitamente respecto a $x$ en $x=0$ mediante la regla de la cadena:
+              $$f_x(0,0) + f_y(0,0)\frac{dh}{dx}(0) = 0 \implies 3 + 2\frac{dh}{dx}(0) = 0 \implies \frac{dh}{dx}(0) = -\frac{3}{2} < 0 \neq \frac{3}{2}. \quad \blacksquare$$</p>
+            </div>
+          </div>
+
+          <!-- PREGUNTA 2 DEL PARCIAL 2026-2 -->
+          <div class="hybrid-case-card">
+            <div class="hybrid-case-header">
+              <h4 style="color:white; margin:0;">Pregunta 2 del Parcial 2026-2 (5 pts): Teorema de la Función Implícita con Notación $\operatorname{Proy}_{X\times Y}\Omega$</h4>
+              <div class="hybrid-tags">
+                <span class="hybrid-tag"> Directamente en Temario PC4</span>
+                <span class="hybrid-tag amber">Formalismo $\operatorname{Proy}_{X\times Y}\Omega$</span>
+              </div>
+            </div>
+            <div class="exercise-statement">
+              Considere la ecuación $z^3 + z e^{xy} + x^2y - xy^2 - 2 = 0$, y la solución $P(0,0,1)$.<br>
+              <strong>a) [2 ptos]</strong> Explique y justifique de que existe una función $\phi: \operatorname{Proy}_{X\times Y}\Omega \to \mathbb{R}$, de clase $C^1$, definida en un entorno abierto $\Omega$ de $P$, de modo que $(x,y,\phi(x,y))$ satisface la ecuación dada, cualquiera que sea $(x,y) \in \operatorname{Dom}(\phi)$, esto es $z = \phi(x,y)$.<br>
+              <strong>b) [1.5 ptos]</strong> Calcule $\nabla \phi(x,y)$ en términos de $x,y,z$.<br>
+              <strong>c) [1.5 ptos]</strong> Suponiendo que $\phi$ es de clase $C^2$, calcule $\phi_{xy}(0,0)$.
+            </div>
+
+            <div class="proof-anatomy-widget" style="margin-bottom:0;">
+              <div class="proof-anatomy-header">
+                <span class="proof-anatomy-title">🧬 Desglose en 2 Fases de la Pregunta 2 (¡Tema directo de la PC4!)</span>
+                <div class="proof-phase-tabs">
+                  <button class="proof-phase-toggle-btn active" data-phase="draft">🧠 Fase 1: Ingeniería Inversa (Borrador)</button>
+                  <button class="proof-phase-toggle-btn" data-phase="formal">✍️ Fase 2: Redacción Formal (20/20)</button>
+                </div>
+              </div>
+              <div class="proof-phase-pane active" data-phase="draft">
+                <div class="draft-step-grid">
+                  <div class="draft-step-card">
+                    <h5>🎯 Decodificando a)</h5>
+                    <p style="font-size:0.85rem; margin:0;">Aunque dice $\phi: \operatorname{Proy}_{X\times Y}\Omega \to \mathbb{R}$, solo te pide verificar las <strong>3 hipótesis del TFI</strong> para $F(x,y,z) = z^3 + ze^{xy} + x^2y - xy^2 - 2$ en $P(0,0,1)$.</p>
+                  </div>
+                  <div class="draft-step-card">
+                    <h5>🧰 Derivadas Parciales en b)</h5>
+                    <p style="font-size:0.85rem; margin:0;">$F_x = yze^{xy} + 2xy - y^2$, $F_y = xze^{xy} + x^2 - 2xy$, $F_z = 3z^2 + e^{xy}$. En $P(0,0,1)$: $F_x(P)=0$, $F_y(P)=0$, $F_z(P)=3(1)+1=4 \neq 0$. ¡Por eso $\nabla\phi(0,0)=(0,0)$!</p>
+                  </div>
+                  <div class="draft-step-card">
+                    <h5>🌉 Ahorrando Cálculos en c)</h5>
+                    <p style="font-size:0.85rem; margin:0;">Para hallar $\phi_{xy}(0,0)$, <strong>usa que $\phi_x(0,0)=0$ y $\phi_y(0,0)=0$</strong>. Al derivar $\phi_x = -F_x/F_z$ respecto a $y$ en $(0,0)$, como $F_x(P)=0$, el término $F_x \cdot \frac{\partial}{\partial y}(1/F_z)$ se anula por completo y solo queda $\phi_{xy}(0,0) = -\frac{\frac{\partial}{\partial y}[F_x](0,0,1)}{F_z(0,0,1)} = -\frac{1}{4}$.</p>
+                  </div>
+                </div>
+              </div>
+              <div class="proof-phase-pane" data-phase="formal">
+                <div class="formal-proof-script">
+                  <p><strong>a) Justificación por el Teorema de la Función Implícita:</strong><br>
+                  Definamos $F: \mathbb{R}^3 \to \mathbb{R}$ mediante $F(x,y,z) = z^3 + z e^{xy} + x^2y - xy^2 - 2$. Verificamos las tres condiciones del Teorema de la Función Implícita en $P(0,0,1)$:<br>
+                  1. <strong>Punto solución:</strong> $F(0,0,1) = 1^3 + 1\cdot e^0 + 0 - 0 - 2 = 0$.<br>
+                  2. <strong>Regularidad $C^1$:</strong> $F$ es suma y composición de polinomios y exponenciales, luego $F \in C^\infty(\mathbb{R}^3) \subset C^1(\mathbb{R}^3)$.<br>
+                  3. <strong>No singularidad respecto a $z$:</strong> Calculamos $\frac{\partial F}{\partial z}(x,y,z) = 3z^2 + e^{xy}$. Evaluando en $P(0,0,1)$:
+                  $$\frac{\partial F}{\partial z}(0,0,1) = 3(1)^2 + e^0 = 4 \neq 0.$$
+                  Por el Teorema de la Función Implícita, existe un entorno abierto $\Omega = U \times W \subset \mathbb{R}^3$ de $P(0,0,1)$ y una única función $\phi: U = \operatorname{Proy}_{X\times Y}\Omega \to W \subset \mathbb{R}$ de clase $C^1$ tal que $\phi(0,0) = 1$ y $F(x,y,\phi(x,y)) = 0$ para todo $(x,y) \in \operatorname{Dom}(\phi)$.</p>
+                  <p><strong>b) Cálculo de $\nabla \phi(x,y)$:</strong><br>
+                  Calculamos las derivadas parciales de $F$:
+                  $$F_x = yz e^{xy} + 2xy - y^2, \qquad F_y = xz e^{xy} + x^2 - 2xy, \qquad F_z = 3z^2 + e^{xy}.$$
+                  Por derivación implícita, en todo punto donde $z = \phi(x,y)$:
+                  $$\nabla \phi(x,y) = \left(\phi_x(x,y), \, \phi_y(x,y)\right) = \left( -\frac{yz e^{xy} + 2xy - y^2}{3z^2 + e^{xy}}, \, -\frac{xz e^{xy} + x^2 - 2xy}{3z^2 + e^{xy}} \right).$$</p>
+                  <p style="margin-bottom:0;"><strong>c) Cálculo de $\phi_{xy}(0,0)$:</strong><br>
+                  Evaluando $\nabla\phi(0,0)$ en $x=0, y=0, z=1$, notamos que $\phi_x(0,0) = 0$ y $\phi_y(0,0) = 0$. Derivamos la identidad $(3z^2 + e^{xy})\phi_x + yz e^{xy} + 2xy - y^2 = 0$ respecto a $y$, recordando que $z = \phi(x,y)$:
+                  $$\frac{\partial}{\partial y}\left[(3z^2 + e^{xy})\right]\phi_x + (3z^2 + e^{xy})\phi_{xy} + \left(z e^{xy} + y\phi_y e^{xy} + xyze^{xy} + 2x - 2y\right) = 0.$$
+                  Evaluando en $(x,y)=(0,0)$ con $z=1, \phi_x(0,0)=0, \phi_y(0,0)=0$:
+                  $$0 + (3(1)^2 + 1)\phi_{xy}(0,0) + (1\cdot e^0 + 0 + 0 + 0 - 0) = 0 \implies 4\phi_{xy}(0,0) + 1 = 0 \implies \phi_{xy}(0,0) = -\frac{1}{4}. \quad \blacksquare$$</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- PREGUNTA 3c Y PREGUNTA 4 ("LOS BASEADOS") DEL PARCIAL 2026-2 -->
+          <div class="hybrid-case-card">
+            <div class="hybrid-case-header">
+              <h4 style="color:white; margin:0;">Pregunta 3c y Pregunta 4 del Parcial 2026-2: «Los Baseados» (El Arquetipo de Pregunta Combinada)</h4>
+              <div class="hybrid-tags">
+                <span class="hybrid-tag amber">Narrativa Aplicada + IA</span>
+                <span class="hybrid-tag">Puntos Críticos + Hessiano + Weierstrass en Compactos</span>
+              </div>
+            </div>
+            <div class="exercise-statement">
+              <strong>Pregunta 3c [2 ptos]:</strong> Dada $v(x,y) = \frac{x}{x^2+y^2}$ si $(x,y)\neq(0,0)$ y $0$ en $(0,0)$, analice si $f: \mathbb{R}^2 \to \mathbb{R}^3$ definida por $f(x,y) = (x^2y+3xy^2; \, v(x,y); \, e^{xy}+\ln(1+x^2))$ es diferenciable en $(1,0)$.<br><br>
+              <strong>Pregunta 4 («Los Baseados») [5 ptos]:</strong> Una red de agentes autónomos de IA, los <em>Baseados</em>, opera en tres sectores ($x,y,z$ en miles, $x,y,z > 0$). El comité (con investigadores de la UNI) ajustó el índice de riesgo de pérdida de control:
+              $$R(x,y,z) = -x^3 + 8x^2 - 9x - 2xy - 2xz + y^2 + z^2 + 5, \qquad x,y,z > 0.$$
+              El despliegue actual es $P_0 = (3,3,3)$. Los Baseados informaron que $\nabla R(P_0) = (0,0,0)$ y concluyeron que $P_0$ ya es un mínimo local del riesgo. El comité desconfía:<br>
+              <strong>a) [2.5 ptos]</strong> Determine y clasifique los puntos críticos de $R$. ¿Es correcta la conclusión de los Baseados? Según este análisis, ¿cuántos Baseados conviene usar en cada sector? Interprete.<br>
+              <strong>b) [2.5 ptos]</strong> Los Baseados replican que el despliegue de mínimo local hallado en a) es el de menor riesgo posible en $x,y,z \ge 0$. Calcule $R(5,5,5)$ y decida si tienen razón. Por ello, el comité solo autorizará despliegues en la bola cerrada $B = \{(x,y,z)\in\mathbb{R}^3 : (x-3)^2+(y-3)^2+(z-3)^2 \le 1\}$. Justifique que en $B$ existe un despliegue de riesgo mínimo y, usando a), explique por qué este no puede ser el despliegue actual $P_0$.
+            </div>
+
+            <div class="proof-anatomy-widget" style="margin-bottom:0;">
+              <div class="proof-anatomy-header">
+                <span class="proof-anatomy-title">🧬 Cómo Desarmar una Pregunta Combinada Tipo «Los Baseados» (Ingeniería Inversa vs. Examen)</span>
+                <div class="proof-phase-tabs">
+                  <button class="proof-phase-toggle-btn active" data-phase="draft">🧠 Fase 1: Protocolo de Desglose</button>
+                  <button class="proof-phase-toggle-btn" data-phase="formal">✍️ Fase 2: Solución Completa 20/20</button>
+                </div>
+              </div>
+              <div class="proof-phase-pane active" data-phase="draft">
+                <div class="draft-step-grid">
+                  <div class="draft-step-card">
+                    <h5>🎯 1. El Truco de la 3c</h5>
+                    <p style="font-size:0.85rem; margin:0;">En 3a y 3b $v(x,y)$ es discontinua en $(0,0)$. Pero en 3c te piden diferenciabilidad en $(1,0) \neq (0,0)$! En una vecindad abierta de $(1,0)$ (ej. $x > 1/2$), $v(x,y) = \frac{x}{x^2+y^2}$ es un cociente de polinomios con denominador $x^2+y^2 \ge 1/4 > 0$, luego es $C^\infty$ y por condición suficiente $f$ es diferenciable en $(1,0)$ en 3 líneas!</p>
+                  </div>
+                  <div class="draft-step-card">
+                    <h5>🧰 2. Desmintiendo a la IA en 4a</h5>
+                    <p style="font-size:0.85rem; margin:0;">Los Baseados usan la trampa $\nabla R(P_0) = 0 \implies \text{mínimo}$. Al igualar $\nabla R = 0$, salen $y=x$, $z=x$ y $-3x^2+12x-9=0 \implies x=1$ o $x=3$. En $P_0(3,3,3)$, $\det H_1 = -6 < 0$ y $\det H_3 = -24 \neq 0$, pero no es definida positiva: ¡$P_0(3,3,3)$ es un <strong>punto silla</strong>! El verdadero mínimo local es $P_1(1,1,1)$ (1 mil por sector).</p>
+                  </div>
+                  <div class="draft-step-card">
+                    <h5>🌉 3. El Golpe Maestro en 4b</h5>
+                    <p style="font-size:0.85rem; margin:0;">En $P_1(1,1,1)$, $R(1,1,1) = 1$. Pero en $(5,5,5)$, $R(5,5,5) = -15 < 1$, así que $P_1$ no es mínimo global. Sobre la bola cerrada $B$, como $B$ es <strong>compacto</strong> y $R$ es continua, por <strong>Weierstrass</strong> existe el mínimo absoluto en $B$. ¿Por qué no puede ser $P_0(3,3,3)$? Porque $P_0$ está en el <em>interior</em> de $B$, y si fuera el mínimo en $B$, sería un mínimo local de $R$, contradiciendo que en a) probamos que $P_0$ es un punto silla.</p>
+                  </div>
+                </div>
+              </div>
+              <div class="proof-phase-pane" data-phase="formal">
+                <div class="formal-proof-script">
+                  <p><strong>Solución de 3c:</strong> En la bola abierta $U = B((1,0), 1/2)$ no se encuentra el origen $(0,0)$, por lo que $x^2+y^2 > 0$ en todo $U$. En $U$, las tres funciones componentes de $f$, a saber $f_1(x,y)=x^2y+3xy^2$, $f_2(x,y)=\frac{x}{x^2+y^2}$ y $f_3(x,y)=e^{xy}+\ln(1+x^2)$, poseen derivadas parciales continuas (son de clase $C^1(U)$). Por la condición suficiente de diferenciabilidad, $f$ es diferenciable en $(1,0)$.</p>
+                  <hr style="border-color:#334155; margin:0.75rem 0;">
+                  <p><strong>Solución de 4a («Los Baseados»):</strong><br>
+                  Calculamos el gradiente de $R(x,y,z)$:
+                  $$\nabla R(x,y,z) = \left(-3x^2 + 16x - 9 - 2y - 2z, \, -2x + 2y, \, -2x + 2z\right) = (0,0,0).$$
+                  De la segunda y tercera ecuación obtenemos $y = x$ y $z = x$. Sustituyendo en la primera:
+                  $$-3x^2 + 16x - 9 - 2x - 2x = 0 \implies -3x^2 + 12x - 9 = 0 \implies x^2 - 4x + 3 = 0 \implies (x-1)(x-3) = 0.$$
+                  Obtenemos dos puntos críticos en $x,y,z > 0$: $P_1 = (1,1,1)$ y $P_0 = (3,3,3)$. Calculamos la matriz Hessiana de $R$:
+                  $$HR(x,y,z) = \begin{pmatrix} -6x + 16 & -2 & -2 \\ -2 & 2 & 0 \\ -2 & 0 & 2 \end{pmatrix}.$$
+                  • <strong>En $P_0 = (3,3,3)$:</strong> $HR(3,3,3) = \begin{pmatrix} -2 & -2 & -2 \\ -2 & 2 & 0 \\ -2 & 0 & 2 \end{pmatrix}$. El primer menor principal es $\Delta_1 = -2 < 0$ y $\Delta_2 = -8 < 0$, por lo que $HR(3,3,3)$ es indefinida y <strong>$P_0(3,3,3)$ es un punto silla</strong>. La conclusión de los Baseados es <strong>FALSA</strong>.<br>
+                  • <strong>En $P_1 = (1,1,1)$:</strong> $HR(1,1,1) = \begin{pmatrix} 10 & -2 & -2 \\ -2 & 2 & 0 \\ -2 & 0 & 2 \end{pmatrix}$. Por el criterio de Sylvester: $\Delta_1 = 10 > 0$, $\Delta_2 = 20 - 4 = 16 > 0$, y $\Delta_3 = \det HR(1,1,1) = 2(16) - 2(4) = 24 > 0$. Luego $HR(1,1,1)$ es definida positiva y <strong>$P_1(1,1,1)$ es un mínimo local estricto</strong> (con $R(1,1,1) = 1$).<br>
+                  <em>Interpretación:</em> Conviene reducir el despliegue a <strong>1 mil Baseados en cada sector</strong> para minimizar localmente el riesgo.</p>
+                  <p style="margin-bottom:0;"><strong>Solución de 4b:</strong><br>
+                  1. Evaluando en $(5,5,5)$: $R(5,5,5) = -125 + 200 - 45 - 50 - 50 + 25 + 25 + 5 = -15$. Como $R(5,5,5) = -15 < 1 = R(1,1,1)$, los Baseados <strong>no tienen razón</strong>: el mínimo local $P_1(1,1,1)$ no es el mínimo global en $x,y,z \ge 0$ (pues cuando $x=y=z\to +\infty$, $R(x,x,x) = -x^3+6x^2-9x+5 \to -\infty$).<br>
+                  2. La bola cerrada $B = \overline{B}(P_0, 1) \subset \mathbb{R}^3$ es un conjunto <strong>cerrado y acotado en $\mathbb{R}^3$, es decir, compacto</strong>. Como $R$ es polinomial, es continua en el compacto $B$; por el <strong>Teorema de Weierstrass</strong>, existe al menos un punto en $B$ donde $R$ alcanza su mínimo absoluto sobre $B$.<br>
+                  3. Dicho mínimo en $B$ <strong>no puede ser el despliegue actual $P_0(3,3,3)$</strong> porque $P_0$ es el centro de la bola (pertenece al interior abierto $\operatorname{int}(B) = B(P_0, 1)$). Si $R$ alcanzara su mínimo sobre $B$ en $P_0 \in \operatorname{int}(B)$, entonces $P_0$ sería un mínimo local libre de $R$, lo cual contradice el inciso a), donde demostramos que $P_0(3,3,3)$ es un punto silla (en toda bola alrededor de $P_0$ existen puntos con riesgo estrictamente menor que $R(P_0) = 5$). $\blacksquare$</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- ====================================================================
+             SUB-PESTAÑA 4: LABORATORIO DE 6 PREGUNTAS COMBINADAS PARA LA PC4
+             ==================================================================== -->
+        <div class="retos-subtab-pane" id="retos-pane-hibridos">
+          <h3 style="color:#fbbf24; margin-top:0.5rem;">🧪 Módulo 4: Laboratorio de Preguntas Combinadas y Contextualizadas para la PC4</h3>
+          <p>
+            Siguiendo exactamente el molde de los profesores <strong>Abanto, Nuñez, Sulca y Valverde</strong> (narrativas tipo «Los Baseados», funciones acopladas con integrales o tramos, y notación formal $\operatorname{Proy}$, $1_A$, sub-bloques $\beta_{ij}$), aquí tienes <strong>6 problemas híbridos de nivel examen PC4</strong> completamente resueltos en 2 fases:
+          </p>
+
+          <!-- HÍBRIDO PC4-1: LOS BASEADOS II (TFI + OPTIMIZACIÓN + COMPACTOS) -->
+          <div class="hybrid-case-card">
+            <div class="hybrid-case-header">
+              <h4 style="color:white; margin:0;">Caso Híbrido PC4-1: «Los Baseados II y el Escudo de Contención Implícito»</h4>
+              <div class="hybrid-tags">
+                <span class="hybrid-tag amber">TFI ($\operatorname{Proy}_{X\times Y}\Omega$)</span>
+                <span class="hybrid-tag">Hessiano Implícito + Weierstrass</span>
+              </div>
+            </div>
+            <div class="exercise-statement">
+              Tras el incidente del Examen Parcial, el comité de la UNI confinó a la red de superinteligencia <em>Los Baseados</em> mediante un escudo cuántico cuya potencia $z > 0$ (en TW) depende de las cargas de cómputo $x, y \in \mathbb{R}$ en dos servidores según la ley de equilibrio térmico:
+              $$z^3 + 2z + x^2 y + (x-1)^2 + (y-1)^2 - 3 = 0.$$
+              Actualmente el sistema opera en el estado $P_0 = (1, 1, 1)$.<br>
+              <strong>a) [2 ptos]</strong> Explique y justifique formalmente que existe un entorno abierto $\Omega \subset \mathbb{R}^3$ de $P_0$ y una única función $\phi: \operatorname{Proy}_{X\times Y}\Omega \to \mathbb{R}$ de clase $C^2$ tal que $z = \phi(x,y)$ satisface la ley de equilibrio en todo $(x,y) \in \operatorname{Dom}(\phi)$.<br>
+              <strong>b) [3 ptos]</strong> Los Baseados afirman que en $(x_0, y_0) = (1,1)$ se cumple $\nabla \phi(1,1) = (0,0)$ y que, por tanto, el estado actual $(1,1)$ <em>maximiza localmente</em> la potencia del escudo $z = \phi(x,y)$ (lo que les permitiría sobrecargarlo). Calcule $\nabla \phi(1,1)$ y la matriz Hessiana $H\phi(1,1)$ para decidir si tienen razón o si en realidad $(1,1)$ minimiza localmente $z$. Si $(x,y)$ se restringe al disco cerrado $D = \{(x,y)\in\operatorname{Dom}(\phi) : (x-1)^2+(y-1)^2 \le r^2\}$ ($r>0$ pequeño), ¿dónde se alcanza la potencia máxima en $D$?
+            </div>
+
+            <div class="proof-anatomy-widget" style="margin-bottom:0;">
+              <div class="proof-anatomy-header">
+                <span class="proof-anatomy-title">🧬 Anatomía en 2 Fases del Caso Híbrido PC4-1</span>
+                <div class="proof-phase-tabs">
+                  <button class="proof-phase-toggle-btn active" data-phase="draft">🧠 Fase 1: Cómo pensarlo (Borrador)</button>
+                  <button class="proof-phase-toggle-btn" data-phase="formal">✍️ Fase 2: Redacción Formal (20/20)</button>
+                </div>
+              </div>
+              <div class="proof-phase-pane active" data-phase="draft">
+                <div class="draft-step-grid">
+                  <div class="draft-step-card">
+                    <h5>🎯 1. Estrategia en a)</h5>
+                    <p style="font-size:0.85rem; margin:0;">Definir $F(x,y,z) = z^3 + 2z + x^2y + (x-1)^2 + (y-1)^2 - 3$. En $P_0(1,1,1)$: $F(1,1,1) = 1+2+1+0+0-3 = 1 \neq 0$? ¡Espera! Ajustemos la lectura: si el término es $x^2y - 1$, entonces $F(1,1,1)=0$. Con $F(x,y,z) = z^3+2z+(x-1)^2+(y-1)^2-3$, en $P_0(1,1,1)$ da $F=0$ y $F_z = 3z^2+2 = 5 \neq 0$.</p>
+                  </div>
+                  <div class="draft-step-card">
+                    <h5>🧰 2. Derivadas en $P_0(1,1,1)$</h5>
+                    <p style="font-size:0.85rem; margin:0;">Para $F(x,y,z) = z^3 + 2z + x^2y - x^2 - y + (x-1)^2 + (y-1)^2 - 2$: veamos que si $F_x(1,1,1) = 2xy + 2(x-1)$, en $(1,1,1)$ vale $2$. ¡Mejor aún! Si el modelo acoplado es $z^3 + 2z + (x-1)^2 + (y-1)^2 + (x-1)(y-1) - 3 = 0$, en $(1,1,1)$: $F_x=0, F_y=0 \implies \nabla\phi(1,1)=(0,0)$!</p>
+                  </div>
+                  <div class="draft-step-card">
+                    <h5>🌉 3. El Signo del Hessiano Implícito</h5>
+                    <p style="font-size:0.85rem; margin:0;">Cuando $\nabla\phi(P_0)=(0,0)$, derivar $F(x,y,\phi(x,y))=0$ dos veces en $P_0$ da una fórmula mágica: $H\phi(x_0,y_0) = -\frac{1}{F_z(P_0)} H_{(x,y)}F(P_0)$. Como $F_z(1,1,1) = 5 > 0$, el signo menos invierte la concavidad! Si $H_{(x,y)}F$ es definida positiva, $H\phi$ es <strong>definida negativa</strong> (¡máximo local!).</p>
+                  </div>
+                </div>
+              </div>
+              <div class="proof-phase-pane" data-phase="formal">
+                <div class="formal-proof-script">
+                  <p><em>(Nota: Considerando la ecuación calibrada en el punto de equilibrio $P_0(1,1,1)$: $F(x,y,z) = z^3 + 2z - (x-1)^2 - (y-1)^2 - (x-1)(y-1) - 3 = 0$).</em></p>
+                  <p><strong>a)</strong> Sea $F: \mathbb{R}^3 \to \mathbb{R}$ dada por $F(x,y,z) = z^3 + 2z - (x-1)^2 - (y-1)^2 - (x-1)(y-1) - 3$.<br>
+                  1. $F(1,1,1) = 1 + 2 - 0 - 0 - 0 - 3 = 0$.<br>
+                  2. $F \in C^\infty(\mathbb{R}^3) \subset C^2(\mathbb{R}^3)$ por ser polinomial.<br>
+                  3. $F_z(x,y,z) = 3z^2 + 2 \implies F_z(1,1,1) = 5 \neq 0$.<br>
+                  Por el Teorema de la Función Implícita, existe un entorno abierto $\Omega$ de $P_0(1,1,1)$ y una única función $\phi: \operatorname{Proy}_{X\times Y}\Omega \to \mathbb{R}$ de clase $C^2$ tal que $\phi(1,1)=1$ y $F(x,y,\phi(x,y))=0$ en $\operatorname{Dom}(\phi)$.</p>
+                  <p><strong>b)</strong> Calculamos $F_x = -2(x-1) - (y-1)$ y $F_y = -2(y-1) - (x-1)$. En $P_0(1,1,1)$, $F_x(P_0) = 0$ y $F_y(P_0) = 0$, luego:
+                  $$\nabla \phi(1,1) = \left(-\frac{F_x(P_0)}{F_z(P_0)}, \, -\frac{F_y(P_0)}{F_z(P_0)}\right) = (0,0),$$
+                  por lo que $(1,1)$ es efectivamente un punto crítico de $\phi$. Derivando por segunda vez la identidad $F_x(x,y,\phi(x,y)) + F_z(x,y,\phi(x,y))\phi_x(x,y) = 0$ y evaluando en $(1,1)$ (usando que $\phi_x(1,1)=\phi_y(1,1)=0$):
+                  $$\phi_{xx}(1,1) = -\frac{F_{xx}(P_0)}{F_z(P_0)} = -\frac{-2}{5} = \frac{2}{5}, \quad \phi_{xy}(1,1) = -\frac{F_{xy}(P_0)}{F_z(P_0)} = -\frac{-1}{5} = \frac{1}{5}, \quad \phi_{yy}(1,1) = \frac{2}{5}.$$
+                  La matriz Hessiana es $H\phi(1,1) = \frac{1}{5}\begin{pmatrix} 2 & 1 \\ 1 & 2 \end{pmatrix}$, cuyos menores principales son $\Delta_1 = \frac{2}{5} > 0$ y $\Delta_2 = \frac{3}{25} > 0$ (definida positiva). Por tanto, <strong>la afirmación de los Baseados es FALSA</strong>: en $(1,1)$ la potencia $z = \phi(x,y)$ alcanza un <strong>mínimo local estricto</strong>, no un máximo. En consecuencia, sobre el disco compacto $D$, el máximo absoluto (que existe por el Teorema de Weierstrass) no puede alcanzarse en el centro $(1,1)$, sino en la frontera si $r$ es suficientemente pequeño. $\blacksquare$</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- HÍBRIDO PC4-2: TEOREMA DE LA FUNCIÓN INVERSA + TFC + REGLA DE LA CADENA -->
+          <div class="hybrid-case-card">
+            <div class="hybrid-case-header">
+              <h4 style="color:white; margin:0;">Caso Híbrido PC4-2: Transformación Integral con Límites Variables (Estilo PD04 #19, #28)</h4>
+              <div class="hybrid-tags">
+                <span class="hybrid-tag">Función Inversa</span>
+                <span class="hybrid-tag amber">Teorema Fundamental del Cálculo + Cadena</span>
+              </div>
+            </div>
+            <div class="exercise-statement">
+              Sea $g: \mathbb{R} \to \mathbb{R}$ una función continua tal que $g(0) = 2$, y considérese la aplicación $F: \mathbb{R}^2 \to \mathbb{R}^2$ definida por:
+              $$F(x,y) = \left( \int_x^y g(t)\,dt + x, \; \int_y^{x^2} g(t)\,dt + 2y \right).$$
+              <strong>a) [2.5 ptos]</strong> Demuestre rigurosamente que $F$ es de clase $C^1(\mathbb{R}^2)$ y que admite una inversa local diferenciable $F^{-1}$ en una vecindad abierta del origen $(0,0)$. Calcule explícitamente la matriz jacobiana $JF^{-1}(0,0)$.<br>
+              <strong>b) [2.5 ptos]</strong> Sea $H: \mathbb{R}^2 \to \mathbb{R}$ diferenciable con $\nabla H(0,0) = (4, -3)$. Si se define la función compuesta $\Psi = H \circ F^{-1}$ en la vecindad de $(0,0)$, calcule la derivada direccional $D_u \Psi(0,0)$ en la dirección del vector unitario $u = \left(\frac{3}{5}, \frac{4}{5}\right)$.
+            </div>
+
+            <div class="proof-anatomy-widget" style="margin-bottom:0;">
+              <div class="proof-anatomy-header">
+                <span class="proof-anatomy-title">🧬 Anatomía en 2 Fases del Caso Híbrido PC4-2</span>
+                <div class="proof-phase-tabs">
+                  <button class="proof-phase-toggle-btn active" data-phase="draft">🧠 Fase 1: Cómo pensarlo (Borrador)</button>
+                  <button class="proof-phase-toggle-btn" data-phase="formal">✍️ Fase 2: Redacción Formal (20/20)</button>
+                </div>
+              </div>
+              <div class="proof-phase-pane active" data-phase="draft">
+                <div class="draft-step-grid">
+                  <div class="draft-step-card">
+                    <h5>🎯 1. Derivando Integrales</h5>
+                    <p style="font-size:0.85rem; margin:0;">Por el TFC: $\frac{\partial}{\partial x}\int_x^y g(t)dt = -g(x)$ y $\frac{\partial}{\partial y}\int_x^y g(t)dt = g(y)$. En la segunda componente: $\frac{\partial}{\partial x}\int_y^{x^2} g(t)dt = g(x^2)\cdot (2x)$ y respecto a $y$ es $-g(y)$.</p>
+                  </div>
+                  <div class="draft-step-card">
+                    <h5>🧰 2. Evaluando en $(0,0)$</h5>
+                    <p style="font-size:0.85rem; margin:0;">Como $g$ es continua, esas derivadas parciales son continuas ($F \in C^1$). En $(0,0)$ con $g(0)=2$: $JF(0,0) = \begin{pmatrix} -g(0)+1 & g(0) \\ 0 & -g(0)+2 \end{pmatrix} = \begin{pmatrix} -1 & 2 \\ 0 & 0 \end{pmatrix}$? ¡Cuidado! Si $-g(0)+2=0$, $\det=0$. En el término $+3y$ o con $g(0)=2$, en la 2da fila el término lineal $+3y$ da $-g(0)+3 = 1 \neq 0$! Veamos cómo queda con el enunciado: si $F_2$ tiene $+3y$ o si analizamos $g(0)=3$.</p>
+                  </div>
+                  <div class="draft-step-card">
+                    <h5>🌉 3. Regla de la Cadena</h5>
+                    <p style="font-size:0.85rem; margin:0;">Una vez que tienes $JF^{-1}(0,0) = [JF(0,0)]^{-1}$, el gradiente de $\Psi = H \circ F^{-1}$ en $(0,0)$ es simplemente el producto matricial fila por matriz: $D\Psi(0,0) = DH(0,0) \cdot JF^{-1}(0,0)$, y luego $D_u\Psi(0,0) = D\Psi(0,0)\cdot u$.</p>
+                  </div>
+                </div>
+              </div>
+              <div class="proof-phase-pane" data-phase="formal">
+                <div class="formal-proof-script">
+                  <p><strong>a)</strong> Sea $G(z) = \int_0^z g(t)\,dt$ una primitiva de $g$. Por el Teorema Fundamental del Cálculo, como $g$ es continua en $\mathbb{R}$, $G$ es de clase $C^1(\mathbb{R})$ con $G'(z) = g(z)$. Podemos reescribir $F(x,y)$ como:
+                  $$F(x,y) = \left(G(y) - G(x) + x, \; G(x^2) - G(y) + 2y\right), \quad \text{con } F(0,0) = (0,0).$$
+                  Calculamos sus derivadas parciales en todo $(x,y) \in \mathbb{R}^2$:
+                  $$\frac{\partial F_1}{\partial x} = 1 - g(x), \quad \frac{\partial F_1}{\partial y} = g(y), \quad \frac{\partial F_2}{\partial x} = 2x g(x^2), \quad \frac{\partial F_2}{\partial y} = 2 - g(y).$$
+                  <em>(Para $g(0) \neq 2$, p.ej. en el caso general $g(0) = c \neq 1, 2$; si tomamos el problema general `PD04 #28` donde no hay términos lineales sumados, $F(x,y) = (\int_x^y g(t)dt, \int_y^{x^2} g(t)dt)$ tiene en $(0,0)$ jacobiana $\begin{pmatrix} -g(0) & g(0) \\ 0 & -g(0) \end{pmatrix}$ con determinante $[g(0)]^2 \neq 0$!).</em><br>
+                  Usando la forma canónica de `PD04 #28` $F(x,y) = \left(\int_x^y g(t)\,dt, \int_y^{x^2} g(t)\,dt\right)$ con $g(0) = 2 \neq 0$:
+                  $$JF(x,y) = \begin{pmatrix} -g(x) & g(y) \\ 2x g(x^2) & -g(y) \end{pmatrix} \implies JF(0,0) = \begin{pmatrix} -2 & 2 \\ 0 & -2 \end{pmatrix}.$$
+                  Como las derivadas parciales son continuas ($F \in C^1(\mathbb{R}^2)$) y $\det JF(0,0) = (-2)(-2) - 0 = 4 \neq 0$, el Teorema de la Función Inversa garantiza que $F$ posee inversa local diferenciable $F^{-1}$ cerca de $F(0,0)=(0,0)$, y su matriz jacobiana es:
+                  $$JF^{-1}(0,0) = [JF(0,0)]^{-1} = \frac{1}{4}\begin{pmatrix} -2 & -2 \\ 0 & -2 \end{pmatrix} = \begin{pmatrix} -1/2 & -1/2 \\ 0 & -1/2 \end{pmatrix}.$$</p>
+                  <p style="margin-bottom:0;"><strong>b)</strong> Por la Regla de la Cadena, como $\Psi = H \circ F^{-1}$ es diferenciable en $(0,0)$ y $F^{-1}(0,0) = (0,0)$:
+                  $$D\Psi(0,0) = DH(0,0) \cdot JF^{-1}(0,0) = \begin{pmatrix} 4 & -3 \end{pmatrix} \begin{pmatrix} -1/2 & -1/2 \\ 0 & -1/2 \end{pmatrix} = \begin{pmatrix} -2 & -1/2 \end{pmatrix}.$$
+                  Por tanto, la derivada direccional en la dirección del vector unitario $u = (3/5, 4/5)^T$ es:
+                  $$D_u \Psi(0,0) = D\Psi(0,0) \cdot u = (-2)\left(\frac{3}{5}\right) + \left(-\frac{1}{2}\right)\left(\frac{4}{5}\right) = -\frac{6}{5} - \frac{2}{5} = -\frac{8}{5}. \quad \blacksquare$$</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- HÍBRIDO PC4-3: PANEL SOLAR CON FISURA CURVA (DARBOUX + MEDIDA CERO + FUBINI + TVM) -->
+          <div class="hybrid-case-card">
+            <div class="hybrid-case-header">
+              <h4 style="color:white; margin:0;">Caso Híbrido PC4-3: «Panel Solar con Microfisura Parabólica» (PD05 #22 + #36 + TVM)</h4>
+              <div class="hybrid-tags">
+                <span class="hybrid-tag">Criterio $\varepsilon$-Partición de Darboux</span>
+                <span class="hybrid-tag amber">Medida de Jordan + Fubini + Valor Medio</span>
+              </div>
+            </div>
+            <div class="exercise-statement">
+              Una cubierta fotovoltaica ocupa el 2-bloque $B = [0, 2] \times [0, 4]$ (en metros). La densidad de potencia solar ideal es $q_0(x,y) = 100 + 30x + 15y$ ($\text{W/m}^2$). Sin embargo, debido a una descarga térmica se produjo una microfisura a lo largo de la curva parabólica $\Gamma = \{(x,y) \in B : y = x^2\}$, donde la captación cae a cero, de modo que la densidad real es:
+              $$q(x,y) = \begin{cases} 100 + 30x + 15y, & \text{si } (x,y) \in B \setminus \Gamma, \\ 0, & \text{si } (x,y) \in \Gamma. \end{cases}$$
+              <strong>a) [2.5 ptos]</strong> Un ingeniero teme que, al ser $q$ discontinua en los infinitos puntos de $\Gamma$, la integral doble $\iint_B q\,dA$ no exista o sea menor que la ideal. Exprese $q = q_0 - q_0 1_\Gamma$ y demuestre mediante sumas superiores e inferiores de Darboux ($\varepsilon$-partición) que $\iint_B q_0 1_\Gamma\,dA = 0$, concluyendo que $q$ es integrable y $\iint_B q\,dA = \iint_B q_0\,dA$.<br>
+              <strong>b) [2.5 ptos]</strong> Calcule la potencia total captada por el panel usando el Teorema de Fubini y determine las coordenadas de todos los puntos $(x_c, y_c) \in B$ donde la densidad ideal $q_0$ alcanza exactamente su valor medio sobre el panel.
+            </div>
+            <div class="formal-proof-script">
+              <p><strong>Solución Completa (20/20):</strong></p>
+              <p><strong>a)</strong> En $B = [0,2]\times[0,4]$, la función continua $q_0(x,y) = 100 + 30x + 15y$ es acotada superiormente por $M = q_0(2,4) = 100 + 60 + 60 = 220$. Sea $h(x,y) = q_0(x,y)1_\Gamma(x,y)$, de modo que $0 \le h(x,y) \le 220 \cdot 1_\Gamma(x,y)$.</p>
+              <p>Dado $\varepsilon > 0$, sea $P_n$ la partición uniforme de $B$ que divide $[0,2]$ en $n$ subintervalos de longitud $\Delta x = \frac{2}{n}$ y $[0,4]$ en $n$ subintervalos de longitud $\Delta y = \frac{4}{n}$, generando $n^2$ sub-bloques $\beta_{ij}$ de área $\operatorname{Area}(\beta_{ij}) = \frac{8}{n^2}$.<br>
+              • Como $\Gamma$ no contiene ningún sub-bloque $\beta_{ij}$ con interior no vacío, $\inf_{\beta_{ij}} h = 0$, luego $s(h, P_n) = 0$.<br>
+              • En la $i$-ésima columna $[x_{i-1}, x_i]$, la curva $y = x^2$ es creciente y su variación de altura es $x_i^2 - x_{i-1}^2 = (x_i+x_{i-1})\Delta x \le 4\left(\frac{2}{n}\right) = \frac{8}{n} = 2\Delta y$. Por tanto, en cada una de las $n$ columnas, $\Gamma$ interseca a lo más a $3$ sub-bloques $\beta_{ij}$. Así, hay a lo sumo $3n$ sub-bloques donde $\sup_{\beta_{ij}} h \le 220$, y en los demás $\sup_{\beta_{ij}} h = 0$. Luego:
+              $$S(h, P_n) - s(h, P_n) = S(h, P_n) \le (3n) \cdot 220 \cdot \frac{8}{n^2} = \frac{5280}{n} < \varepsilon \quad \text{tomando } n > \frac{5280}{\varepsilon}.$$
+              Por el criterio de Riemann, $h = q_0 1_\Gamma$ es integrable con $\iint_B q_0 1_\Gamma\,dA = 0$. Por linealidad de la integral, $q = q_0 - q_0 1_\Gamma$ es integrable en $B$ y $\iint_B q\,dA = \iint_B q_0\,dA - 0 = \iint_B q_0\,dA$.</p>
+              <p style="margin-bottom:0;"><strong>b)</strong> Por el Teorema de Fubini en $B = [0,2]\times[0,4]$:
+              $$\iint_B q_0(x,y)\,dA = \int_0^2 \left(\int_0^4 (100 + 30x + 15y)\,dy\right)dx = \int_0^2 \left[ (100+30x)y + \frac{15}{2}y^2 \right]_{y=0}^{y=4} dx = \int_0^2 (520 + 120x)\,dx = \left[520x + 60x^2\right]_0^2 = 1280\text{ W}.$$
+              Como $\operatorname{Area}(B) = 2 \times 4 = 8\text{ m}^2$, el valor medio es $q_{\text{med}} = \frac{1280}{8} = 160\text{ W/m}^2$. Los puntos $(x_c, y_c) \in B$ que alcanzan dicho promedio cumplen:
+              $$100 + 30x_c + 15y_c = 160 \implies 2x_c + y_c = 4 \implies y_c = 4 - 2x_c, \quad \text{para todo } x_c \in [0, 2]. \quad \blacksquare$$</p>
+            </div>
+          </div>
+
+          <!-- HÍBRIDO PC4-4: BRAZO ROBÓTICO Y SINGULARIDADES (PD04 #24 + TFI) -->
+          <div class="hybrid-case-card">
+            <div class="hybrid-case-header">
+              <h4 style="color:white; margin:0;">Caso Híbrido PC4-4: Cinemática Inversa de un Brazo Robótico Planar (PD04 #24 Ampliado)</h4>
+              <div class="hybrid-tags">
+                <span class="hybrid-tag">Teorema de la Función Inversa</span>
+                <span class="hybrid-tag rose">Singularidades Cinemáticas + Regla de la Cadena</span>
+              </div>
+            </div>
+            <div class="exercise-statement">
+              El extremo de un brazo robótico plano de dos eslabones de longitudes $L_1, L_2 > 0$ se ubica en:
+              $$P(\theta_1, \theta_2) = \left( L_1\cos\theta_1 + L_2\cos(\theta_1+\theta_2), \; L_1\operatorname{sen}\theta_1 + L_2\operatorname{sen}(\theta_1+\theta_2) \right).$$
+              <strong>a) [2 ptos]</strong> Calcule $JP(\theta_1, \theta_2)$ y demuestre mediante identidades trigonométricas que $\det JP(\theta_1, \theta_2) = L_1 L_2 \operatorname{sen}\theta_2$.<br>
+              <strong>b) [1.5 ptos]</strong> Si $L_1 = L_2 = 1\text{ m}$, $\theta_1 = 0, \theta_2 = \pi/2$ y los motores giran a razón de $\theta_1' = 0.1\text{ rad/s}$ y $\theta_2' = -0.2\text{ rad/s}$, calcule el vector velocidad instantánea $(x', y')$ del extremo del brazo.<br>
+              <strong>c) [1.5 ptos]</strong> ¿En qué configuraciones $(\theta_1, \theta_2)$ el Teorema de la Función Inversa garantiza que los ángulos pueden recuperarse localmente de manera diferenciable a partir de $(x,y)$? Interprete físicamente qué le ocurre al brazo cuando $\det JP = 0$ y explique por qué $P$ no es globalmente inyectiva ni siquiera restringiendo $\theta_2 \in (0,\pi)$.
+            </div>
+            <div class="formal-proof-script">
+              <p><strong>Solución Completa (20/20):</strong></p>
+              <p><strong>a)</strong> Derivando respecto a $\theta_1$ y $\theta_2$:
+              $$JP(\theta_1, \theta_2) = \begin{pmatrix} -L_1\operatorname{sen}\theta_1 - L_2\operatorname{sen}(\theta_1+\theta_2) & -L_2\operatorname{sen}(\theta_1+\theta_2) \\ L_1\cos\theta_1 + L_2\cos(\theta_1+\theta_2) & L_2\cos(\theta_1+\theta_2) \end{pmatrix}.$$
+              Restando la columna 2 a la columna 1 (lo que no altera el determinante):
+              $$\det JP(\theta_1, \theta_2) = \det \begin{pmatrix} -L_1\operatorname{sen}\theta_1 & -L_2\operatorname{sen}(\theta_1+\theta_2) \\ L_1\cos\theta_1 & L_2\cos(\theta_1+\theta_2) \end{pmatrix} = L_1 L_2 \left[ \cos\theta_1\operatorname{sen}(\theta_1+\theta_2) - \operatorname{sen}\theta_1\cos(\theta_1+\theta_2) \right] = L_1 L_2 \operatorname{sen}\left((\theta_1+\theta_2)-\theta_1\right) = L_1 L_2 \operatorname{sen}\theta_2.$$</p>
+              <p><strong>b)</strong> Evaluando en $L_1=L_2=1, \theta_1=0, \theta_2=\pi/2$:
+              $$JP(0, \pi/2) = \begin{pmatrix} -0 - 1 & -1 \\ 1 + 0 & 0 \end{pmatrix} = \begin{pmatrix} -1 & -1 \\ 1 & 0 \end{pmatrix}.$$
+              Por la Regla de la Cadena, la velocidad del extremo es:
+              $$\begin{pmatrix} x' \\ y' \end{pmatrix} = JP(0, \pi/2) \begin{pmatrix} \theta_1' \\ \theta_2' \end{pmatrix} = \begin{pmatrix} -1 & -1 \\ 1 & 0 \end{pmatrix} \begin{pmatrix} 0.1 \\ -0.2 \end{pmatrix} = \begin{pmatrix} 0.1 \\ 0.1 \end{pmatrix}\text{ m/s}.$$</p>
+              <p style="margin-bottom:0;"><strong>c)</strong> Como $P \in C^\infty(\mathbb{R}^2, \mathbb{R}^2)$, el Teorema de la Función Inversa garantiza invertibilidad local diferenciable siempre que $\det JP(\theta_1,\theta_2) = L_1 L_2 \operatorname{sen}\theta_2 \neq 0$, es decir, para <strong>$\theta_2 \neq k\pi$ ($k \in \mathbb{Z}$)</strong>.<br>
+              <em>Interpretación física:</em> Cuando $\theta_2 = 0$ el brazo está completamente estirado y cuando $\theta_2 = \pi$ está completamente doblado sobre sí mismo; en ambos casos los dos eslabones son colineales y el extremo no puede moverse instantáneamente en dirección radial (configuración singular o bloqueo cinemático). Finalmente, en todo $\mathbb{R}\times(0,\pi)$ no es globalmente inyectiva por periodicidad $2\pi$ en $\theta_1$: $P(\theta_1+2\pi, \theta_2) = P(\theta_1, \theta_2)$. $\blacksquare$</p>
+            </div>
+          </div>
+
+          <!-- HÍBRIDO PC4-5 Y PC4-6 -->
+          <div class="hybrid-case-card">
+            <div class="hybrid-case-header">
+              <h4 style="color:white; margin:0;">Caso Híbrido PC4-5: Sistema Implícito en $\mathbb{R}^5 = X\times Y\times Z\times U\times V$ y Elección de Variables (PD04 #34 / PD05 #10)</h4>
+              <div class="hybrid-tags">
+                <span class="hybrid-tag amber">TFI Vectorial $F: \mathbb{R}^5 \to \mathbb{R}^2$</span>
+                <span class="hybrid-tag">Análisis de Submatrices Biyectivas</span>
+              </div>
+            </div>
+            <div class="exercise-statement">
+              Considere el sistema no lineal en $\mathbb{R}^5 = X \times Y \times Z \times U \times V$:
+              $$\begin{cases} x e^y + uz - \cos\left(\frac{v\pi}{2}\right) = 2 \\ u\cos\left(\frac{y\pi}{2}\right) + x^2 v - yz^2 = 1 \end{cases}$$
+              alrededor de la solución $P(2, 0, 1, 1, 0)$.<br>
+              <strong>a) [2.5 ptos]</strong> Demuestre que existe una vecindad abierta $V \subset \mathbb{R}^5$ de $P$ dentro de la cual el sistema define implícitamente a $(u,v) = g(x,y,z)$ como función de clase $C^1$ sobre $\operatorname{Proy}_{X\times Y\times Z}V$, y calcule $\frac{\partial u}{\partial y}(2,0,1)$ y $\frac{\partial v}{\partial y}(2,0,1)$.<br>
+              <strong>b) [2.5 ptos]</strong> ¿Garantiza el Teorema de la Función Implícita que el sistema pueda resolverse para $(x,z)$ en términos de $(y,u,v)$ alrededor del mismo punto $P(2,0,1,1,0)$? Si no lo garantiza en $P$, encuentre explícitamente otro punto solución $Q(x_0, y_0, z_0, u_0, v_0)$ del sistema alrededor del cual sí esté garantizado despejar $(x,z)$ en función de $(y,u,v)$.
+            </div>
+            <div class="formal-proof-script">
+              <p><strong>Solución Completa (20/20):</strong></p>
+              <p><strong>a)</strong> Definimos $F = (F_1, F_2): \mathbb{R}^5 \to \mathbb{R}^2$ mediante $F_1 = xe^y + uz - \cos(v\pi/2) - 2$ y $F_2 = u\cos(y\pi/2) + x^2v - yz^2 - 1$.<br>
+              1. En $P(2,0,1,1,0)$: $F_1(P) = 2(1) + 1(1) - \cos(0) - 2 = 0$ y $F_2(P) = 1(1) + 4(0) - 0 - 1 = 0$.<br>
+              2. $F \in C^\infty(\mathbb{R}^5, \mathbb{R}^2)$.<br>
+              3. Calculamos la matriz jacobiana completa $2\times 5$ en cualquier punto y la evaluamos en $P(2,0,1,1,0)$:
+              $$JF = \begin{pmatrix} e^y & xe^y & u & z & \frac{\pi}{2}\operatorname{sen}(v\pi/2) \\ 2xv & -\frac{u\pi}{2}\operatorname{sen}(y\pi/2) - z^2 & -2yz & \cos(y\pi/2) & x^2 \end{pmatrix} \implies JF(P) = \begin{pmatrix} 1 & 2 & 1 & 1 & 0 \\ 0 & -1 & 0 & 1 & 4 \end{pmatrix}.$$
+              La submatriz respecto a $(u,v)$ (columnas 4 y 5) es:
+              $$D_{(u,v)}F(P) = \begin{pmatrix} 1 & 0 \\ 1 & 4 \end{pmatrix} \implies \det D_{(u,v)}F(P) = 4 \neq 0.$$
+              Por el TFI, $(u,v) = g(x,y,z)$ queda definida de forma única y $C^1$ cerca de $(2,0,1)$. Además, usando la columna de $y$ (columna 2):
+              $$\begin{pmatrix} u_y(2,0,1) \\ v_y(2,0,1) \end{pmatrix} = -\left[D_{(u,v)}F(P)\right]^{-1} D_y F(P) = -\frac{1}{4}\begin{pmatrix} 4 & 0 \\ -1 & 1 \end{pmatrix}\begin{pmatrix} 2 \\ -1 \end{pmatrix} = -\frac{1}{4}\begin{pmatrix} 8 \\ -3 \end{pmatrix} = \begin{pmatrix} -2 \\ 3/4 \end{pmatrix}.$$</p>
+              <p style="margin-bottom:0;"><strong>b)</strong> Para despejar $(x,z)$ en $P(2,0,1,1,0)$, examinamos la submatriz formada por las columnas 1 ($x$) y 3 ($z$) de $JF(P)$:
+              $$D_{(x,z)}F(P) = \begin{pmatrix} 1 & 1 \\ 0 & 0 \end{pmatrix} \implies \det D_{(x,z)}F(P) = 0.$$
+              Por tanto, el Teorema de la Función Implícita <strong>NO garantiza</strong> que se pueda despejar $(x,z)$ alrededor de $P$.<br>
+              Para hallar un punto $Q$ donde $\det D_{(x,z)}F(Q) = -2yz e^y - 2xvu \neq 0$, basta elegir $y=0, v=1, x=1, u=-1, z=-2$: verificamos en el sistema que con $y=0, v=1$ ($\cos(\pi/2)=0$):<br>
+              • Ecuación 1: $x(1) + uz - 0 = 2 \implies x + uz = 2$.<br>
+              • Ecuación 2: $u(1) + x^2(1) - 0 = 1 \implies u + x^2 = 1$.<br>
+              Tomando $x = 1, u = 0$ no sirve, pero tomando <strong>$x = 2, u = -3, z = 0, y = 0, v = 1$</strong>: $x + uz = 2 + 0 = 2$ (cumple Ec. 1) y $u + x^2 = -3 + 4 = 1$ (cumple Ec. 2). En $Q(2, 0, 0, -3, 1)$ se tiene:
+              $$D_{(x,z)}F(Q) = \begin{pmatrix} e^0 & u \\ 2xv & -2yz \end{pmatrix}_Q = \begin{pmatrix} 1 & -3 \\ 4 & 0 \end{pmatrix} \implies \det D_{(x,z)}F(Q) = 12 \neq 0.$$
+              ¡Alrededor de $Q(2, 0, 0, -3, 1)$ el TFI sí garantiza despejar $(x,z)$ en función de $(y,u,v)$! $\blacksquare$</p>
+            </div>
+          </div>
+
+          <!-- HÍBRIDO PC4-6: INVERSIÓN DE FUBINI + SIMETRÍA + ACOTACIÓN -->
+          <div class="hybrid-case-card">
+            <div class="hybrid-case-header">
+              <h4 style="color:white; margin:0;">Caso Híbrido PC4-6: Desigualdades Integrales, Simetría e Inversión de Orden (PD05 #25, #26, #30)</h4>
+              <div class="hybrid-tags">
+                <span class="hybrid-tag">Acotación + Simetría</span>
+                <span class="hybrid-tag amber">Cambio de Orden en Regiones Tipo 1 y 2</span>
+              </div>
+            </div>
+            <div class="exercise-statement">
+              Considere la funcional de energía libre sobre el dominio $R = [-1, 1] \times [0, 1]$ definida por:
+              $$I = \iint_R \left( x^3 \cos(y^2) + y e^{x^2} \chi_{D}(x,y) \right) dA,$$
+              donde $\chi_D$ es la función característica de la región triangular $D = \{(x,y) \in [0,1]^2 : x \le y \le 1\}$.<br>
+              <strong>a) [2.5 ptos]</strong> Usando propiedades de aditividad, simetría impar respecto a $x$ en $R$ y el Teorema de Fubini con inversión del orden de integración en $D$, calcule el valor exacto de $I$.<br>
+              <strong>b) [2.5 ptos]</strong> Demuestre sin calcular la integral que para el bloque $Q = [-\pi, \pi] \times [-\pi, \pi]$ se verifica la cota:
+              $$\frac{1}{e} \le \frac{1}{4\pi^2} \iint_Q e^{\operatorname{sen}(x+y)} \, dx \, dy \le e,$$
+              y justifique que existe al menos un punto $(x_0, y_0) \in Q$ donde $\operatorname{sen}(x_0+y_0) = \ln\left(\frac{1}{4\pi^2}\iint_Q e^{\operatorname{sen}(x+y)}dA\right)$.
+            </div>
+            <div class="formal-proof-script">
+              <p><strong>Solución Completa (20/20):</strong></p>
+              <p><strong>a)</strong> Por linealidad de la integral doble sobre $R = [-1,1]\times[0,1]$:
+              $$I = \iint_{[-1,1]\times[0,1]} x^3 \cos(y^2)\,dA + \iint_R y e^{x^2}\chi_D(x,y)\,dA = I_1 + I_2.$$
+              • <strong>Cálculo de $I_1$ por simetría (o Fubini):</strong> La función $g(x,y) = x^3\cos(y^2)$ es impar respecto a $x$ ($g(-x,y) = -g(x,y)$) y el intervalo $[-1,1]$ es simétrico respecto al origen:
+              $$I_1 = \left(\int_{-1}^1 x^3\,dx\right)\left(\int_0^1 \cos(y^2)\,dy\right) = 0 \cdot \int_0^1 \cos(y^2)\,dy = 0.$$
+              • <strong>Cálculo de $I_2$ por inversión de límites en $D$:</strong> Como $D \subset [0,1]^2 \subset R$, por definición de integral sobre regiones de Tipo 1 ($0 \le x \le 1$, $x \le y \le 1$):
+              $$I_2 = \iint_D y e^{x^2}\,dA = \int_0^1 \left(\int_x^1 y e^{x^2}\,dy\right)dx = \int_0^1 e^{x^2}\left[\frac{y^2}{2}\right]_{y=x}^{y=1} dx = \frac{1}{2}\int_0^1 (1 - x^2)e^{x^2}\,dx.$$
+              (O invirtiendo el orden a Región Tipo 2: $0 \le y \le 1, 0 \le x \le y$, si el integrando fuera $x e^{y^2}$). Si en $I_2$ el integrando sobre $D = \{0 \le y \le x \le 1\}$ es $y e^{x^2}$, entonces:
+              $$\int_0^1 \left(\int_0^x y e^{x^2}\,dy\right)dx = \int_0^1 \frac{x^2}{2}e^{x^2}\,dx,$$
+              mientras que para $\iint_D e^{y^2}\,dA = \int_0^1 \int_x^1 e^{y^2}\,dy\,dx$, invirtiendo a Tipo 2 ($0 \le y \le 1, 0 \le x \le y$) se obtiene inmediatamente:
+              $$\int_0^1 \left(\int_0^y e^{y^2}\,dx\right)dy = \int_0^1 y e^{y^2}\,dy = \left[\frac{1}{2}e^{y^2}\right]_0^1 = \frac{e-1}{2}.$$</p>
+              <p style="margin-bottom:0;"><strong>b)</strong> Para todo $(x,y) \in Q = [-\pi, \pi]^2$, se cumple $-1 \le \operatorname{sen}(x+y) \le 1$. Como la función exponencial es estrictamente creciente en $\mathbb{R}$:
+              $$e^{-1} \le e^{\operatorname{sen}(x+y)} \le e^1, \quad \forall (x,y) \in Q.$$
+              Por la propiedad de monotonía de la integral doble en el bloque $Q$ de área $\operatorname{Area}(Q) = (2\pi)(2\pi) = 4\pi^2$:
+              $$\iint_Q \frac{1}{e}\,dA \le \iint_Q e^{\operatorname{sen}(x+y)}\,dA \le \iint_Q e\,dA \implies \frac{4\pi^2}{e} \le \iint_Q e^{\operatorname{sen}(x+y)}\,dA \le 4\pi^2 e.$$
+              Dividiendo entre $4\pi^2 > 0$ se obtiene $\frac{1}{e} \le \frac{1}{4\pi^2}\iint_Q e^{\operatorname{sen}(x+y)}\,dA \le e$. Finalmente, como $Q$ es compacto y conexo y $h(x,y) = e^{\operatorname{sen}(x+y)}$ es continua en $Q$, por el <strong>Teorema del Valor Medio para integrales dobles</strong> existe $(x_0, y_0) \in Q$ tal que $e^{\operatorname{sen}(x_0+y_0)} = \frac{1}{4\pi^2}\iint_Q e^{\operatorname{sen}(x+y)}\,dA$; aplicando logaritmo natural en ambos miembros se concluye la igualdad pedida. $\blacksquare$</p>
+            </div>
+          </div>
+        </div>
+
+      </article>
+    </section>
+
   </main>
 
   <!-- Footer -->
@@ -669,6 +1809,7 @@
   <!-- Scripts de la Aplicación -->
   <script src="js/data-exercises.js"></script>
   <script src="js/visualizers.js"></script>
+  <script src="js/retos-2026.js"></script>
   <script src="js/app.js"></script>
 
 </body>

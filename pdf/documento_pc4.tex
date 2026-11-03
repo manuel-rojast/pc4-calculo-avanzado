@@ -5658,4 +5658,219 @@ Recorrer la curva en sentido horario, lo que invierte el signo del área a $-\pi
 \vspace{0.5cm}
 \hrule
 \vspace{0.5cm}
+
+\newpage
+\section{Centro de Entrenamiento Avanzado y Retos 2026-2 (Abanto -- Nuñez -- Sulca -- Valverde)}
+
+Este capítulo especial fue diseñado específicamente para superar los cuatro retos más exigentes del curso en el ciclo 2026-2: \textbf{(1) Demostraciones matemáticas}, \textbf{(2) Definiciones hiper-formales de las diapositivas de clase}, \textbf{(3) Demostraciones $\varepsilon$-$\delta$ y de oscilación de Darboux}, y \textbf{(4) Preguntas combinadas y contextualizadas} como la Pregunta 4 (\textit{«Los Baseados»}) del Examen Parcial 2026-2.
+
+\subsection{Módulo 1: Traductor Bilingüe de Notación Formal 2026-2 y Contraejemplos V/F}
+
+\begin{intuitionbox}
+\textbf{Diccionario «Formalismo de Clase $\leftrightarrow$ Español Sencillo $\leftrightarrow$ Acción en el Examen»:}
+\begin{itemize}[leftmargin=1.5em]
+  \item \textbf{Conjuntos de nivel $\mathcal{N}_c(f) = \{x \in U : f(x) = c\}$ (Parcial 1c, 1d):} Es la curva o superficie donde la función vale constante $c$. ¡Cuidado! Aunque $\mathcal{N}_c(f) \neq \emptyset$, puede reducirse a un único punto aislado (ej. $f(x,y)=x^2+y^2$ para $c=0$ da $\mathcal{N}_0(f)=\{(0,0)\}$). Solo es una curva suave infinita cerca de $P \in \mathcal{N}_c(f)$ cuando $\nabla f(P) \neq (0,0)$.
+  \item \textbf{Proyecciones $\phi: \text{Proy}_{X\times Y}\Omega \to \mathbb{R}$ (Parcial 2a y Sesión 7.3):} $\Omega \subset \mathbb{R}^3$ es una caja abierta tridimensional alrededor de $P_0(x_0,y_0,z_0)$, y $\text{Proy}_{X\times Y}\Omega$ es simplemente la \emph{sombra} de $\Omega$ en el piso $XY$ (el dominio abierto donde vive $(x,y)$). Para justificar que existe $\phi$, verifica únicamente las 3 hipótesis del TFI: (1) $F(P_0)=0$, (2) $F \in C^1$, y (3) $F_z(P_0) \neq 0$.
+  \item \textbf{Restricción biyectiva $Df(P)|_{\text{eje}(X)\times\text{eje}(Z)}: \text{eje}(X)\times\text{eje}(Z) \to \mathbb{R}^2$ (Sesión 7.3):} Significa que las columnas correspondientes a $x$ y $z$ en la matriz jacobiana son linealmente independientes, es decir, el determinante $2\times 2$ de derivadas respecto a $(x,z)$ es $\neq 0$, lo que permite despejar $(x,z)$ en función de las demás variables.
+  \item \textbf{2-bloques $B$, sub-bloques $\beta_{ij}$, puntillación $\xi$ y sumas $s(f,P), S(f,P)$ (Sesión 9.1):} Un 2-bloque es un rectángulo cerrado $[a_1,b_1]\times[a_2,b_2]$. Los sub-bloques $\beta_{ij}$ son los subrectángulos de la partición $P$. La puntillación $\xi = \{\xi_{ij}\}$ es la elección de puntos muestra. En clase se denota $s(f,P) \equiv L(f,P) = \sum_{\beta\in P} m_\beta \text{Area}(\beta)$ y $S(f,P) \equiv U(f,P) = \sum_{\beta\in P} M_\beta \text{Area}(\beta)$.
+  \item \textbf{Secciones $\alpha_x(y) = (x,y)$ e integrales inferior/superior $\varphi_1, \psi_1$ (Sesión 9.2):} Es la notación formal para ``congelar $x$ e integrar respecto a $y$''. Si $f$ es integrable pero no continua, $\varphi_1(x) = \underline{\int_{a_2}^{b_2}} (f\circ \alpha_x)\,dy$ y $\psi_1(x) = \overline{\int_{a_2}^{b_2}} (f\circ \alpha_x)\,dy$ son integrables y $\int_{a_1}^{b_1}\varphi_1(x)dx = \int_{a_1}^{b_1}\psi_1(x)dx = \iint_B f$. Si $f$ es continua, $\varphi_1 = \psi_1$.
+  \item \textbf{Función indicadora $1_A$ (o $A_Y$ en PD05) y medida de Jordan $m_B(A) = \int_B 1_A$ (Sesión 10.1):} Vale $1$ dentro de $A$ y $0$ fuera de $A$. Para integrar sobre una región curva Tipo 1 o 2, se extiende por cero fuera de $R$ mediante $f 1_R$ sobre un bloque envolvente $B$.
+\end{itemize}
+\end{intuitionbox}
+
+\begin{tcolorbox}[colback=red!3,colframe=red!75!black,arc=1mm,boxrule=0.6pt,title=\textbf{Arsenal de Contraejemplos de Bolsillo para Verdadero / Falso (PC4)}]
+\begin{enumerate}[label=\textbf{\arabic*.}, leftmargin=1.5em]
+  \item \textbf{«Si $f: \mathbb{R}^n \to \mathbb{R}^n$ es $C^1$ y biyectiva, entonces $f^{-1}$ es diferenciable» (FALSO - PD04 \#1e):} Contraejemplo: $f(x) = x^3$ en $\mathbb{R}$ (o $F(x,y)=(x^3,y)$ en $\mathbb{R}^2$). Es $C^\infty$ y biyectiva, pero $f'(0)=0$ y $f^{-1}(u)=u^{1/3}$ no es diferenciable en $0$.
+  \item \textbf{«Si $\det JF(p) \neq 0$ en todo $\mathbb{R}^2$, entonces $F$ es globalmente inyectiva» (FALSO - PD04 \#1f):} Contraejemplo: $F(x,y) = (e^x\cos y, e^x\sin y)$ cumple $\det JF = e^{2x} > 0$, pero $F(0,0) = F(0,2\pi)$.
+  \item \textbf{«Si $f(0,0)=0, f_x(0,0)=3, f_y(0,0)=2$, entonces $h'(0) = 3/2 > 0$» (FALSO - Parcial 1d):} Por regla de la cadena en $f(x,h(x))=0$, $h'(0) = -f_x(0,0)/f_y(0,0) = -3/2 < 0$.
+  \item \textbf{«Si $Q$ refina a $P$, entonces $L(f,P) \le L(f,Q)$ y $U(f,P) \le U(f,Q)$» (FALSO - PD05 \#32b):} Al refinar, la suma superior disminuye: $U(f,Q) \le U(f,P)$.
+  \item \textbf{«Si $f \ge 0$ es integrable en $R=[0,1]^2$ y $\iint_R f dA = 0$, entonces $f(x,y)=0$ en todo $R$» (FALSO - PD05 \#33c):} Contraejemplo: $f(0,0)=1$ y $f(x,y)=0$ para $(x,y)\neq(0,0)$.
+  \item \textbf{«Si las dos integrales iteradas existen, siempre son iguales aunque $f$ no sea integrable Riemann» (FALSO - PD05 \#28 y \#34c):} Contraejemplo: $f(x,y) = 1/y^2$ si $0<x<y<1$, $-1/x^2$ si $0<y<x<1$, y $0$ en otro caso; sus integrales iteradas en $[0,1]^2$ valen $1$ y $-1$.
+\end{enumerate}
+\end{tcolorbox}
+
+\subsection{Módulo 2: Técnica de las 2 Columnas para Demostraciones \texorpdfstring{$\varepsilon$-$\delta$}{epsilon-delta} y Darboux}
+
+\begin{tcolorbox}[colback=blue!3,colframe=primaryblue!80,arc=1mm,boxrule=0.6pt,title=\textbf{Ingeniería Inversa (Borrador) vs. Redacción Formal (Hoja de Examen)}]
+En toda prueba donde debes demostrar que $\forall \varepsilon > 0, \exists \delta > 0$ (o $\exists P_n$ partición tal que $S(f,P_n) - s(f,P_n) < \varepsilon$):
+\begin{enumerate}[label=\textbf{Fase \arabic*:}, leftmargin=3.5em]
+  \item \textbf{En tu Borrador (De atrás hacia adelante):} Escribe la cantidad que deseas acotar, por ejemplo $S(f,P_n) - s(f,P_n) = \sum_{\beta \in P_n} (M_\beta - m_\beta)\text{Area}(\beta)$. Separa los sub-bloques en \textbf{«cajas buenas»} (donde $M_\beta - m_\beta = 0$ o $< \frac{\varepsilon}{\text{Area}(B)}$) y \textbf{«cajas malas»} (que tocan una curva de discontinuidad, donde hay a lo más $C\cdot n$ cajas de área $\frac{\text{Area}(B)}{n^2}$). Obtendrás una cota del tipo $\frac{K}{n}$. Iguala $\frac{K}{n} < \varepsilon$ y despeja $n > \frac{K}{\varepsilon}$.
+  \item \textbf{En tu Examen (De adelante hacia atrás):} Comienza escribiendo: \emph{«Sea $\varepsilon > 0$ arbitrario. Por la propiedad arquimediana, elegimos $n \in \mathbb{N}$ tal que $n > \frac{K}{\varepsilon}$ y tomamos la partición uniforme $P_n$...»}. Al desarrollar la suma, el término $\frac{K}{n}$ queda automáticamente menor que $\varepsilon$.
+\end{enumerate}
+\end{tcolorbox}
+
+\paragraph{Ejemplo Modelo Resuelto en 2 Fases (PD05 \#22 -- Integral de la parábola $Y = \{y=x^2\}$ es cero):}
+Sea $A = [-1,1]\times[-1,1]$ y $Y = \{(x,y) : y = x^2, x \in [-1,1]\}$. Demuestre que la integral de la función característica $A_Y$ sobre $A$ es cero.
+\begin{itemize}[leftmargin=1.5em]
+  \item \textbf{Fase 1 (Cómo pensarla en borrador):} Como la parábola $Y$ no tiene grosor, toda cajita $\beta_{ij}$ tiene puntos fuera de $Y$, luego $m_{ij} = \inf_{\beta_{ij}} A_Y = 0 \implies L(A_Y, P_n) = 0$. En una cuadrícula $n\times n$ de lado $\Delta x = \Delta y = \frac{2}{n}$ y área $\frac{4}{n^2}$, en cada columna $[x_{i-1},x_i]$ la altura $y=x^2$ varía $|x_i^2 - x_{i-1}^2| = |x_i+x_{i-1}|\Delta x \le 2(\frac{2}{n}) = \frac{4}{n} = 2\Delta y$. Por tanto, en cada columna la parábola toca a lo más $3$ cajas. Como hay $n$ columnas, hay a lo sumo $3n$ cajas rojas donde $M_{ij}=1$. Así $U(A_Y,P_n) \le 3n \cdot \frac{4}{n^2} = \frac{12}{n} < \varepsilon \iff n > \frac{12}{\varepsilon}$.
+  \item \textbf{Fase 2 (Redacción Formal 20/20):} Sea $\varepsilon > 0$. Elegimos $n \in \mathbb{N}$ tal que $n > \frac{12}{\varepsilon}$ y consideramos la partición uniforme $P_n$ de $A=[-1,1]^2$ en $n^2$ sub-bloques $\beta_{ij}$ de lados $\Delta x = \Delta y = \frac{2}{n}$ y área $\frac{4}{n^2}$. Como $\text{int}(Y) = \emptyset$, $\inf_{\beta_{ij}} A_Y = 0$ en todo $\beta_{ij}$, luego $L(A_Y,P_n)=0$. En cada franja vertical $[x_{i-1},x_i]$, la variación de $y=x^2$ es $|x_i^2-x_{i-1}^2| \le 2\Delta x = 2\Delta y$, por lo que $Y$ interseca a lo más a $3$ sub-bloques por columna, dando a lo sumo $3n$ sub-bloques con $\sup_{\beta_{ij}} A_Y = 1$. Así:
+  \[ U(A_Y, P_n) - L(A_Y, P_n) = U(A_Y, P_n) \le (3n)\frac{4}{n^2} = \frac{12}{n} < \varepsilon. \]
+  Por el criterio de Riemann, $A_Y$ es integrable en $A$ y $\iint_A A_Y\,dA = \sup_P L(A_Y,P) = 0$. $\blacksquare$
+\end{itemize}
+
+\newpage
+\subsection{Módulo 3: Solucionario Completo y Desglosado del Examen Parcial 2026-2}
+
+\subsubsection*{Pregunta 1 del Parcial 2026-2: Verdadero / Falso y Detección de Trampas [5 ptos]}
+\begin{enumerate}[label=\textbf{\alph*)}]
+  \item \textbf{VERDADERO:} Si $\|\vec{r}'(t)\| = c$, derivando $\langle \vec{r}'(t), \vec{r}'(t)\rangle = c^2$ se obtiene $2\langle \vec{r}''(t), \vec{r}'(t)\rangle = 0 \implies \vec{r}''(t) \perp \vec{r}'(t)$.
+  \item \textbf{VERDADERO:} Para $\alpha(t) = (1-5\text{sen}\,t, e^t, 4-e^t)$, se cumple $y(t)+z(t) = e^t + (4-e^t) = 4$ para todo $t\in\mathbb{R}$, luego la curva está contenida en el plano $y+z=4$.
+  \item \textbf{FALSO:} Contraejemplo: $f(x,y) = x^2+y^2 \in C^1(\mathbb{R}^2)$ tiene conjunto de nivel $\mathcal{N}_0(f) = \{(0,0)\} \neq \emptyset$, que consta de un solo punto y no es infinito.
+  \item \textbf{FALSO:} Derivando implícitamente $f(x,h(x))=0$ en $x=0$: $f_x(0,0) + f_y(0,0)h'(0) = 0 \implies h'(0) = -\frac{f_x(0,0)}{f_y(0,0)} = -\frac{3}{2} < 0 \neq \frac{3}{2}$.
+\end{enumerate}
+
+\subsubsection*{Pregunta 2 del Parcial 2026-2: Función Implícita con Notación $\text{Proy}_{X\times Y}\Omega$ [5 ptos]}
+\begin{tcolorbox}[colback=white,colframe=gray!40,arc=1mm,boxrule=0.5pt]
+\textbf{Enunciado Oficial:} Considere la ecuación $z^3 + z e^{xy} + x^2y - xy^2 - 2 = 0$, y la solución $P(0,0,1)$.
+\begin{enumerate}[label=\textbf{\alph*)}]
+  \item Explique y justifique de que existe una función $\phi: \text{Proy}_{X\times Y}\Omega \to \mathbb{R}$, de clase $C^1$, definida en un entorno abierto $\Omega$ de $P$, de modo que $(x,y,\phi(x,y))$ satisface la ecuación dada, cualquiera que sea $(x,y) \in \text{Dom}(\phi)$, esto es $z = \phi(x,y)$. \hfill [2 ptos.]
+  \item Calcule $\nabla \phi(x,y)$ en términos de $x,y,z$. \hfill [1.5 ptos.]
+  \item Suponiendo que $\phi$ es de clase $C^2$, calcule $\phi_{xy}(0,0)$. \hfill [1.5 ptos.]
+\end{enumerate}
+\end{tcolorbox}
+
+\paragraph{Solución Rigurosa Paso a Paso:}
+\begin{enumerate}[label=\textbf{\alph*)}]
+  \item Definimos $F: \mathbb{R}^3 \to \mathbb{R}$ mediante $F(x,y,z) = z^3 + ze^{xy} + x^2y - xy^2 - 2$. Verificamos las hipótesis del Teorema de la Función Implícita en $P(0,0,1)$:
+  \begin{itemize}
+    \item $F(0,0,1) = 1^3 + 1\cdot e^0 + 0 - 0 - 2 = 0$.
+    \item $F \in C^\infty(\mathbb{R}^3) \subset C^1(\mathbb{R}^3)$ por ser suma de polinomios y exponenciales.
+    \item $\frac{\partial F}{\partial z}(x,y,z) = 3z^2 + e^{xy} \implies \frac{\partial F}{\partial z}(0,0,1) = 3(1)^2 + e^0 = 4 \neq 0$.
+  \end{itemize}
+  Por el Teorema de la Función Implícita, existe un entorno abierto $\Omega \subset \mathbb{R}^3$ de $P(0,0,1)$ y una única función $\phi: \text{Proy}_{X\times Y}\Omega \to \mathbb{R}$ de clase $C^1$ tal que $\phi(0,0)=1$ y $F(x,y,\phi(x,y))=0$ para todo $(x,y) \in \text{Dom}(\phi)$.
+  \item Calculando las derivadas parciales $F_x = yze^{xy} + 2xy - y^2$, $F_y = xze^{xy} + x^2 - 2xy$ y $F_z = 3z^2 + e^{xy}$, tenemos:
+  \[ \nabla \phi(x,y) = \left( -\frac{F_x}{F_z}, \, -\frac{F_y}{F_z} \right) = \left( -\frac{yz e^{xy} + 2xy - y^2}{3z^2 + e^{xy}}, \, -\frac{xz e^{xy} + x^2 - 2xy}{3z^2 + e^{xy}} \right). \]
+  \item Evaluando en $(x,y)=(0,0)$ con $z=\phi(0,0)=1$, obtenemos $\phi_x(0,0) = 0$ y $\phi_y(0,0) = 0$. Derivando la identidad $(3z^2+e^{xy})\phi_x + yze^{xy} + 2xy - y^2 = 0$ respecto a $y$ y evaluando en $(0,0,1)$:
+  \[ 4\phi_{xy}(0,0) + \left[ z e^{xy} + xyze^{xy} + 2x - 2y \right]_{(0,0,1)} = 0 \implies 4\phi_{xy}(0,0) + 1 = 0 \implies \phi_{xy}(0,0) = -\frac{1}{4}. \]
+\end{enumerate}
+
+\subsubsection*{Pregunta 3c y Pregunta 4 del Parcial 2026-2: «Los Baseados» (Preguntas Combinadas)}
+\begin{tcolorbox}[colback=white,colframe=gray!40,arc=1mm,boxrule=0.5pt]
+\textbf{Pregunta 3c [2 ptos]:} Dada $v(x,y) = \frac{x}{x^2+y^2}$ para $(x,y)\neq(0,0)$ y $v(0,0)=0$, analice si $f: \mathbb{R}^2 \to \mathbb{R}^3$ definida por $f(x,y) = \left(x^2y+3xy^2; \, v(x,y); \, e^{xy}+\ln(1+x^2)\right)$ es diferenciable en $(1,0)$.\\[4pt]
+\textbf{Pregunta 4 («Los Baseados») [5 ptos]:} Una red de agentes autónomos de IA, los \emph{Baseados}, opera en tres sectores ($x,y,z$ en miles, $x,y,z > 0$). El índice de riesgo de pérdida de control es:
+\[ R(x,y,z) = -x^3 + 8x^2 - 9x - 2xy - 2xz + y^2 + z^2 + 5, \qquad x,y,z > 0. \]
+El despliegue actual es $P_0 = (3,3,3)$. Los Baseados informaron que $\nabla R(P_0) = (0,0,0)$ y concluyeron que $P_0$ ya es un mínimo local del riesgo.
+\begin{enumerate}[label=\textbf{\alph*)}]
+  \item Determine y clasifique los puntos críticos de $R$. ¿Es correcta la conclusión de los Baseados? Según este análisis, ¿cuántos Baseados conviene usar en cada sector? Interprete. \hfill [2.5 ptos]
+  \item Los Baseados replican que el despliegue de mínimo local hallado en a) es el de menor riesgo posible en $x,y,z \ge 0$. Calcule $R(5,5,5)$ y decida si tienen razón. Por ello, el comité solo autorizará despliegues en la bola cerrada $B = \{(x,y,z)\in\mathbb{R}^3 : (x-3)^2+(y-3)^2+(z-3)^2 \le 1\}$. Justifique que en $B$ existe un despliegue de riesgo mínimo y, usando a), explique por qué este no puede ser el despliegue actual $P_0$. \hfill [2.5 ptos]
+\end{enumerate}
+\end{tcolorbox}
+
+\paragraph{Solución Rigurosa Paso a Paso:}
+\begin{itemize}[leftmargin=1.5em]
+  \item \textbf{Solución de 3c:} En la bola abierta $U = B((1,0), 1/2)$ no está contenido el origen $(0,0)$, por lo que $x^2+y^2 > 0$ en todo $U$ y allí $v(x,y) = \frac{x}{x^2+y^2}$ es un cociente de polinomios con denominador no nulo. Así, las tres componentes de $f$ tienen derivadas parciales continuas en $U$ ($f \in C^1(U, \mathbb{R}^3)$). Por la condición suficiente de diferenciabilidad, $f$ es diferenciable en $(1,0)$.
+  \item \textbf{Solución de 4a:} Igualando el gradiente a cero:
+  \[ \nabla R(x,y,z) = (-3x^2 + 16x - 9 - 2y - 2z, \, -2x + 2y, \, -2x + 2z) = (0,0,0) \implies y = x, \ z = x, \]
+  y sustituyendo en la primera componente: $-3x^2 + 12x - 9 = 0 \implies (x-1)(x-3) = 0$. Obtenemos dos puntos críticos: $P_1(1,1,1)$ y $P_0(3,3,3)$. La matriz Hessiana es:
+  \[ HR(x,y,z) = \begin{pmatrix} -6x+16 & -2 & -2 \\ -2 & 2 & 0 \\ -2 & 0 & 2 \end{pmatrix}. \]
+  En $P_0(3,3,3)$: $\Delta_1 = -2 < 0$ y $\Delta_2 = -8 < 0$, luego $HR(3,3,3)$ es indefinida y \textbf{$P_0(3,3,3)$ es un punto silla}. La conclusión de los Baseados es \textbf{FALSA}. En cambio, en $P_1(1,1,1)$: $\Delta_1 = 10 > 0, \Delta_2 = 16 > 0, \Delta_3 = 24 > 0$, por lo que $HR(1,1,1)$ es definida positiva y \textbf{$P_1(1,1,1)$ es un mínimo local estricto} ($R(1,1,1)=1$). Conviene usar \textbf{1 mil Baseados en cada sector}.
+  \item \textbf{Solución de 4b:} Evaluando en $(5,5,5)$, tenemos $R(5,5,5) = -125 + 200 - 45 - 50 - 50 + 25 + 25 + 5 = -15 < 1 = R(1,1,1)$. Por tanto, los Baseados \textbf{no tienen razón}: el mínimo local $P_1(1,1,1)$ no es mínimo global. Ahora bien, la bola cerrada $B = \overline{B}(P_0, 1) \subset \mathbb{R}^3$ es cerrada y acotada en $\mathbb{R}^3$ (\textbf{compacta}), y como $R$ es continua en $B$, el \textbf{Teorema de Weierstrass} garantiza que existe en $B$ un despliegue de riesgo mínimo absoluto. Finalmente, dicho mínimo en $B$ \textbf{no puede ser el centro $P_0(3,3,3)$} porque $P_0 \in \text{int}(B)$; si $R|_B$ alcanzara su mínimo en un punto interior $P_0$, entonces $P_0$ sería un mínimo local libre de $R$, contradiciendo que en a) probamos que $P_0$ es un punto silla. $\blacksquare$
+\end{itemize}
+
+\newpage
+\subsection{Módulo 4: Laboratorio de 6 Problemas Híbridos y Contextualizados para la PC4}
+
+\subsubsection*{Caso Híbrido PC4-1: «Los Baseados II y el Escudo de Contención Implícito» (TFI + Hessiano + Weierstrass)}
+\begin{tcolorbox}[colback=white,colframe=gray!40,arc=1mm,boxrule=0.5pt]
+\textbf{Enunciado:} El comité de la UNI confinó a la red \emph{Los Baseados} mediante un escudo cuántico cuya potencia $z > 0$ (en TW) depende de las cargas $x,y \in \mathbb{R}$ según la ecuación de estado:
+\[ z^3 + 2z - (x-1)^2 - (y-1)^2 - (x-1)(y-1) - 3 = 0, \]
+operando actualmente en $P_0 = (1,1,1)$.
+\begin{enumerate}[label=\textbf{\alph*)}]
+  \item Justifique formalmente que existe un entorno abierto $\Omega \subset \mathbb{R}^3$ de $P_0$ y una única función $\phi: \text{Proy}_{X\times Y}\Omega \to \mathbb{R}$ de clase $C^2$ tal que $z = \phi(x,y)$ satisface la ecuación en $\text{Dom}(\phi)$.
+  \item Los Baseados afirman que $\nabla\phi(1,1)=(0,0)$ y que por tanto $(1,1)$ maximiza localmente la potencia $z = \phi(x,y)$. Calcule $\nabla\phi(1,1)$ y $H\phi(1,1)$ para decidir si tienen razón. Si $(x,y)$ se restringe al disco compacto $D = \{(x,y)\in\text{Dom}(\phi): (x-1)^2+(y-1)^2 \le r^2\}$ ($r>0$ pequeño), ¿por qué el máximo absoluto de $\phi$ en $D$ no puede estar en $(1,1)$?
+\end{enumerate}
+\end{tcolorbox}
+
+\paragraph{Solución Paso a Paso:}
+\begin{enumerate}[label=\textbf{\alph*)}]
+  \item Sea $F(x,y,z) = z^3 + 2z - (x-1)^2 - (y-1)^2 - (x-1)(y-1) - 3$. Se cumple: (1) $F(1,1,1) = 1+2-0-3 = 0$; (2) $F \in C^\infty(\mathbb{R}^3) \subset C^2(\mathbb{R}^3)$; y (3) $F_z(x,y,z) = 3z^2+2 \implies F_z(1,1,1) = 5 \neq 0$. Por el TFI, existe un entorno abierto $\Omega$ de $P_0$ y una única $\phi: \text{Proy}_{X\times Y}\Omega \to \mathbb{R}$ de clase $C^2$ con $\phi(1,1)=1$.
+  \item Como $F_x = -2(x-1)-(y-1)$ y $F_y = -2(y-1)-(x-1)$, en $P_0(1,1,1)$ tenemos $F_x(P_0)=F_y(P_0)=0 \implies \nabla\phi(1,1) = (0,0)$. Derivando implícitamente por segunda vez en $(1,1)$ (usando $\phi_x(1,1)=\phi_y(1,1)=0$):
+  \[ H\phi(1,1) = -\frac{1}{F_z(P_0)} \begin{pmatrix} F_{xx}(P_0) & F_{xy}(P_0) \\ F_{yx}(P_0) & F_{yy}(P_0) \end{pmatrix} = -\frac{1}{5}\begin{pmatrix} -2 & -1 \\ -1 & -2 \end{pmatrix} = \frac{1}{5}\begin{pmatrix} 2 & 1 \\ 1 & 2 \end{pmatrix}. \]
+  Como $\Delta_1 = 2/5 > 0$ y $\Delta_2 = 3/25 > 0$, $H\phi(1,1)$ es definida positiva y \textbf{$(1,1)$ es un mínimo local estricto}, por lo que la afirmación de los Baseados es \textbf{FALSA}. Sobre el disco compacto $D$, el máximo absoluto existe por Weierstrass pero no puede alcanzarse en el punto interior $(1,1)$ por ser este un mínimo local estricto; debe alcanzarse en la circunferencia frontera $\partial D$.
+\end{enumerate}
+
+\subsubsection*{Caso Híbrido PC4-2: Transformación Integral y Regla de la Cadena (PD04 \#19, \#28)}
+\begin{tcolorbox}[colback=white,colframe=gray!40,arc=1mm,boxrule=0.5pt]
+\textbf{Enunciado:} Sea $g: \mathbb{R} \to \mathbb{R}$ continua con $g(0) = 2$, y defínase $F: \mathbb{R}^2 \to \mathbb{R}^2$ mediante:
+\[ F(x,y) = \left( \int_x^y g(t)\,dt, \; \int_y^{x^2} g(t)\,dt \right). \]
+\begin{enumerate}[label=\textbf{\alph*)}]
+  \item Demuestre que $F$ admite una inversa local diferenciable $F^{-1}$ cerca de $(0,0)$ y calcule $JF^{-1}(0,0)$.
+  \item Si $H: \mathbb{R}^2 \to \mathbb{R}$ es diferenciable con $\nabla H(0,0) = (4, -3)$ y $\Psi = H \circ F^{-1}$, calcule $D_u \Psi(0,0)$ en la dirección $u = (3/5, 4/5)$.
+\end{enumerate}
+\end{tcolorbox}
+
+\paragraph{Solución Paso a Paso:}
+\begin{enumerate}[label=\textbf{\alph*)}]
+  \item Por el Teorema Fundamental del Cálculo, como $g$ es continua, las derivadas parciales de $F$ existen y son continuas ($F \in C^1(\mathbb{R}^2)$):
+  \[ JF(x,y) = \begin{pmatrix} -g(x) & g(y) \\ 2x g(x^2) & -g(y) \end{pmatrix} \implies JF(0,0) = \begin{pmatrix} -2 & 2 \\ 0 & -2 \end{pmatrix}. \]
+  Como $\det JF(0,0) = 4 \neq 0$, por el TFI existe $F^{-1}$ localmente cerca de $F(0,0)=(0,0)$ y:
+  \[ JF^{-1}(0,0) = [JF(0,0)]^{-1} = \begin{pmatrix} -1/2 & -1/2 \\ 0 & -1/2 \end{pmatrix}. \]
+  \item Por la regla de la cadena, $D\Psi(0,0) = DH(0,0)\cdot JF^{-1}(0,0) = (-2, -1/2)$. Luego $D_u\Psi(0,0) = (-2)(3/5) + (-1/2)(4/5) = -8/5$.
+\end{enumerate}
+
+\subsubsection*{Caso Híbrido PC4-3: Panel Solar con Microfisura Parabólica (Darboux + Medida Cero + Fubini + TVM)}
+\begin{tcolorbox}[colback=white,colframe=gray!40,arc=1mm,boxrule=0.5pt]
+\textbf{Enunciado:} Un panel solar ocupa el bloque $B = [0,2]\times[0,4]$. Su densidad de potencia ideal es $q_0(x,y) = 100 + 30x + 15y$, pero presenta una microfisura a lo largo de la parábola $\Gamma = \{(x,y)\in B : y = x^2\}$ donde la captación cae a cero ($q(x,y) = q_0(x,y)$ en $B\setminus\Gamma$ y $0$ en $\Gamma$).
+\begin{enumerate}[label=\textbf{\alph*)}]
+  \item Demuestre mediante sumas de Darboux ($\varepsilon$-partición) que $\iint_B q_0 1_\Gamma\,dA = 0$ y que $\iint_B q\,dA = \iint_B q_0\,dA$.
+  \item Calcule la potencia total por el Teorema de Fubini y halle el lugar geométrico de los puntos $(x_c, y_c) \in B$ donde $q_0$ alcanza su valor medio.
+\end{enumerate}
+\end{tcolorbox}
+
+\paragraph{Solución Paso a Paso:}
+\begin{enumerate}[label=\textbf{\alph*)}]
+  \item En $B=[0,2]\times[0,4]$, $0 \le q_0(x,y) \le q_0(2,4) = 220$. Sea $h = q_0 1_\Gamma$. Dado $\varepsilon > 0$, en la partición uniforme $P_n$ de $n\times n$ sub-bloques $\beta_{ij}$ de lados $\Delta x = 2/n, \Delta y = 4/n$ y área $8/n^2$, tenemos $s(h,P_n)=0$. En cada columna $[x_{i-1},x_i]$, la curva $y=x^2$ varía $x_i^2-x_{i-1}^2 \le 4\Delta x = 8/n = 2\Delta y$, tocando a lo más $3$ sub-bloques por columna ($3n$ en total). Así:
+  \[ S(h, P_n) - s(h, P_n) \le (3n)\cdot 220 \cdot \frac{8}{n^2} = \frac{5280}{n} < \varepsilon \quad \text{eligiendo } n > \frac{5280}{\varepsilon}. \]
+  Luego $\iint_B q_0 1_\Gamma\,dA = 0$ y por linealidad $\iint_B q\,dA = \iint_B q_0\,dA$.
+  \item Por Fubini: $\iint_B q_0\,dA = \int_0^2 \int_0^4 (100+30x+15y)\,dy\,dx = \int_0^2 (520+120x)\,dx = 1280\text{ W}$. El valor medio es $q_{\text{med}} = \frac{1280}{8} = 160\text{ W/m}^2$, que se alcanza sobre el segmento $100+30x_c+15y_c = 160 \iff y_c = 4 - 2x_c$, con $x_c \in [0,2]$.
+\end{enumerate}
+
+\subsubsection*{Caso Híbrido PC4-4: Cinemática Inversa de un Brazo Robótico Planar (PD04 \#24 Ampliado)}
+\begin{tcolorbox}[colback=white,colframe=gray!40,arc=1mm,boxrule=0.5pt]
+\textbf{Enunciado:} El extremo de un brazo robótico plano de dos segmentos $L_1, L_2 > 0$ se ubica en:
+\[ P(\theta_1, \theta_2) = \left( L_1\cos\theta_1 + L_2\cos(\theta_1+\theta_2), \; L_1\text{sen}\,\theta_1 + L_2\text{sen}(\theta_1+\theta_2) \right). \]
+\begin{enumerate}[label=\textbf{\alph*)}]
+  \item Calcule $JP(\theta_1, \theta_2)$ y pruebe que $\det JP(\theta_1, \theta_2) = L_1 L_2 \text{sen}\,\theta_2$.
+  \item Si $L_1 = L_2 = 1\text{ m}$, $\theta_1 = 0, \theta_2 = \pi/2$ y $\theta_1' = 0.1\text{ rad/s}, \theta_2' = -0.2\text{ rad/s}$, calcule la velocidad del extremo.
+  \item ¿En qué configuraciones garantiza el TFI que $(\theta_1,\theta_2)$ pueden recuperarse localmente de manera diferenciable? Interprete qué ocurre cuando $\det JP = 0$.
+\end{enumerate}
+\end{tcolorbox}
+
+\paragraph{Solución Paso a Paso:}
+\begin{enumerate}[label=\textbf{\alph*)}]
+  \item Derivando respecto a $\theta_1, \theta_2$ y restando la columna 2 a la columna 1 en el determinante:
+  \[ \det JP(\theta_1,\theta_2) = \det\begin{pmatrix} -L_1\text{sen}\,\theta_1 & -L_2\text{sen}(\theta_1+\theta_2) \\ L_1\cos\theta_1 & L_2\cos(\theta_1+\theta_2) \end{pmatrix} = L_1 L_2 \text{sen}\left((\theta_1+\theta_2)-\theta_1\right) = L_1 L_2 \text{sen}\,\theta_2. \]
+  \item En $(0,\pi/2)$ con $L_1=L_2=1$: $JP(0,\pi/2) = \begin{pmatrix} -1 & -1 \\ 1 & 0 \end{pmatrix}$. Luego $(x', y')^T = JP(0,\pi/2)(0.1, -0.2)^T = (0.1, 0.1)^T\text{ m/s}$.
+  \item El TFI garantiza invertibilidad local siempre que $\theta_2 \neq k\pi$ ($k\in\mathbb{Z}$). Cuando $\theta_2 = 0$ o $\pi$, los dos eslabones son colineales (brazo totalmente estirado o plegado) y pierde un grado de libertad radial (singularidad cinemática).
+\end{enumerate}
+
+\subsubsection*{Caso Híbrido PC4-5: Sistema Implícito en $\mathbb{R}^5 = X\times Y\times Z\times U\times V$ (PD04 \#34 / PD05 \#10)}
+\begin{tcolorbox}[colback=white,colframe=gray!40,arc=1mm,boxrule=0.5pt]
+\textbf{Enunciado:} Considere el sistema $x e^y + uz - \cos(v\pi/2) = 2$, $u\cos(y\pi/2) + x^2v - yz^2 = 1$ alrededor de $P(2,0,1,1,0)$.
+\begin{enumerate}[label=\textbf{\alph*)}]
+  \item Pruebe que el sistema define a $(u,v)$ como funciones $C^1$ de $(x,y,z)$ cerca de $P$, y halle $u_y(2,0,1)$ y $v_y(2,0,1)$.
+  \item ¿Garantiza el TFI que pueda despejarse $(x,z)$ en función de $(y,u,v)$ cerca de $P$? Halle otro punto $Q$ donde sí esté garantizado.
+\end{enumerate}
+\end{tcolorbox}
+
+\paragraph{Solución Paso a Paso:}
+\begin{enumerate}[label=\textbf{\alph*)}]
+  \item Evaluando $JF(P)$ para $F=(F_1,F_2): \mathbb{R}^5 \to \mathbb{R}^2$ en $P(2,0,1,1,0)$:
+  \[ JF(P) = \begin{pmatrix} 1 & 2 & 1 & 1 & 0 \\ 0 & -1 & 0 & 1 & 4 \end{pmatrix} \implies D_{(u,v)}F(P) = \begin{pmatrix} 1 & 0 \\ 1 & 4 \end{pmatrix}, \quad \det D_{(u,v)}F(P) = 4 \neq 0. \]
+  Por el TFI, $(u,v) = g(x,y,z)$ es $C^1$ cerca de $(2,0,1)$ y $\begin{pmatrix} u_y \\ v_y \end{pmatrix} = -\begin{pmatrix} 1 & 0 \\ 1 & 4 \end{pmatrix}^{-1}\begin{pmatrix} 2 \\ -1 \end{pmatrix} = \begin{pmatrix} -2 \\ 3/4 \end{pmatrix}$.
+  \item En $P$, $D_{(x,z)}F(P) = \begin{pmatrix} 1 & 1 \\ 0 & 0 \end{pmatrix}$ tiene determinante $0$, por lo que el TFI \textbf{no lo garantiza en $P$}. En cambio, en el punto solución $Q(2, 0, 0, -3, 1)$ se tiene $D_{(x,z)}F(Q) = \begin{pmatrix} 1 & -3 \\ 4 & 0 \end{pmatrix}$ con determinante $12 \neq 0$, donde el TFI sí garantiza despejar $(x,z)$.
+\end{enumerate}
+
+\subsubsection*{Caso Híbrido PC4-6: Desigualdades Integrales, Simetría y Valor Medio (PD05 \#25, \#26)}
+\begin{tcolorbox}[colback=white,colframe=gray!40,arc=1mm,boxrule=0.5pt]
+\textbf{Enunciado:} Pruebe sin calcular la integral que en $Q = [-\pi,\pi]\times[-\pi,\pi]$ se cumple:
+\[ \frac{1}{e} \le \frac{1}{4\pi^2} \iint_Q e^{\text{sen}(x+y)} \, dx \, dy \le e, \]
+y demuestre que existe $(x_0, y_0) \in Q$ tal que $\text{sen}(x_0+y_0) = \ln\left(\frac{1}{4\pi^2}\iint_Q e^{\text{sen}(x+y)}\,dA\right)$.
+\end{tcolorbox}
+
+\paragraph{Solución Paso a Paso:}
+Como $-1 \le \text{sen}(x+y) \le 1$ en todo $Q$ y $t \mapsto e^t$ es creciente, $e^{-1} \le e^{\text{sen}(x+y)} \le e^1$. Integrando sobre $Q$ (donde $\text{Area}(Q) = 4\pi^2$) por monotonía:
+\[ \frac{4\pi^2}{e} \le \iint_Q e^{\text{sen}(x+y)}\,dA \le 4\pi^2 e \implies \frac{1}{e} \le \frac{1}{4\pi^2}\iint_Q e^{\text{sen}(x+y)}\,dA \le e. \]
+Como $Q$ es compacto y conexo y $e^{\text{sen}(x+y)}$ es continua en $Q$, por el Teorema del Valor Medio para integrales dobles existe $(x_0,y_0)\in Q$ donde $e^{\text{sen}(x_0+y_0)} = \frac{1}{4\pi^2}\iint_Q e^{\text{sen}(x+y)}\,dA$. Aplicando $\ln(\cdot)$ se concluye la igualdad. $\blacksquare$
+
 \end{document}

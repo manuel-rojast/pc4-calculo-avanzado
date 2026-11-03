@@ -717,6 +717,363 @@ a:hover {
 }
 
 /* ==============================================================================
+   MÓDULOS DE ENTRENAMIENTO AVANZADO 2026-2 (TRADUCTOR, DEMOSTRACIONES Y RETOS)
+   ============================================================================== */
+
+/* Botón destacado en la barra y pestañas para Retos 2026-2 */
+.nav-link-highlight {
+  color: #fbbf24 !important;
+  border: 1px solid rgba(245, 158, 11, 0.4);
+  background: rgba(245, 158, 11, 0.1);
+}
+.nav-link-highlight:hover {
+  background: rgba(245, 158, 11, 0.22) !important;
+  color: #fde68a !important;
+}
+
+.topic-tab-btn.retos-tab-special {
+  border-color: rgba(245, 158, 11, 0.55);
+  background: linear-gradient(135deg, rgba(245, 158, 11, 0.16), rgba(244, 63, 94, 0.16));
+  color: #fde68a;
+}
+.topic-tab-btn.retos-tab-special.active {
+  border-color: #f59e0b;
+  background: linear-gradient(135deg, rgba(245, 158, 11, 0.3), rgba(244, 63, 94, 0.28));
+  color: #ffffff;
+  box-shadow: 0 0 15px rgba(245, 158, 11, 0.35);
+}
+
+/* Traductor Bilingüe de Notación Formal (En cada subtema y en el diccionario) */
+.formal-translator-box {
+  background: rgba(15, 23, 42, 0.85);
+  border: 1px solid rgba(56, 189, 248, 0.35);
+  border-left: 4px solid #38bdf8;
+  border-radius: var(--radius-md);
+  padding: 1.2rem;
+  margin: 1.35rem 0;
+}
+
+.formal-translator-box h4 {
+  color: #38bdf8;
+  font-size: 0.95rem;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  margin-bottom: 0.75rem;
+  display: flex;
+  align-items: center;
+  gap: 0.45rem;
+}
+
+.translator-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 0.75rem;
+}
+
+.translator-item {
+  background: rgba(31, 41, 55, 0.75);
+  border: 1px solid #374151;
+  border-radius: var(--radius-sm);
+  padding: 0.85rem 1rem;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 0.5rem;
+}
+
+@media (min-width: 768px) {
+  .translator-item {
+    grid-template-columns: 0.9fr 1.1fr 1fr;
+    align-items: start;
+    gap: 1rem;
+  }
+}
+
+.trans-col-label {
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  font-weight: 700;
+  display: block;
+  margin-bottom: 0.2rem;
+}
+.trans-col-symbol .trans-col-label { color: #c084fc; }
+.trans-col-human .trans-col-label { color: #38bdf8; }
+.trans-col-action .trans-col-label { color: #34d399; }
+
+.trans-col-symbol {
+  font-size: 0.92rem;
+  color: #f3f4f6;
+  background: rgba(17, 24, 39, 0.7);
+  padding: 0.5rem 0.65rem;
+  border-radius: var(--radius-sm);
+  border-left: 3px solid #a855f7;
+}
+
+.trans-col-human {
+  font-size: 0.9rem;
+  color: #e2e8f0;
+}
+
+.trans-col-action {
+  font-size: 0.88rem;
+  color: #d1fae5;
+  background: rgba(16, 185, 129, 0.08);
+  padding: 0.5rem 0.65rem;
+  border-radius: var(--radius-sm);
+  border-left: 3px solid #10b981;
+}
+
+/* Anatomía de Demostraciones en 2 Fases (Borrador vs Examen) */
+.proof-anatomy-widget {
+  background: rgba(17, 24, 39, 0.9);
+  border: 1px solid rgba(168, 85, 247, 0.4);
+  border-radius: var(--radius-md);
+  margin: 1.35rem 0;
+  overflow: hidden;
+}
+
+.proof-anatomy-header {
+  background: rgba(31, 41, 55, 0.95);
+  padding: 0.85rem 1.15rem;
+  border-bottom: 1px solid #374151;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+}
+
+.proof-anatomy-title {
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: #e9d5ff;
+  display: flex;
+  align-items: center;
+  gap: 0.45rem;
+}
+
+.proof-phase-tabs {
+  display: flex;
+  gap: 0.4rem;
+  flex-wrap: wrap;
+}
+
+.proof-phase-toggle-btn {
+  background: #111827;
+  color: #9ca3af;
+  border: 1px solid #4b5563;
+  padding: 0.35rem 0.75rem;
+  border-radius: var(--radius-sm);
+  font-size: 0.8rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.proof-phase-toggle-btn:hover {
+  color: white;
+  background: #1f2937;
+}
+
+.proof-phase-toggle-btn.active[data-phase="draft"] {
+  background: rgba(245, 158, 11, 0.2);
+  color: #fde68a;
+  border-color: #f59e0b;
+}
+
+.proof-phase-toggle-btn.active[data-phase="formal"] {
+  background: rgba(16, 185, 129, 0.2);
+  color: #a7f3d0;
+  border-color: #10b981;
+}
+
+.proof-phase-pane {
+  display: none;
+  padding: 1.15rem;
+  font-size: 0.93rem;
+  line-height: 1.7;
+}
+
+.proof-phase-pane.active {
+  display: block;
+}
+
+.draft-step-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 0.75rem;
+}
+
+@media (min-width: 768px) {
+  .draft-step-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.draft-step-card {
+  background: rgba(31, 41, 55, 0.7);
+  border: 1px solid #374151;
+  border-radius: var(--radius-sm);
+  padding: 0.85rem;
+}
+
+.draft-step-card h5 {
+  font-size: 0.82rem;
+  text-transform: uppercase;
+  margin-bottom: 0.4rem;
+  color: #fbbf24;
+}
+
+.formal-proof-script {
+  background: rgba(15, 23, 42, 0.9);
+  border-left: 4px solid #10b981;
+  padding: 1rem 1.2rem;
+  border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+  color: #e2e8f0;
+}
+
+/* Sub-pestañas de la Sección Retos 2026-2 */
+.retos-subtabs-nav {
+  display: flex;
+  gap: 0.5rem;
+  overflow-x: auto;
+  padding-bottom: 0.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.retos-subtab-btn {
+  background: #111827;
+  color: #9ca3af;
+  border: 1px solid #374151;
+  padding: 0.65rem 1.1rem;
+  border-radius: var(--radius-md);
+  font-size: 0.88rem;
+  font-weight: 700;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: all 0.2s;
+}
+
+.retos-subtab-btn:hover {
+  color: white;
+  background: #1f2937;
+}
+
+.retos-subtab-btn.active {
+  background: linear-gradient(135deg, rgba(245, 158, 11, 0.22), rgba(56, 189, 248, 0.22));
+  border-color: #fbbf24;
+  color: #ffffff;
+}
+
+.retos-subtab-pane {
+  display: none;
+  animation: fadeIn 0.25s ease-in-out;
+}
+.retos-subtab-pane.active {
+  display: block;
+}
+
+/* Simulador Épsilon-Delta y Cajas de Darboux */
+.darboux-sim-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+  margin: 1.25rem 0;
+}
+
+@media (min-width: 900px) {
+  .darboux-sim-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.darboux-canvas-wrapper {
+  width: 100%;
+  height: 340px;
+  background: #0b1120;
+  border: 1px solid #334155;
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  position: relative;
+}
+
+#darboux-eps-canvas {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+.sim-status-badge {
+  padding: 0.6rem 0.9rem;
+  border-radius: var(--radius-sm);
+  font-weight: 700;
+  font-size: 0.88rem;
+  text-align: center;
+  margin-top: 0.75rem;
+}
+
+.sim-status-badge.success {
+  background: rgba(16, 185, 129, 0.18);
+  border: 1px solid #10b981;
+  color: #6ee7b7;
+}
+
+.sim-status-badge.pending {
+  background: rgba(245, 158, 11, 0.18);
+  border: 1px solid #f59e0b;
+  color: #fcd34d;
+}
+
+/* Tarjetas de Casos Híbridos y Parcial 2026-2 */
+.hybrid-case-card {
+  background: var(--bg-card);
+  border: 1px solid #374151;
+  border-top: 4px solid #f59e0b;
+  border-radius: var(--radius-lg);
+  padding: 1.6rem;
+  margin-bottom: 1.5rem;
+  box-shadow: var(--shadow-md);
+}
+
+.hybrid-case-header {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.hybrid-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+}
+
+.hybrid-tag {
+  font-size: 0.74rem;
+  font-weight: 700;
+  padding: 0.2rem 0.6rem;
+  border-radius: 9999px;
+  background: rgba(56, 189, 248, 0.15);
+  color: #7dd3fc;
+  border: 1px solid rgba(56, 189, 248, 0.35);
+}
+
+.hybrid-tag.amber {
+  background: rgba(245, 158, 11, 0.15);
+  color: #fcd34d;
+  border-color: rgba(245, 158, 11, 0.35);
+}
+
+.hybrid-tag.rose {
+  background: rgba(244, 63, 94, 0.15);
+  color: #fda4af;
+  border-color: rgba(244, 63, 94, 0.35);
+}
+
+
+/* ==============================================================================
    REGLAS DE IMPRESIÓN (PRINT READY)
    ============================================================================== */
 @media print {

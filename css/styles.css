@@ -321,7 +321,7 @@ a:hover {
   to { opacity: 1; transform: translateY(0); }
 }
 
-/* Grid de Teoría y Visor 3D */
+/* Grid de Teoría y Visor 3D (Ancho Completo) */
 .topic-grid {
   display: grid;
   grid-template-columns: 1fr;
@@ -329,9 +329,15 @@ a:hover {
   margin-bottom: 2rem;
 }
 
+.visualizer-card.embedded-visualizer {
+  margin: 1.5rem 0;
+  background: rgba(15, 23, 42, 0.78);
+  border: 1px solid rgba(56, 189, 248, 0.35);
+}
+
 @media (min-width: 900px) {
-  .topic-grid {
-    grid-template-columns: 1.1fr 0.9fr;
+  .visualizer-card.embedded-visualizer .three-canvas-wrapper {
+    height: 360px;
   }
 }
 
@@ -939,6 +945,14 @@ a:hover {
   overflow-x: auto;
   padding-bottom: 0.5rem;
   margin-bottom: 1.5rem;
+  scrollbar-width: thin;
+}
+
+@media (min-width: 768px) {
+  .retos-subtabs-nav {
+    flex-wrap: wrap;
+    overflow-x: visible;
+  }
 }
 
 .retos-subtab-btn {

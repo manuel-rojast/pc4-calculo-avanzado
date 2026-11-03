@@ -24,7 +24,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;600&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
   <!-- Estilos propios -->
-  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="css/styles.css?v=4">
 </head>
 <body>
 
@@ -148,6 +148,30 @@
             </p>
           </div>
 
+          <!-- Visor 3D Interactivo: Deformación Jacobiana (Entre las definiciones y la explicación sencilla) -->
+          <div class="visualizer-card embedded-visualizer">
+            <div class="visualizer-header">
+              <h3 class="visualizer-title">🎮 Gráfico Interactivo 3D: Deformación de Malla y Factor $\det J$</h3>
+              <span class="touch-hint-badge">👆 Toca y gira en 3D</span>
+            </div>
+
+            <div class="three-canvas-wrapper" id="jacobian-canvas-container"></div>
+
+            <div class="visualizer-controls">
+              <div class="control-group">
+                <label class="control-label" for="jacobian-slider">No-Linealidad ($t$):</label>
+                <input type="range" class="control-slider" id="jacobian-slider" min="0" max="1" step="0.05" value="0">
+              </div>
+              <div class="visualizer-readout">
+                <span>Factor de Escala Local $\det J$:</span>
+                <span class="readout-value" id="jacobian-det-val">1.000</span>
+              </div>
+            </div>
+            <p style="font-size:0.82rem; color:#94a3b8; margin-top:0.75rem; margin-bottom:0;">
+              El parche naranja representa el elemento diferencial de área transformado. El determinante jacobiano cuantifica exactamente el estiramiento o compresión del área infinitesimal.
+            </p>
+          </div>
+
           <div class="theory-block" style="border-left-color: #38bdf8; background: rgba(56, 189, 248, 0.08);">
             <h4 style="color:#38bdf8;">💡 Explicación Sencilla y Detallada (Intuición Geométrica):</h4>
             <p>
@@ -244,30 +268,6 @@
             </div>
         </article>
 
-        <!-- Visor 3D Interactivo: Deformación Jacobiana -->
-        <aside class="visualizer-card">
-          <div class="visualizer-header">
-            <h3 class="visualizer-title">Deformación de Malla y Factor $\det J$</h3>
-            <span class="touch-hint-badge">👆 Toca y gira en 3D</span>
-          </div>
-
-          <div class="three-canvas-wrapper" id="jacobian-canvas-container"></div>
-
-          <div class="visualizer-controls">
-            <div class="control-group">
-              <label class="control-label" for="jacobian-slider">No-Linealidad ($t$):</label>
-              <input type="range" class="control-slider" id="jacobian-slider" min="0" max="1" step="0.05" value="0">
-            </div>
-            <div class="visualizer-readout">
-              <span>Factor de Escala Local $\det J$:</span>
-              <span class="readout-value" id="jacobian-det-val">1.000</span>
-            </div>
-          </div>
-          <p style="font-size:0.8rem; color:#94a3b8; margin-top:0.75rem;">
-            El parche naranja representa el elemento diferencial de área transformado. El determinante jacobiano cuantifica exactamente el estiramiento o compresión del área infinitesimal.
-          </p>
-        </aside>
-
       </div>
 
       <!-- Barra de Filtros de Nivel de Ejercicios -->
@@ -323,6 +323,30 @@
               <li><strong>Superficie en el espacio ($F: \mathbb{R}^3 \to \mathbb{R}$):</strong> $\nabla \varphi(x,y) = \left(-\frac{F_x}{F_z}, -\frac{F_y}{F_z}\right)$ si $F_z \neq 0$.</li>
               <li><strong>Sistemas $2 \times 4$ ($F: \mathbb{R}^4 \to \mathbb{R}^2$):</strong> Requiere invertir la matriz $2 \times 2$ de derivadas dependientes.</li>
             </ul>
+          </div>
+
+          <!-- Visor 3D Interactivo: Superficie Implícita (Entre las definiciones y la explicación sencilla) -->
+          <div class="visualizer-card embedded-visualizer">
+            <div class="visualizer-header">
+              <h3 class="visualizer-title">🎮 Gráfico Interactivo 3D: Superficie Implícita $F(x,y,z)=0$</h3>
+              <span class="touch-hint-badge">👆 Toca y gira en 3D</span>
+            </div>
+
+            <div class="three-canvas-wrapper" id="implicit-canvas-container"></div>
+
+            <div class="visualizer-controls">
+              <p style="font-size:0.85rem; color:#cbd5e1; margin-bottom:0.5rem;">
+                <strong>Punto Regular $P_0$ (Esfera roja):</strong> Cumple $\nabla F(P_0) \neq 0$.
+              </p>
+              <div class="visualizer-readout">
+                <span>Plano Tangente (Verde):</span>
+                <span class="readout-value">$\nabla F(P_0) \cdot (X - P_0) = 0$</span>
+              </div>
+              <div class="visualizer-readout" style="margin-top:0.4rem;">
+                <span>Curva Local (Amarilla):</span>
+                <span class="readout-value">$z = \varphi(x, y_0)$</span>
+              </div>
+            </div>
           </div>
 
           <div class="theory-block" style="border-left-color: #a855f7; background: rgba(168, 85, 247, 0.08);">
@@ -420,30 +444,6 @@
           </div>
         </article>
 
-        <!-- Visor 3D Interactivo: Superficie Implícita -->
-        <aside class="visualizer-card">
-          <div class="visualizer-header">
-            <h3 class="visualizer-title">Superficie Implícita $F(x,y,z)=0$</h3>
-            <span class="touch-hint-badge">👆 Toca y gira en 3D</span>
-          </div>
-
-          <div class="three-canvas-wrapper" id="implicit-canvas-container"></div>
-
-          <div class="visualizer-controls">
-            <p style="font-size:0.85rem; color:#cbd5e1; margin-bottom:0.5rem;">
-              <strong>Punto Regular $P_0$ (Esfera roja):</strong> Cumple $\nabla F(P_0) \neq 0$.
-            </p>
-            <div class="visualizer-readout">
-              <span>Plano Tangente (Verde):</span>
-              <span class="readout-value">$\nabla F(P_0) \cdot (X - P_0) = 0$</span>
-            </div>
-            <div class="visualizer-readout" style="margin-top:0.4rem;">
-              <span>Curva Local (Amarilla):</span>
-              <span class="readout-value">$z = \varphi(x, y_0)$</span>
-            </div>
-          </div>
-        </aside>
-
       </div>
 
       <!-- Barra de Filtros de Nivel de Ejercicios -->
@@ -502,6 +502,39 @@
               <em>Propiedad fundamental de orden:</em> Para cualesquiera dos particiones $P_1, P_2$:
               $$L(f, P_1) \le L(f, P_1 \cup P_2) \le S(f, P_1 \cup P_2, \xi) \le U(f, P_1 \cup P_2) \le U(f, P_2).$$
             </p>
+          </div>
+
+          <!-- Visor 3D Interactivo: Sumas de Riemann (Entre las definiciones y la explicación sencilla) -->
+          <div class="visualizer-card embedded-visualizer">
+            <div class="visualizer-header">
+              <h3 class="visualizer-title">🎮 Gráfico Interactivo 3D: Prismas de Riemann y Darboux</h3>
+              <span class="touch-hint-badge">👆 Toca y gira en 3D</span>
+            </div>
+
+            <div class="three-canvas-wrapper" id="riemann-canvas-container"></div>
+
+            <div class="visualizer-controls">
+              <div class="control-group">
+                <label class="control-label" for="riemann-m-slider">Subdivisiones en $x$ ($m$):</label>
+                <input type="range" class="control-slider" id="riemann-m-slider" min="2" max="16" step="1" value="4">
+              </div>
+              <div class="control-group">
+                <label class="control-label" for="riemann-n-slider">Subdivisiones en $y$ ($n$):</label>
+                <input type="range" class="control-slider" id="riemann-n-slider" min="2" max="16" step="1" value="4">
+              </div>
+              <div class="control-group">
+                <span class="control-label">Modo de aproximación:</span>
+                <div class="control-btn-group">
+                  <button class="btn-ctrl riemann-mode-btn" data-mode="lower">Inferior (L)</button>
+                  <button class="btn-ctrl riemann-mode-btn active" data-mode="upper">Superior (U)</button>
+                  <button class="btn-ctrl riemann-mode-btn" data-mode="mid">Punto Medio</button>
+                </div>
+              </div>
+              <div class="visualizer-readout">
+                <span id="riemann-boxes-count">16 prismas (4x4)</span>
+                <span>Volumen aproximado: <strong class="readout-value" id="riemann-val-display">5.1200</strong></span>
+              </div>
+            </div>
           </div>
 
           <div class="theory-block" style="border-left-color: #38bdf8; background: rgba(56, 189, 248, 0.08);">
@@ -597,39 +630,6 @@
             </div>
           </div>
         </article>
-
-        <!-- Visor 3D Interactivo: Sumas de Riemann -->
-        <aside class="visualizer-card">
-          <div class="visualizer-header">
-            <h3 class="visualizer-title">Prismas de Riemann y Darboux 3D</h3>
-            <span class="touch-hint-badge">👆 Toca y gira en 3D</span>
-          </div>
-
-          <div class="three-canvas-wrapper" id="riemann-canvas-container"></div>
-
-          <div class="visualizer-controls">
-            <div class="control-group">
-              <label class="control-label" for="riemann-m-slider">Subdivisiones en $x$ ($m$):</label>
-              <input type="range" class="control-slider" id="riemann-m-slider" min="2" max="16" step="1" value="4">
-            </div>
-            <div class="control-group">
-              <label class="control-label" for="riemann-n-slider">Subdivisiones en $y$ ($n$):</label>
-              <input type="range" class="control-slider" id="riemann-n-slider" min="2" max="16" step="1" value="4">
-            </div>
-            <div class="control-group">
-              <span class="control-label">Modo de aproximación:</span>
-              <div class="control-btn-group">
-                <button class="btn-ctrl riemann-mode-btn" data-mode="lower">Inferior (L)</button>
-                <button class="btn-ctrl riemann-mode-btn active" data-mode="upper">Superior (U)</button>
-                <button class="btn-ctrl riemann-mode-btn" data-mode="mid">Punto Medio</button>
-              </div>
-            </div>
-            <div class="visualizer-readout">
-              <span id="riemann-boxes-count">16 prismas (4x4)</span>
-              <span>Volumen aproximado: <strong class="readout-value" id="riemann-val-display">5.1200</strong></span>
-            </div>
-          </div>
-        </aside>
 
       </div>
 
@@ -839,6 +839,30 @@
             </p>
           </div>
 
+          <!-- Visor 3D Interactivo: Rebanadas de Fubini (Entre Definiciones y Explicación) -->
+          <div class="visualizer-card embedded-visualizer">
+            <div class="visualizer-header">
+              <h3 class="visualizer-title">Rebanadas de Fubini $A(x) = \int f dy$</h3>
+              <span class="touch-hint-badge">👆 Toca y gira en 3D</span>
+            </div>
+
+            <div class="three-canvas-wrapper" id="fubini-canvas-container"></div>
+
+            <div class="visualizer-controls">
+              <div class="control-group">
+                <label class="control-label" for="fubini-x-slider">Plano de corte $x = x_0$:</label>
+                <input type="range" class="control-slider" id="fubini-x-slider" min="0" max="2" step="0.05" value="1">
+              </div>
+              <div class="visualizer-readout">
+                <span>Área de la rebanada $A(x_0)$ (Perfil rojo):</span>
+                <span class="readout-value" id="fubini-slice-area">2.150</span>
+              </div>
+            </div>
+            <p style="font-size:0.8rem; color:#94a3b8; margin-top:0.75rem;">
+              Deslice el plano transversal $x = x_0$ para observar cómo la sección se acumula para generar el volumen del sólido.
+            </p>
+          </div>
+
           <div class="theory-block" style="border-left-color: #f59e0b; background: rgba(245, 158, 11, 0.08);">
             <h4 style="color:#fbbf24;">💡 Explicación Sencilla y Detallada (El Pan de Molde y el Lago Nivelado):</h4>
             <p>
@@ -931,30 +955,6 @@
             </div>
           </div>
         </article>
-
-        <!-- Visor 3D Interactivo: Rebanadas de Fubini -->
-        <aside class="visualizer-card">
-          <div class="visualizer-header">
-            <h3 class="visualizer-title">Rebanadas de Fubini $A(x) = \int f dy$</h3>
-            <span class="touch-hint-badge">👆 Toca y gira en 3D</span>
-          </div>
-
-          <div class="three-canvas-wrapper" id="fubini-canvas-container"></div>
-
-          <div class="visualizer-controls">
-            <div class="control-group">
-              <label class="control-label" for="fubini-x-slider">Plano de corte $x = x_0$:</label>
-              <input type="range" class="control-slider" id="fubini-x-slider" min="0" max="2" step="0.05" value="1">
-            </div>
-            <div class="visualizer-readout">
-              <span>Área de la rebanada $A(x_0)$ (Perfil rojo):</span>
-              <span class="readout-value" id="fubini-slice-area">2.150</span>
-            </div>
-          </div>
-          <p style="font-size:0.8rem; color:#94a3b8; margin-top:0.75rem;">
-            Deslice el plano transversal $x = x_0$ para observar cómo la sección se acumula para generar el volumen del sólido.
-          </p>
-        </aside>
 
       </div>
 
@@ -1267,7 +1267,7 @@
               </div>
               <div class="trans-col-action">
                 <span class="trans-col-label">Contraejemplo Oficial</span>
-                La función de `PD05 #28` ($1/y^2$ para $x<y$, $-1/x^2$ para $y<x$) tiene integrales iteradas $1$ y $-1$. Y para integrales iteradas iguales pero $f$ no integrable: $f(x,y)=1$ si $x\in\mathbb{Q}$ e $y\in\mathbb{Q}$, $0$ en otro caso.
+                La función de <strong>PD05 #28</strong> ($f(x,y) = 1/y^2$ para $0 \lt x \lt y \lt 1$ y $f(x,y) = -1/x^2$ para $0 \lt y \lt x \lt 1$) tiene integrales iteradas $1$ y $-1$. Y para integrales iteradas iguales pero $f$ no integrable: $f(x,y)=1$ si $x\in\mathbb{Q}$ e $y\in\mathbb{Q}$, $0$ en otro caso.
               </div>
             </div>
           </div>
@@ -1807,10 +1807,10 @@
   </footer>
 
   <!-- Scripts de la Aplicación -->
-  <script src="js/data-exercises.js"></script>
-  <script src="js/visualizers.js"></script>
-  <script src="js/retos-2026.js"></script>
-  <script src="js/app.js"></script>
+  <script src="js/data-exercises.js?v=4"></script>
+  <script src="js/visualizers.js?v=4"></script>
+  <script src="js/retos-2026.js?v=4"></script>
+  <script src="js/app.js?v=4"></script>
 
 </body>
 </html>
